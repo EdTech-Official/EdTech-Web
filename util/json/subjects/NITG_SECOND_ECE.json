@@ -1,0 +1,152 @@
+[
+    {
+        "id": "1",
+        "subject_code": "EC201",
+        "name": "Analog Electronics",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1fiaK6zokO-6JophZEz3kdIs4D5wBJpNb/view?usp=sharing"
+    },
+    {
+        "id": "2",
+        "subject_code": "EC202",
+        "name": "Signals and Systems",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/12_N9LEhDu5Q0-ekmAYqkoc317mYEjMQd/view?usp=sharing"
+    },
+    {
+        "id": "3",
+        "subject_code": "EC203",
+        "name": "Network Theory and Synthesis",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1UZ6kVxNBU9ioDBJrIQnMF50hXG0-RIqQ/view?usp=sharing"
+    },
+    {
+        "id": "4",
+        "subject_code": "EC204",
+        "name": "Electromagnetic Theory",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1fFXKOiY7z17JN-ntssAJzwIrl-_tiUOO/view?usp=sharing"
+    },
+    {
+        "id": "5",
+        "subject_code": "MA200",
+        "name": "Mathematics III",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1-BNYjXiVkjb8X6OM4VDi8-MFpMv16KsA/view?usp=sharing"
+    },
+    {
+        "id": "6",
+        "subject_code": "EC205",
+        "name": "Analog Electronics Laboratory",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1yWmIL0oUVf1KV6AQ-XM45EBkqRZKMy82/view?usp=sharing"
+    },
+    {
+        "id": "7",
+        "subject_code": "EC206",
+        "name": "Signals and Systems Laboratory",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/111ka7_226dwCFUsLDmTluHT-aEWTCoSi/view?usp=sharing"
+    },
+    {
+        "id": "8",
+        "subject_code": "EC251",
+        "name": "Digital Electronics",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1VMRO2IXegFgsz3oaC9gPHvZI8PgptuM0/view?usp=sharing"
+    },
+    {
+        "id": "9",
+        "subject_code": "EC252",
+        "name": "Communication Engineering",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1WEeyRevw2Isbjc6upXH5rTUmmsauB6DL/view?usp=sharing"
+    },
+    {
+        "id": "10",
+        "subject_code": "EC253",
+        "name": "Devices",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1frmod7stTEXgr3AJX6PHBbdo89OV1Qyh/view?usp=sharing"
+    },
+    {
+        "id": "11",
+        "subject_code": "HS250",
+        "name": "Economics",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/15Xkw27hvsCM7x98a6KvDoQ-SiEe4NobV/view?usp=sharing"
+    },
+    {
+        "id": "12",
+        "subject_code": "MA250",
+        "name": "Mathematics-IV (Probability, Statistics and Random Processes)",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/19X0J8w92Ninb2fQorgl7gKAlt2KQEsTD/view?usp=sharing"
+    },
+    {
+        "id": "13",
+        "subject_code": "EC254",
+        "name": "Digital Electronics Laboratory",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1IoKENyLVxs_Wt8FTTmSRAOA541yvmIQS/view?usp=sharing"
+    },
+    {
+        "id": "14",
+        "subject_code": "EC255",
+        "name": "Communication Engineering Laboratory",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1AnzsyUkUGN3tETmBcpyyFF7QxD78IQuq/view?usp=sharing"
+    },
+    {
+        "id": "15",
+        "subject_code": "VE200",
+        "name": "Value Education",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/10-CUHL0vjp9UukhWQiAU3y9sdJ0_LxyG/view?usp=sharing"
+    }
+]

@@ -1,0 +1,51 @@
+[
+    {
+        "id": "1",
+        "branch_code": "CSE",
+        "college": "NITG",
+        "name": "Computer Science and Engineering",
+        "description": "The Department of Computer Science and Engineering (CSE) of NIT Goa is one of the founding departments of the institute, started in 2010. It offers 4 years full time B. Tech. degree program, 2 years full time M. Tech. degree program and Ph.D. program in Computer Science and Engineering."
+    },
+    {
+        "id": "2",
+        "branch_code": "EEE",
+        "college": "NITG",
+        "name": "Electrical and Electronics Engineering",
+        "description": "The department of Electrical and Electronics Engineering was established during the inception of the institute in 2010. It offers undergraduate (B. Tech.), postgraduate (M. Tech in Power Electronics and Power Systems), and research programmes in the various fields of Electrical and Electronics Engineering"
+    },
+    {
+        "id": "3",
+        "branch_code": "ECE",
+        "college": "NITG",
+        "name": "Electronics and Communication Engineering",
+        "description": "The Electronics and Communication Department of NIT Goa was formed in 2010. It offers B. Tech.,  M.Tech. in VLSI and Ph.D. program in Electronics and Communication Engineering. The goal of the department is to impart both theoretical and practical knowledge in Electronics and Communication Engineering to students so as to enable them for technology and research."
+    },
+    {
+        "id": "4",
+        "branch_code": "HSS",
+        "college": "NITG",
+        "name": "Humanities and Social Sciences",
+        "description": "The Department of Humanities and Social Sciences of NIT Goa is multidisciplinary in its orientation and at present it includes two disciplines: Economics and English. The department has efficient faculty members, who are dedicated to teaching, research and other co-curricular activities."
+    },
+    {
+        "id": "5",
+        "branch_code": "CVE",
+        "college": "NITG",
+        "name": "Civil Engineering",
+        "description": "The Department of Civil Engineering was established in the year 2018. It offers Undergraduate (B.Tech.) program in the field of Civil Engineering. The Institution and the faculty members are committed to provide the finest possible education to the students."
+    },
+    {
+        "id": "6",
+        "branch_code": "MCE",
+        "college": "NITG",
+        "name": "Mechanical Engineering",
+        "description": "The Department of Mechanical Engineering was established in the year 2018. It offers Undergraduate (B.Tech.) program in the field of Mechanical Engineering"
+    },
+    {
+        "id": "7",
+        "branch_code": "APS",
+        "college": "NITG",
+        "name": "Applied Sciences",
+        "description": "The Department of Applied Sciences of NIT Goa is multidisciplinary in its orientation and at present it includes three disciplines: Physics, Chemistry and Mathematics."
+    }
+]

@@ -1,0 +1,182 @@
+[
+    {
+        "id": "1",
+        "subject_code": "ME300",
+        "name": "Manufacturing Technology-II",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1IfdIdNf1iVgx4RNHCAFQN8_NVrHjMrf9/view?usp=sharing"
+    },
+    {
+        "id": "2",
+        "subject_code": "ME301",
+        "name": "CAD/CAM",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/10RrhtAqlG6p9FvzexnQyNIMxdIc72XMs/view?usp=sharing"
+    },
+    {
+        "id": "3",
+        "subject_code": "ME302",
+        "name": "Turbo Machinery ",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1kwxpNRjdcJz8ZzYQDxGQcS09Vj2XLUYw/view?usp=sharing"
+    },
+    {
+        "id": "4",
+        "subject_code": "ME303",
+        "name": "Machine Design-I",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/17SJwu1-MUEQcPrqViZ2UTsxJ9kPr-emB/view?usp=sharing"
+    },
+    {
+        "id": "5",
+        "subject_code": "ES301",
+        "name": "Environmental Studies",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1ziUXicB7aumrbidYNIlIycISEQ9IAW6F/view?usp=sharing"
+    },
+    {
+        "id": "6",
+        "subject_code": "HS300",
+        "name": "Economics ",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1U-6STl7EYUmt9-qZzmZTyli0wkx6XO-J/view?usp=sharing"
+    },
+    {
+        "id": "7",
+        "subject_code": "ME304",
+        "name": "Mechanical Lab-1",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1Pj-xCNWAkPH0Aszi3puvYe8tzoM_dQH7/view?usp=sharing"
+    },
+    {
+        "id": "8",
+        "subject_code": "ME305",
+        "name": "Measurements and Metrology Lab",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1Hzz_q0_7SRQ-uz81w9RfvybD0zBAQvYF/view?usp=sharing"
+    },
+    {
+        "id": "9",
+        "subject_code": "ME306",
+        "name": "Mechanical Workshop-I",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1Hzz_q0_7SRQ-uz81w9RfvybD0zBAQvYF/view?usp=sharing"
+    },
+    {
+        "id": "10",
+        "subject_code": "ME350",
+        "name": "Heat Transfer",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1aMotWBSzQyASXzkSPSdWTq9pgV5pkTJt/view?usp=sharing"
+    },
+    {
+        "id": "11",
+        "subject_code": "ME351",
+        "name": "Automobile Engineering",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1uDZlGZFYgS8PD-U_VSVWF6eFKDGE9-qP/view?usp=sharing"
+    },
+    {
+        "id": "12",
+        "subject_code": "ME352",
+        "name": "Machine Design-II ",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/10InQJU2TWhe5rJsASnJAb7agf4TyMENJ/view?usp=sharing"
+    },
+    {
+        "id": "13",
+        "subject_code": "HS350",
+        "name": "Management",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1mg0lNqsXF8-OgcILrVQ4qepcNmZHEDOx/view?usp=sharing"
+    },
+    {
+        "id": "14",
+        "subject_code": "HU350",
+        "name": "Professional Communication-II and Languages Lab ",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": ""
+    },
+    {
+        "id": "15",
+        "subject_code": "ME353",
+        "name": "Mechanical Workshop-II",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1e5Ud30jmVXTJ_DNF9e43sZEYIZGLf0Zp/view?usp=sharing"
+    },
+    {
+        "id": "16",
+        "subject_code": "ME354",
+        "name": "Mechanical Lab-II",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1kkvQHsqyTjYboz1qs6hpJXsa1d1ok-Gl/view?usp=sharing"
+    },
+    {
+        "id": "17",
+        "subject_code": "ME355",
+        "name": "CAD/CAM Lab",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1SacUsgAYTIg1xnK0ZcjhGguBmTg_z5di/view?usp=sharing"
+    },
+    {
+        "id": "18",
+        "subject_code": "ME356",
+        "name": "Mini Project/Industrial training",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": ""
+    }
+]

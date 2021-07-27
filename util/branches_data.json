@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Computer Science and Engineering",
+        "description": "Nisi consectetur eiusmod veniam cillum culpa. Anim pariatur sunt deserunt. Ad sunt exercitation aute esse.",
+        "branch_code": "CSE"
+    },
+    {
+        "name": "Electrical and Electronics Engineering",
+        "description": "Cupidatat consequat fugiat pariatur laborum sunt sed do. Enim in tempor duis. Commodo aute ipsum reprehenderit culpa enim. Adipiscing eiusmod nulla nostrud duis tempor, ex consequat enim culpa aute non aliquip cillum, veniam elit cillum ex.",
+        "branch_code": "EEE"
+    },
+    {
+        "name": "Electronics and Communication Engineering",
+        "description": "Dolor et mollit laborum. Dolor anim occaecat pariatur do. Officia ex laborum aliqua veniam ex culpa. Veniam minim magna do officia eiusmod est laboris. Sed est consectetur sed cupidatat laborum.",
+        "branch_code": "ECE"
+    },
+    {
+        "name": "Humanities and Social Sciences",
+        "description": "Nisi minim qui fugiat elit nulla. Anim veniam ullamco non duis mollit ea sit. Nisi quis laboris est ad ut anim. Id amet voluptate sed quis.",
+        "branch_code": "HSS"
+    },
+    {
+        "name": "Civil Engineering",
+        "description": "Labore mollit sint aliquip duis. Exercitation nisi cillum ea sunt ad, incididunt anim do ipsum nulla laborum. Ex fugiat et velit, commodo quis duis laborum dolor ea fugiat minim, elit aliqua id velit. Quis occaecat velit tempor nisi. Et sint ullamco sed nostrud ex.",
+        "branch_code": "CVE"
+    },
+    {
+        "name": "Mechanical Engineering",
+        "description": "Quis ex minim sed velit exercitation elit exercitation. Sit occaecat anim esse sed sit, sunt minim ut consectetur cillum esse, fugiat eu magna ullamco minim. Do ad aliqua anim. Occaecat ut occaecat tempor ea exercitation esse, mollit dolor do reprehenderit anim fugiat.",
+        "branch_code": "MCE"
+    },
+    {
+        "name": "Applied Sciences",
+        "description": "Nulla veniam culpa aliquip et non duis. Lorem laborum fugiat deserunt mollit sit. Do voluptate voluptate in incididunt minim in. Eiusmod labore proident sit qui pariatur esse pariatur. Cupidatat anim incididunt minim ipsum aute aliquip.",
+        "branch_code": "APS"
+    }
+]

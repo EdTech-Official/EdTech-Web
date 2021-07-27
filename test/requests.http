@@ -1,0 +1,101 @@
+GET http://127.0.0.1:8000/api/subject-list/
+content-type: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/subject-detail/2/
+content-type: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/branch-list/
+content-type: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/branch-detail/3/
+content-type: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/course-list/
+content-type: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/course-detail/3/
+content-type: application/json
+
+###
+
+POST https://httpbin.org/post
+Content-Type: application/json
+
+body: {
+  "firstName": "Bonnie",
+  "lastName": "Lass",
+  "email": "bonnie.lass@mycompany.com",
+  "password": "password",
+  "role": "admin"
+}
+
+###
+
+GET  http://127.0.0.1:8000/api/user-list/
+content-type: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/user-detail/3/
+content-type: application/json
+
+###
+
+GET  http://127.0.0.1:8000/api/textbook-list/?page_size=15&page=1
+content-type: application/json
+
+{
+  "page_size": 15,
+  "page": 1,
+}
+
+###
+
+POST  http://127.0.0.1:8000/api/textbook-list/
+Content-Type: application/json
+
+{
+  "title": "Concept of Physics part-1",
+  "author": "H.C. Verma",
+  "link": "https://drive.google.com/file/d/1x6WgM2Z5addlN2cD2vMRNpRUlvMkpJl9/view?usp=sharing",
+  "cover_image": "https://drive.google.com/file/d/1xRdE6oqhM3VcAUBwtNiw3ZoFxK3UJHY7/view?usp=sharing",
+  "subject": "Physics",
+  "posted_by": "raj",
+  "description": "A book on physics"
+}
+
+###
+
+GET  http://127.0.0.1:8000/api/textbook-detail/101/
+content-type: application/json
+
+###
+PUT  http://127.0.0.1:8000/api/textbook-detail/101/
+Content-Type: application/json
+
+{
+  "title": "Concept of Physics part-1 (updated)",
+  "author": "H.C. Verma",
+  "link": "https://drive.google.com/file/d/1x6WgM2Z5addlN2cD2vMRNpRUlvMkpJl9/view?usp=sharing",
+  "cover_image": "https://drive.google.com/file/d/1xRdE6oqhM3VcAUBwtNiw3ZoFxK3UJHY7/view?usp=sharing",
+  "subject": "Physics",
+  "posted_by": "deepshetye",
+  "description": "A book on physics"
+}
+
+
+###
+
+DELETE http://127.0.0.1:8000/api/textbook-detail/101/
+Content-Type: application/json
+

@@ -1,0 +1,16 @@
+id,subject_code,name,college,branch,year,description,portion_link
+1,CS300,Operating Systems ,NITG,CSE,THIRD,NULL,https://drive.google.com/file/d/1OMDOFb30fp5WdbXEjuTHat7xH4kcRRic/view?usp=sharing
+2,CS301,Database Systems ,NITG,CSE,THIRD,NULL,https://drive.google.com/file/d/1SMyKnRn8QC67OGQreQIY6kaKflkQ6kPl/view?usp=sharing
+3,CS302,Microprocessor and Microcontrollers,NITG,CSE,THIRD,NULL,https://drive.google.com/file/d/1gs0wGEgOhKVOsa_w4w1BGGk9uDKXNAll/view?usp=sharing
+4,CS303,Theory of Computation ,NITG,CSE,THIRD,NULL,https://drive.google.com/file/d/1PlOq2iFrQUq6jrNqJdqWv493x9K4ps9G/view?usp=sharing
+5,ES300,Environmental Studies,NITG,CSE,THIRD,NULL,https://drive.google.com/file/d/17uLLX0y4BFTqHJ4KT5Pqi4pS-aatp3lt/view?usp=sharing
+6,CS304,Operating Systems Laboratory ,NITG,CSE,THIRD,NULL,https://drive.google.com/file/d/1DolIZMPEPWENV9jQ3BhsL7RLBNuaSlmR/view?usp=sharing
+7,CS305,Database Systems Laboratory,NITG,CSE,THIRD,NULL,https://drive.google.com/file/d/1V5s-5hIQMAT2FuDYkBXW1P7fTTAPKX5i/view?usp=sharing
+8,CS306,Microprocessor and Microcontrollers Laboratory,NITG,CSE,THIRD,NULL,https://drive.google.com/file/d/11BLyzPZ2zKRcN66ZLhrYz19ljTQ9M_yQ/view?usp=sharing
+9,CS350,Compiler Design ,NITG,CSE,THIRD,NULL,https://drive.google.com/file/d/1V87IYIM4om2irMeqHWgoVLSJLDBDySvg/view?usp=sharing
+10,CS351,Design and Analysis of Algorithms ,NITG,CSE,THIRD,NULL,https://drive.google.com/file/d/18-JdO167yA4UTHnvLKBtuuZBbs-n6ZT3/view?usp=sharing
+11,CS352,Software Engineering,NITG,CSE,THIRD,NULL,https://drive.google.com/file/d/12X9UiVIf_gbx2E4XhVw6IIbG9li0Ccgg/view?usp=sharing
+12,CS353,Computer Networks ,NITG,CSE,THIRD,NULL,https://drive.google.com/file/d/1bK6S8ywA6UVG_wI1Wz7YIvk1LTFjh_7d/view?usp=sharing
+13,CS354,Compiler Design Laboratory,NITG,CSE,THIRD,NULL,https://drive.google.com/file/d/1ckSwrMQ1A6tTgIGEHblxQm9Baxy5Rl84/view?usp=sharing
+14,CS355,Networks Laboratory,NITG,CSE,THIRD,NULL,https://drive.google.com/file/d/1ZDEDw_VhB6KJqj29mYcaN_wmXlC7SITi/view?usp=sharing
+15,CS356,Mini Project/Industrial training,NITG,CSE,THIRD,NULL,

@@ -1,0 +1,18 @@
+id,subject_code,name,college,branch,year,description,portion_link
+1,MA200,Mathematics-III,NITG,MCE,SECOND,NULL,https://drive.google.com/file/d/1Q9NGX2f78XxaKTunDbqT9LWSm34yLTH6/view?usp=sharing
+2,ME200,Mechanics of Solids,NITG,MCE,SECOND,NULL,https://drive.google.com/file/d/1nVXa4RgJukD6fuuWV4oK_qhaYzPiWMZ2/view?usp=sharing
+3,ME201,Materials and Metallurgical Engineering,NITG,MCE,SECOND,NULL,https://drive.google.com/file/d/1nRXiw3qNpNyw9etGEyGwurAAHRMibvmj/view?usp=sharing
+4,ME202,Fluid Mechanics,NITG,MCE,SECOND,NULL,https://drive.google.com/file/d/1Ft7W0qNn5B2cu4SeE5g79_g-GLDw1JEp/view?usp=sharing
+5,ME203,Electrical and Electronics Technology,NITG,MCE,SECOND,NULL,https://drive.google.com/file/d/1GBW9j7zBO5bzYhKu-QLelWaEqHGtLUmY/view?usp=sharing
+6,ME204,Basic Thermodynamics,NITG,MCE,SECOND,NULL,https://drive.google.com/file/d/1K10IuvSvzyapHdepdkm7qkE7yIb1Cosn/view?usp=sharing
+7,ME205,Machine Drawing,NITG,MCE,SECOND,NULL,https://drive.google.com/file/d/1ZY3kibpFMsSLJ1hPItKSTxv1UdgI31Z0/view?usp=sharing
+8,ME206,Electrical and Electronics Technology Lab,NITG,MCE,SECOND,NULL,https://drive.google.com/file/d/1BumM4aIOXyMis9AfqyrXXFqUpA2ZATXn/view?usp=sharing
+9,MA250,Mathematics-IV (Numerical Methods and Statistics) ,NITG,MCE,SECOND,NULL,https://drive.google.com/file/d/1QaKXgRD9RK-D6dpPKIpwIyoGZQ5Fymgy/view?usp=sharing
+10,ME250,Applied Thermodynamics ,NITG,MCE,SECOND,NULL,https://drive.google.com/file/d/1pWHHZrL_wci5__l72ceYEtA9JAIL9q9H/view?usp=sharing
+11,ME251,Power Plant Engineering,NITG,MCE,SECOND,NULL,https://drive.google.com/file/d/14nr4bklVuwE7OegOGZyU0IFKiJYVl1Id/view?usp=sharing
+12,ME252,Manufacturing Technology-I,NITG,MCE,SECOND,NULL,https://drive.google.com/file/d/1yU9eccisN7P7AQ2xxHr8OD5i7BJzFKRX/view?usp=sharing
+13,ME253,Mechanics of Machinery,NITG,MCE,SECOND,NULL,https://drive.google.com/file/d/1ygz3wcui70qfhrvAhpV_Sq1dDd0Yn2A-/view?usp=sharing
+14,ME254,Measurements and Metrology,NITG,MCE,SECOND,NULL,https://drive.google.com/file/d/188m-U2gb_df63760hHPPXwF6w3rFJCF7/view?usp=sharing
+15,ME255,Mechanics of Solids Lab,NITG,MCE,SECOND,NULL,https://drive.google.com/file/d/1aKIatOdacXXRDhj1m1kO6O7MeC5gp9A4/view?usp=sharing
+16,ME256,Fluid Mechanics Lab,NITG,MCE,SECOND,NULL,https://drive.google.com/file/d/1yAWHJGr7A-pKm0ceNoN99Flg-jGWMofe/view?usp=sharing
+17,VE200,Value Education,NITG,MCE,SECOND,NULL,https://drive.google.com/file/d/1QrbH14K128bspnIfSqCl_nK_GrfhxxcG/view?usp=sharing

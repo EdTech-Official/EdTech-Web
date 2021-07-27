@@ -1,0 +1,142 @@
+[
+    {
+        "id": "1",
+        "subject_code": "EE300",
+        "portion_link": "https://drive.google.com/file/d/10ERLp-DatttwHLOfiG29BKVGICgK1pZZ/view?usp=sharing",
+        "name": "Electrical Power Transmission and Distribution ",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "THIRD",
+        "description": "NULL"
+    },
+    {
+        "id": "2",
+        "subject_code": "EE301",
+        "portion_link": "https://drive.google.com/file/d/1s-WIKHL5MJPuGJNf0cAGEE7dNkE6iW-H/view?usp=sharing",
+        "name": "Electrical Machines-II ",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "THIRD",
+        "description": "NULL"
+    },
+    {
+        "id": "3",
+        "subject_code": "EE302",
+        "portion_link": "https://drive.google.com/file/d/1LPbntjQ3nPRnS0wuzn0lDePbwS_oy05Q/view?usp=sharing",
+        "name": "Control Systems",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "THIRD",
+        "description": "NULL"
+    },
+    {
+        "id": "4",
+        "subject_code": "EE303",
+        "portion_link": "https://drive.google.com/file/d/1qWWqOCAPptjIfuaWiEHMUiq_dT6UgVqX/view?usp=sharing",
+        "name": "Microprocessors and Microcontrollers ",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "THIRD",
+        "description": "NULL"
+    },
+    {
+        "id": "5",
+        "subject_code": "EE304",
+        "portion_link": "https://drive.google.com/file/d/1a5hwkSfBhOEdwh7MCCwhsxuprz1Id9G-/view?usp=sharing",
+        "name": "Electrical Machines-II Lab",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "THIRD",
+        "description": "NULL"
+    },
+    {
+        "id": "6",
+        "subject_code": "EE305",
+        "portion_link": "https://drive.google.com/file/d/1eJkgiDgbfWIDLJHQiZmz3ou-R91JiNou/view?usp=sharing",
+        "name": "Microprocessors and Microcontrollers Lab ",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "THIRD",
+        "description": "NULL"
+    },
+    {
+        "id": "7",
+        "subject_code": "ES300",
+        "portion_link": "https://drive.google.com/file/d/13PPMTEkWennTYh_myyu0I2EK5bRKIc3H/view?usp=sharing",
+        "name": "Environmental Studies ",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "THIRD",
+        "description": "NULL"
+    },
+    {
+        "id": "8",
+        "subject_code": "EE350",
+        "portion_link": "https://drive.google.com/file/d/1ZcrzT3sSK7lYDrR5_8LqGnkLQysJZzZn/view?usp=sharing",
+        "name": "Switchgear and Protection ",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "THIRD",
+        "description": "NULL"
+    },
+    {
+        "id": "9",
+        "subject_code": "EE351",
+        "portion_link": "https://drive.google.com/file/d/10Q5se7rwL983CHiMyhovWr3k9n3r1zzk/view?usp=sharing",
+        "name": "Power System Analysis",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "THIRD",
+        "description": "NULL"
+    },
+    {
+        "id": "10",
+        "subject_code": "EE352",
+        "portion_link": "https://drive.google.com/file/d/1ji_reZqNc2gQ9j44cTu-8vmyjNsAr_xs/view?usp=sharing",
+        "name": "Power Electronics ",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "THIRD",
+        "description": "NULL"
+    },
+    {
+        "id": "11",
+        "subject_code": "EE353",
+        "portion_link": "https://drive.google.com/file/d/1MqgV7iVdYxNIYQDM2c2AkoE12UmyyaQf/view?usp=sharing",
+        "name": "Integrated circuits ",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "THIRD",
+        "description": "NULL"
+    },
+    {
+        "id": "12",
+        "subject_code": "EE354",
+        "portion_link": "https://drive.google.com/file/d/1LzcUGQZtVBxsvaEIHdhY1ZndFgaI6nPm/view?usp=sharing",
+        "name": "Electrical Simulation Lab ",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "THIRD",
+        "description": "NULL"
+    },
+    {
+        "id": "13",
+        "subject_code": "EE355",
+        "portion_link": "https://drive.google.com/file/d/1zOOgvcK3RYSY44uerRUTcGflKliGSqZV/view?usp=sharing",
+        "name": "Control Systems Lab",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "THIRD",
+        "description": "NULL"
+    },
+    {
+        "id": "14",
+        "subject_code": "EE356",
+        "portion_link": "",
+        "name": "Mini Project/Training",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "THIRD",
+        "description": "NULL"
+    }
+]

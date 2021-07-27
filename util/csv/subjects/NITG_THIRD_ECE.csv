@@ -1,0 +1,15 @@
+id,subject_code,portion_link,name,college,branch,year,description
+1,ES300,https://drive.google.com/file/d/1sV-sIYKwaSQArh46EEs4glWdatC6-B8x/view?usp=sharing,Environmental Studies,NITG,ECE,THIRD,NULL
+2,EC301,https://drive.google.com/file/d/1tfuQzM0AFdnK6T9S8n_EIdxvlqAn814T/view?usp=sharing,Data Structures and Algorithm,NITG,ECE,THIRD,NULL
+3,EC302,https://drive.google.com/file/d/1oKLSKijqopzwdhvtAiYReEt0_0R8RMc_/view?usp=sharing,Control System,NITG,ECE,THIRD,NULL
+4,EC303,https://drive.google.com/file/d/1dVs2avGU1nQM-ocHimNd2GfO19MkG6jc/view?usp=sharing,Digital Signal Processing,NITG,ECE,THIRD,NULL
+5,EC304,https://drive.google.com/file/d/1D7QrAu8oECH1jxqa7mF8mwCN7d_TZ6QW/view?usp=sharing,Microprocessor and Microcontroller,NITG,ECE,THIRD,NULL
+6,EC305,https://drive.google.com/file/d/1yh0DI6bCf76yf0QgABky2mT4Smj_WTId/view?usp=sharing,Digital Signal Processing Laboratory,NITG,ECE,THIRD,NULL
+7,EC306,https://drive.google.com/file/d/1Ng-bcLp9_8vbEh2VceC_ZCy1FGkw12eN/view?usp=sharing,Microprocessor and Microcontroller Laboratory,NITG,ECE,THIRD,NULL
+8,EC351,https://drive.google.com/file/d/17NNrqLX_XEzVQMV48FnxxjDS2WmwJD8u/view?usp=sharing,Wireless Communication,NITG,ECE,THIRD,NULL
+9,EC352,https://drive.google.com/file/d/1DSPjGqbk0fIARCBi4HiWAMxasQDQLzNz/view?usp=sharing,Linear Integrated Circuits,NITG,ECE,THIRD,NULL
+10,EC353,https://drive.google.com/file/d/1B_gpanaC4t1a_fVWV9Rl2d8IqbyC1is4/view?usp=sharing,Digital Communication,NITG,ECE,THIRD,NULL
+11,EC354,https://drive.google.com/file/d/1tliK2qy_ZHAoKjB7kAjPdn4T_BEq30pw/view?usp=sharing,Communication Network,NITG,ECE,THIRD,NULL
+12,EC355,https://drive.google.com/file/d/1ESaZLRkQgqnSg4_95HW4x2HSw9u2eTi5/view?usp=sharing,Linear Integrated Circuits Laboratory,NITG,ECE,THIRD,NULL
+13,EC356,https://drive.google.com/file/d/14nFKkmyeUr3_vlopVfmekXUglKTd-Dgj/view?usp=sharing,Digital Communication Laboratory,NITG,ECE,THIRD,NULL
+14,EC399,,Mini Project/Industrial Training,NITG,ECE,THIRD,NULL
