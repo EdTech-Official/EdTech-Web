@@ -1,0 +1,162 @@
+[
+    {
+        "id": "1",
+        "subject_code": "MA100",
+        "name": "Mathematics-I",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FIRST",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1ualhwAtY5L_3Pn0QM7ypzAN6BoenkJZG/view?usp=sharing"
+    },
+    {
+        "id": "2",
+        "subject_code": "PH100",
+        "name": "Physics",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FIRST",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1X0ZeJdh6wlg0IihmePp3HuaDB0IR1gwC/view?usp=sharing"
+    },
+    {
+        "id": "3",
+        "subject_code": "ME100",
+        "name": "Engineering Mechanics",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FIRST",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1pvEtAE3bxdaza93FCWkSmxhQCG_Ansc9/view?usp=sharing"
+    },
+    {
+        "id": "4",
+        "subject_code": "CS100",
+        "name": "Computer Programming and Problem solving",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FIRST",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1gp7BmrnrazgjIQwL_X42gpnZtz4Oocmo/view?usp=sharing"
+    },
+    {
+        "id": "5",
+        "subject_code": "HU100",
+        "name": "Professional Communication",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FIRST",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1Co8zJ36XNbIAytuSFXyVK-8Z4JXxLNVa/view?usp=sharing"
+    },
+    {
+        "id": "6",
+        "subject_code": "ME101",
+        "name": "Engineering Drawing",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FIRST",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1TmPqQgdeAO7DvCtaO9M90pOSmvFNCrAy/view?usp=sharing"
+    },
+    {
+        "id": "7",
+        "subject_code": "PH101",
+        "name": "Physics Laboratory",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FIRST",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1X0ZeJdh6wlg0IihmePp3HuaDB0IR1gwC/view?usp=sharing"
+    },
+    {
+        "id": "8",
+        "subject_code": "MA150",
+        "name": "Mathematics-II",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FIRST",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1i_cdcRAmMdIXfUzt4rFwZaNdfxouHoye/view?usp=sharing"
+    },
+    {
+        "id": "9",
+        "subject_code": "PH150",
+        "name": "Material Science",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FIRST",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1d9vbSXnZSe_KwwTw96YNG2gLeTSgEWjP/view?usp=sharing"
+    },
+    {
+        "id": "10",
+        "subject_code": "CY150",
+        "name": "Chemistry",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FIRST",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1M86D2GzyqUyBQWJfXYi9JyZx3nSLB40Z/view?usp=sharing"
+    },
+    {
+        "id": "11",
+        "subject_code": "ME150",
+        "name": "Elements of Mechanical Engineering",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FIRST",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1jdfWyCF2xNc5qFb6NKreCiUF4AyS2LOZ/view?usp=sharing"
+    },
+    {
+        "id": "12",
+        "subject_code": "EE151",
+        "name": "Basic electrical science",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FIRST",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1TIT3RJHS1V_vrnz5FoFHWmnISByjpEtc/view?usp=sharing"
+    },
+    {
+        "id": "13",
+        "subject_code": "ME151",
+        "name": "Workshop Practices",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FIRST",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1OYIFwaClHkwmB4hkNn0xF2RDM4GJ30EF/view?usp=sharing"
+    },
+    {
+        "id": "14",
+        "subject_code": "CY151",
+        "name": "Chemistry- Laboratory",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FIRST",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1K1W_aeqleEK4iwofu9ClZNxTEjIN0Hts/view?usp=sharing"
+    },
+    {
+        "id": "15",
+        "subject_code": "EE152",
+        "name": "Basic Electrical Science Lab",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FIRST",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1NlNbdgOLw9zEIow6XcXz7RHakJqM1Ged/view?usp=sharing"
+    },
+    {
+        "id": "16",
+        "subject_code": "PE150",
+        "name": "Physical Education",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FIRST",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/11KmWkZguq65i3K2kz9XwdhuWBb2Jj91D/view?usp=sharing"
+    }
+]

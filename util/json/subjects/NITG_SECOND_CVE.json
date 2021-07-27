@@ -1,0 +1,182 @@
+[
+    {
+        "id": "1",
+        "subject_code": "MA200",
+        "name": "Mathematics-III",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1mXYWsdZZMbg4UAAcVRZDEjrRoHiQruPt/view?usp=sharing"
+    },
+    {
+        "id": "2",
+        "subject_code": "CV200",
+        "name": "Mechanics of Solids ",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1GqqzcmoMfsJA2sO3ZxuBe02tIyx0zSkx/view?usp=sharing"
+    },
+    {
+        "id": "3",
+        "subject_code": "CV201",
+        "name": "Mechanics of Fluids",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1MgtyMFYue-hdMtYGc9UOm-nChG0seS2n/view?usp=sharing"
+    },
+    {
+        "id": "4",
+        "subject_code": "CV202",
+        "name": "Engineering Earth Sciences",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1FvaoJ8e0fzrCKCMLUE5rSqYnGAQLLqvG/view?usp=sharing"
+    },
+    {
+        "id": "5",
+        "subject_code": "CV203",
+        "name": "Planning and Functional Design of Buildings",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1HC9IckwwlUhHh1VMxf9T_ed_EE3WZI1X/view?usp=sharing"
+    },
+    {
+        "id": "6",
+        "subject_code": "CV204",
+        "name": "Fluid Mechanics Lab",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/16gWY9YrABIRXQBXJmkZ7jCZh2fxQym7o/view?usp=sharing"
+    },
+    {
+        "id": "7",
+        "subject_code": "CV205",
+        "name": "Material Testing Lab-I",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1xoqYklDru9IH-0gk6NYqF1vhUCi1aDIp/view?usp=sharing"
+    },
+    {
+        "id": "8",
+        "subject_code": "CV206",
+        "name": "Geology Lab",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1doBNlF0ndClNIxSacGTeP9vCIFRzFcVB/view?usp=sharing"
+    },
+    {
+        "id": "9",
+        "subject_code": "VE200",
+        "name": "Value Education",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/12LEaY2-O8d1fM98UG5qjUBT40PLd3ksL/view?usp=sharing"
+    },
+    {
+        "id": "10",
+        "subject_code": "MA250",
+        "name": "Mathematics-IV (Computational Methods for Civil Engineering)",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1cHqTh27bn6gwCB-MU9Mt77TSkIWY6Q_N/view?usp=sharing"
+    },
+    {
+        "id": "11",
+        "subject_code": "CV250",
+        "name": "Structural Analysis-I",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/15XSl0Ck2_DeNAm7T5teSQvk4cVzjDaK8/view?usp=sharing"
+    },
+    {
+        "id": "12",
+        "subject_code": "CV251",
+        "name": "Surveying",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1NWbU4KYVyuY9yX224kUqNBjhDNnVxai5/view?usp=sharing"
+    },
+    {
+        "id": "13",
+        "subject_code": "CV252",
+        "name": "Building Material and Construction Technology",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1vc77x4eSq7mj9nGXQNavM-9wlrZpXEzt/view?usp=sharing"
+    },
+    {
+        "id": "14",
+        "subject_code": "CV253",
+        "name": "Environmental Engineering-I ",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1fAob6J8786fIWKO1OOO2JSOHhmmT2c7O/view?usp=sharing"
+    },
+    {
+        "id": "15",
+        "subject_code": "CV254",
+        "name": "Geotechnical Engineering-I",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1US0jSBtJnwTjMe62B648gJuw-EJjIA7E/view?usp=sharing"
+    },
+    {
+        "id": "16",
+        "subject_code": "CV255",
+        "name": "Surveying Lab",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/19W7m1Iv7pOQOhjRxdCfCCKZTwARZA-m6/view?usp=sharing"
+    },
+    {
+        "id": "17",
+        "subject_code": "CV256",
+        "name": "Material Testing Lab-II",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1fODnBlb6KPQWq77tlravbYB6xPv3OBzC/view?usp=sharing"
+    },
+    {
+        "id": "18",
+        "subject_code": "CV257",
+        "name": "Geotechnical Engineering Lab",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1fEiBIOK1wdcq4GmNgTQOPswu1F-i9zed/view?usp=sharing"
+    }
+]

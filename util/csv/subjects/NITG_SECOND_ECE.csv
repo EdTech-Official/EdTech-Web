@@ -1,0 +1,16 @@
+id,subject_code,name,college,branch,year,description,portion_link
+1,EC201,Analog Electronics,NITG,ECE,SECOND,NULL,https://drive.google.com/file/d/1fiaK6zokO-6JophZEz3kdIs4D5wBJpNb/view?usp=sharing
+2,EC202,Signals and Systems,NITG,ECE,SECOND,NULL,https://drive.google.com/file/d/12_N9LEhDu5Q0-ekmAYqkoc317mYEjMQd/view?usp=sharing
+3,EC203,Network Theory and Synthesis,NITG,ECE,SECOND,NULL,https://drive.google.com/file/d/1UZ6kVxNBU9ioDBJrIQnMF50hXG0-RIqQ/view?usp=sharing
+4,EC204,Electromagnetic Theory,NITG,ECE,SECOND,NULL,https://drive.google.com/file/d/1fFXKOiY7z17JN-ntssAJzwIrl-_tiUOO/view?usp=sharing
+5,MA200,Mathematics –III,NITG,ECE,SECOND,NULL,https://drive.google.com/file/d/1-BNYjXiVkjb8X6OM4VDi8-MFpMv16KsA/view?usp=sharing
+6,EC205,Analog Electronics Laboratory,NITG,ECE,SECOND,NULL,https://drive.google.com/file/d/1yWmIL0oUVf1KV6AQ-XM45EBkqRZKMy82/view?usp=sharing
+7,EC206,Signals and Systems Laboratory,NITG,ECE,SECOND,NULL,https://drive.google.com/file/d/111ka7_226dwCFUsLDmTluHT-aEWTCoSi/view?usp=sharing
+8,EC251,Digital Electronics,NITG,ECE,SECOND,NULL,https://drive.google.com/file/d/1VMRO2IXegFgsz3oaC9gPHvZI8PgptuM0/view?usp=sharing
+9,EC252,Communication Engineering,NITG,ECE,SECOND,NULL,https://drive.google.com/file/d/1WEeyRevw2Isbjc6upXH5rTUmmsauB6DL/view?usp=sharing
+10,EC253,Devices,NITG,ECE,SECOND,NULL,https://drive.google.com/file/d/1frmod7stTEXgr3AJX6PHBbdo89OV1Qyh/view?usp=sharing
+11,HS250,Economics,NITG,ECE,SECOND,NULL,https://drive.google.com/file/d/15Xkw27hvsCM7x98a6KvDoQ-SiEe4NobV/view?usp=sharing
+12,MA250,"Mathematics-IV (Probability, Statistics and Random Processes)",NITG,ECE,SECOND,NULL,https://drive.google.com/file/d/19X0J8w92Ninb2fQorgl7gKAlt2KQEsTD/view?usp=sharing
+13,EC254,Digital Electronics Laboratory,NITG,ECE,SECOND,NULL,https://drive.google.com/file/d/1IoKENyLVxs_Wt8FTTmSRAOA541yvmIQS/view?usp=sharing
+14,EC255,Communication Engineering Laboratory,NITG,ECE,SECOND,NULL,https://drive.google.com/file/d/1AnzsyUkUGN3tETmBcpyyFF7QxD78IQuq/view?usp=sharing
+15,VE200,Value Education,NITG,ECE,SECOND,NULL,https://drive.google.com/file/d/10-CUHL0vjp9UukhWQiAU3y9sdJ0_LxyG/view?usp=sharing

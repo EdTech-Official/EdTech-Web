@@ -1,0 +1,72 @@
+[
+    {
+        "id": "1",
+        "subject_code": "CS400",
+        "name": "Foundations of cryptography",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1NR-HU14Bx6k_yAmR1BktUMcGPg03DWPY/view?usp=sharing"
+    },
+    {
+        "id": "2",
+        "subject_code": "CS401",
+        "name": "Introduction to Machine Learning ",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/18ZqImcP8ZYya3i68nujjKn6Ic9QgnbFr/view?usp=sharing"
+    },
+    {
+        "id": "3",
+        "subject_code": "HS400",
+        "name": "Management",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1rYoDIqi6oskM9bV6PuqhPnoIqmoDzUlz/view?usp=sharing"
+    },
+    {
+        "id": "4",
+        "subject_code": "CS402",
+        "name": "Seminar",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1Qy5iCJ18Wcgxu89eKYMXm-KSykzDidrx/view?usp=sharing"
+    },
+    {
+        "id": "5",
+        "subject_code": "CS403",
+        "name": "Security Laboratory ",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": ""
+    },
+    {
+        "id": "6",
+        "subject_code": "CS449",
+        "name": "Major Project-I",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": ""
+    },
+    {
+        "id": "7",
+        "subject_code": "CS499",
+        "name": "Major Project II",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": ""
+    }
+]

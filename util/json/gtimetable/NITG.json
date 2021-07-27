@@ -1,0 +1,142 @@
+[
+    {
+        "id": "1",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "FIRST",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vS2EQAbNGprnMjNGY9IqvYTqjE85a-SjeZQJWlVbvJWRcEEFPCOXCYcKTnBJFlgRjLVnzc0fHkQ9ryR/pubhtml"
+    },
+    {
+        "id": "2",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "SECOND",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQfR-Mymw5fXyx-VAZ_V55fC8FvQ8M7SgWsu9givtJ0uEs4OyA68XYfPcf6aJVLMDrsbWPAZjgsK0nM/pubhtml"
+    },
+    {
+        "id": "3",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "THIRD",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTqTO7rV_mRAOukAQfSMeNafegoamTDmMOHEarEDXy0VtjFQhFRQDXBvBHiA7oxFuUNWUD-5dUgo12S/pubhtml"
+    },
+    {
+        "id": "4",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "FOURTH",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRNgjjmogSZ72E5MuX6-UGFk5W94XzVg0JCMXUhN1WvMYzKCdemDXl7dfQT5N1ulelEZ6Zk4eNlbnYj/pubhtml"
+    },
+    {
+        "id": "5",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "FIRST",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vS2EQAbNGprnMjNGY9IqvYTqjE85a-SjeZQJWlVbvJWRcEEFPCOXCYcKTnBJFlgRjLVnzc0fHkQ9ryR/pubhtml"
+    },
+    {
+        "id": "6",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "SECOND",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTJ_qkwS5V5nld9lTRkXZ5PAYwa6BiCRiP0-p95XfPNy3qHwgAtU7w4ORjwx0qszm1OBgYbAhlDI5Oa/pubhtml"
+    },
+    {
+        "id": "7",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "THIRD",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRY20wx7QDHZVVCGreB4htlkvWn-yojel66liw_XqdW1NaEmTHntRjcYrfXfCT01j23r-rkFznvbglO/pubhtml"
+    },
+    {
+        "id": "8",
+        "college": "NITG",
+        "branch": "ECE",
+        "year": "FOURTH",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vS8ucNzGeiJ92GO_Dq3cQoqOfDNruNpIlajxwf_aWHsBFg07XMKWiBRVPHn3NsN2cBnc1f2dD2ALYtf/pubhtml"
+    },
+    {
+        "id": "9",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "FIRST",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vS2EQAbNGprnMjNGY9IqvYTqjE85a-SjeZQJWlVbvJWRcEEFPCOXCYcKTnBJFlgRjLVnzc0fHkQ9ryR/pubhtml"
+    },
+    {
+        "id": "10",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "SECOND",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBQPGAWHo1drrWYdLqjM46IwXvGK7N8u56Zx5jT_oJpat159pi0pEMdckKL23TcWtJwuUYcRrVMAs7/pubhtml"
+    },
+    {
+        "id": "11",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "THIRD",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRGDNr8rTF2rio33Wic0qdVM0N-KhacrzPj6WBNACvzN0zMt2bmTvd_ce9w8ofIJuhgKaXUt7iti1Df/pubhtml"
+    },
+    {
+        "id": "12",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "FOURTH",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRLH3agganDhnKgKJ_QZFtJs_ruLAH2-rnmqiMkEN-7aG09zLK3cLkRMGzMcUEyLOKx2RiWWLYXQUkT/pubhtml"
+    },
+    {
+        "id": "13",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "FIRST",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vS2EQAbNGprnMjNGY9IqvYTqjE85a-SjeZQJWlVbvJWRcEEFPCOXCYcKTnBJFlgRjLVnzc0fHkQ9ryR/pubhtml"
+    },
+    {
+        "id": "14",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRRQoEgdYIqTeseavv9GfMrwv6csT6CLquRYG_pzWUfNsIiEtZF8gf3by4zaBTl1EPpxIQj49y-4aVq/pubhtml"
+    },
+    {
+        "id": "15",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "THIRD",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTeRUikUJt4-QKU1O_qYUP_fF66PgTQrZglNFgTIrjI5ucECJNz_YmAYzz7DMDwrbz7HfaGpjzKmFfj/pubhtml"
+    },
+    {
+        "id": "16",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "FOURTH",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vT-EdVb8CcspgvWeJaKgQm7TItCcee4gm9OIx3VvNykJpfgZcvqU8iKbizgDTc-PUQicifAGOB9SslO/pubhtml"
+    },
+    {
+        "id": "17",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FIRST",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vS2EQAbNGprnMjNGY9IqvYTqjE85a-SjeZQJWlVbvJWRcEEFPCOXCYcKTnBJFlgRjLVnzc0fHkQ9ryR/pubhtml"
+    },
+    {
+        "id": "18",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "SECOND",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSpBTgRj5xFPwc_0bNlTWFo-ABEg3A92xp35oGgHtNtTKwn6aQKjJu6IPjlxMDCNLfOgJC8RTAe_W_e/pubhtml"
+    },
+    {
+        "id": "19",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTWFa0QSLS_wkuKbGbh9eZx_wEzSKmod4z9kh-5tL6oh8MhVlGNEu4UuufTs_8J3xF2TmHHJet3Mpym/pubhtml"
+    },
+    {
+        "id": "20",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FOURTH",
+        "gsheet_src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSYJVPclEb51FtmsFFAsLqxhZblbG2Eqvc61_V7DWLT3xIENpE3q36fU8uEm_-hk-dRvz5BhK7IejgA/pubhtml"
+    }
+]

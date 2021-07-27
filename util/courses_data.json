@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Bachelor of Technology",
+        "description": "Mollit enim cupidatat exercitation ad irure. Et aliquip ea id. Ex anim fugiat occaecat.",
+        "course_code": "BTECH"
+    },
+    {
+        "name": "Master of Technology",
+        "description": "Proident occaecat dolore culpa id in adipiscing, cupidatat sint in est eiusmod exercitation. Nisi deserunt velit elit esse eu excepteur voluptate.",
+        "course_code": "MTECH"
+    },
+    {
+        "name": "Doctor of Philosophy",
+        "description": "Sunt ullamco deserunt irure officia ipsum nulla amet. Nostrud culpa consequat exercitation eu. Officia voluptate duis laboris sint velit voluptate proident.",
+        "course_code": "PHD"
+    }
+]

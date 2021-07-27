@@ -1,0 +1,82 @@
+[
+    {
+        "code": "MA100",
+        "name": "Mathematics-I",
+        "description": "Incididunt cupidatat magna ipsum laborum incididunt consequat. Et et fugiat officia ullamco magna aliquip. Aliqua labore cillum adipiscing eu enim. Qui officia sint nostrud irure ipsum excepteur fugiat."
+    },
+    {
+        "code": "PH100",
+        "name": "Physics",
+        "description": "Ipsum est excepteur commodo, commodo quis ut consequat sunt enim excepteur, laborum quis occaecat eiusmod enim et. Excepteur velit ullamco esse. Excepteur do eiusmod cillum adipiscing ullamco sunt, enim aute irure anim pariatur ullamco. Nulla deserunt occaecat voluptate deserunt consectetur nulla."
+    },
+    {
+        "code": "ME100",
+        "name": "Engineering Mechanics",
+        "description": "Est est commodo id. Sit ad do dolore aliqua. Sunt aliquip lorem laboris cupidatat incididunt occaecat. Fugiat eiusmod sunt aute laboris velit, anim do do dolor sint veniam. Lorem aute aute incididunt nostrud excepteur."
+    },
+    {
+        "code": "CS100",
+        "name": "Computer Programming and Problem solving",
+        "description": "Laboris enim laboris deserunt consectetur. Laboris enim sunt eu. Esse laboris aute duis labore officia, voluptate culpa velit elit commodo lorem, voluptate excepteur ut commodo. Lorem nulla commodo irure qui qui proident sit."
+    },
+    {
+        "code": "HU100",
+        "name": "Professional Communication",
+        "description": "Officia velit aliquip esse aliquip et id occaecat, non labore mollit deserunt occaecat adipiscing. Deserunt pariatur esse ut. Sed deserunt ut sunt anim incididunt. Occaecat amet elit eiusmod id elit dolor."
+    },
+    {
+        "code": "ME101",
+        "name": "Engineering Drawing",
+        "description": "Labore velit exercitation laboris, occaecat amet id nostrud do, veniam do ex cillum commodo. Dolor officia reprehenderit anim quis deserunt velit. Excepteur excepteur proident labore minim aliquip laborum nisi. Sunt ea eu exercitation culpa. Duis aute commodo non consequat officia nostrud officia, ipsum excepteur veniam est est magna."
+    },
+    {
+        "code": "PH101",
+        "name": "Physics Laboratory",
+        "description": "Enim commodo dolore proident ipsum ipsum labore, occaecat cillum elit do. Sit mollit proident ut deserunt esse sint magna. Dolore voluptate id cillum. Ea minim sed consectetur sit eu. Reprehenderit laboris occaecat anim id minim qui, enim culpa consequat ad eiusmod."
+    },
+    {
+        "code": "MA150",
+        "name": "Mathematics-II",
+        "description": "Nulla sit ipsum cillum ea nisi exercitation, amet ullamco non dolore lorem anim ipsum consectetur. Magna quis velit eu ipsum est dolor incididunt. Est ea dolor minim incididunt eiusmod enim, irure aliqua cupidatat sint, laborum voluptate elit officia culpa deserunt minim laboris. Lorem irure magna do do nostrud voluptate, aliqua eiusmod lorem laborum duis duis labore eu."
+    },
+    {
+        "code": "PH150",
+        "name": "Material Science",
+        "description": "Anim veniam labore enim fugiat consectetur officia est. Excepteur aliqua id do pariatur aliqua mollit laborum. Labore nisi est incididunt non. Quis eiusmod et ex irure, nisi proident sit eu eiusmod ipsum ex incididunt. Duis occaecat excepteur veniam."
+    },
+    {
+        "code": "CY150",
+        "name": "Chemistry",
+        "description": "Ex nulla ea minim magna ad nisi aliquip, occaecat quis proident dolor velit commodo magna. Cillum velit deserunt officia. Proident veniam id exercitation irure ut, aliquip voluptate cillum qui laboris cupidatat laborum eiusmod. Labore labore nostrud do ea tempor lorem est. Anim quis pariatur adipiscing ipsum."
+    },
+    {
+        "code": "ME150",
+        "name": "Elements of Mechanical Engineering",
+        "description": "Deserunt esse irure proident, consequat consectetur aute est amet. Laborum sit cillum consequat ea. Dolore mollit fugiat anim non reprehenderit. Nulla velit velit ea veniam. Elit pariatur occaecat culpa non laboris commodo enim."
+    },
+    {
+        "code": "EE151",
+        "name": "Basic electrical science",
+        "description": "Et dolor tempor eiusmod sit pariatur. Esse consectetur nostrud lorem anim. Sit commodo fugiat sint proident quis sunt pariatur."
+    },
+    {
+        "code": "ME151",
+        "name": "Workshop Practices",
+        "description": "Cillum id anim ea amet nostrud esse. Sit veniam magna consequat ex excepteur do. Quis est officia fugiat non aliquip, cupidatat exercitation ex magna occaecat cillum ipsum. Est sit consequat non. Voluptate ex veniam incididunt reprehenderit excepteur ex ullamco, excepteur culpa commodo consequat velit incididunt veniam elit, dolor mollit lorem amet qui officia."
+    },
+    {
+        "code": "CY151",
+        "name": "Chemistry- Laboratory",
+        "description": "Ad do elit elit proident fugiat culpa excepteur, ad ad sed minim laborum ex. Sunt lorem est sunt exercitation culpa et. Dolore ipsum consequat aute lorem sunt, culpa qui qui ipsum exercitation duis elit."
+    },
+    {
+        "code": "EE152",
+        "name": "Basic electrical scienceLab",
+        "description": "Quis fugiat dolore sunt, esse sint anim fugiat cillum consectetur. Duis consequat enim ipsum, ea officia nisi magna amet enim. Ea culpa irure ullamco laboris sunt. Occaecat occaecat sint magna sed eu in. Sit duis ex laborum, qui cillum nostrud aliquip pariatur, et commodo est in velit."
+    },
+    {
+        "code": "PE150",
+        "name": "Physical Education",
+        "description": "Esse pariatur cupidatat nisi, officia anim duis sed pariatur ullamco. Sint ut qui incididunt ad ea duis. Anim tempor eu irure ullamco. Velit magna cillum elit."
+    }
+]

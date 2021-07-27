@@ -1,0 +1,172 @@
+[
+    {
+        "id": "1",
+        "subject_code": "CV300",
+        "name": "Structural Design-I (RCC) ",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/11f7ZXmxmnF8FbTtpZYyJy-WQ0UyvtKai/view?usp=sharing"
+    },
+    {
+        "id": "2",
+        "subject_code": "CV301",
+        "name": "Structural Analysis-II ",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1rm0Jf789KasocS5fEcGHbuGKcYHGSmWW/view?usp=sharing"
+    },
+    {
+        "id": "3",
+        "subject_code": "CV302",
+        "name": "Transportation Engineering-I",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1q3Kgg36-iiqg3NgZ-WiN81GxvH7cehsA/view?usp=sharing"
+    },
+    {
+        "id": "4",
+        "subject_code": "CV303",
+        "name": "Geotechnical Engineering-II ",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/150oUJvP6ngUG8o8thAFu8o4NhappSEIo/view?usp=sharing"
+    },
+    {
+        "id": "5",
+        "subject_code": "ES301",
+        "name": "Environmental Studies",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1fXUyuAPQPWHVfopEmivmOv51AmU6bkvC/view?usp=sharing"
+    },
+    {
+        "id": "6",
+        "subject_code": "HU300",
+        "name": "Professional Communication-II and Language Lab ",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/10X30vveBHft9uj77tsBZO-Ul-ysw2hip/view?usp=sharing"
+    },
+    {
+        "id": "7",
+        "subject_code": "HS300",
+        "name": "Economics",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1w62Tzr4MwdJ8JYCQhd1qxJmSvD1nrq4j/view?usp=sharing"
+    },
+    {
+        "id": "8",
+        "subject_code": "CV304",
+        "name": "Transportation Engineering Lab",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1w6h5XxuSq3aJaarSqccG2DaTyPRA1whX/view?usp=sharing"
+    },
+    {
+        "id": "9",
+        "subject_code": "CV305",
+        "name": "Building Design and Drawing Lab",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1X8qSOXe25J-EMFU9EXYF4vSMp-2u1IgA/view?usp=sharing"
+    },
+    {
+        "id": "10",
+        "subject_code": "CV350",
+        "name": "Structural Design-II (Steel)",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1jSfVP4DrFTrvv9KJN8QM7nqamigNvP_6/view?usp=sharing"
+    },
+    {
+        "id": "11",
+        "subject_code": "CV351",
+        "name": "Water Resource Engineering",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1yWM5G1aiOujaTZ20pp-mDJVynNltz49K/view?usp=sharing"
+    },
+    {
+        "id": "12",
+        "subject_code": "CV352",
+        "name": "Transportation Engineering-II",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1Vk3M-LG1BFbMY3kUNoIAToAcUQo052ul/view?usp=sharing"
+    },
+    {
+        "id": "13",
+        "subject_code": "CV353",
+        "name": "Environmental Engineering-II",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1RR0sPFhxhiUEwXJJhkWuTMBEZIuBxAwl/view?usp=sharing"
+    },
+    {
+        "id": "14",
+        "subject_code": "HS350",
+        "name": "Management",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1pvQLm1qKa-JAeHV9MrKAnOgZxhXmL2ym/view?usp=sharing"
+    },
+    {
+        "id": "15",
+        "subject_code": "CV354",
+        "name": "Minor Project",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": ""
+    },
+    {
+        "id": "16",
+        "subject_code": "CV355",
+        "name": "Structural Design and Drawing Lab",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1NgSs60_oujX4nyuSs7BnC1MPWJlqvOjI/view?usp=sharing"
+    },
+    {
+        "id": "17",
+        "subject_code": "CV356",
+        "name": "Environmental Engineering Lab ",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "THIRD",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/14Ril6dqEpWgLsDSrdi6XKDdykPgaaXNI/view?usp=sharing"
+    }
+]
