@@ -1,0 +1,15 @@
+id,subject_code,portion_link,name,college,branch,year,description
+1,EE300,https://drive.google.com/file/d/10ERLp-DatttwHLOfiG29BKVGICgK1pZZ/view?usp=sharing,Electrical Power Transmission and Distribution ,NITG,EEE,THIRD,NULL
+2,EE301,https://drive.google.com/file/d/1s-WIKHL5MJPuGJNf0cAGEE7dNkE6iW-H/view?usp=sharing,Electrical Machines-II ,NITG,EEE,THIRD,NULL
+3,EE302,https://drive.google.com/file/d/1LPbntjQ3nPRnS0wuzn0lDePbwS_oy05Q/view?usp=sharing,Control Systems,NITG,EEE,THIRD,NULL
+4,EE303,https://drive.google.com/file/d/1qWWqOCAPptjIfuaWiEHMUiq_dT6UgVqX/view?usp=sharing,Microprocessors and Microcontrollers ,NITG,EEE,THIRD,NULL
+5,EE304,https://drive.google.com/file/d/1a5hwkSfBhOEdwh7MCCwhsxuprz1Id9G-/view?usp=sharing,Electrical Machines-II Lab,NITG,EEE,THIRD,NULL
+6,EE305,https://drive.google.com/file/d/1eJkgiDgbfWIDLJHQiZmz3ou-R91JiNou/view?usp=sharing,Microprocessors and Microcontrollers Lab ,NITG,EEE,THIRD,NULL
+7,ES300,https://drive.google.com/file/d/13PPMTEkWennTYh_myyu0I2EK5bRKIc3H/view?usp=sharing,Environmental Studies ,NITG,EEE,THIRD,NULL
+8,EE350,https://drive.google.com/file/d/1ZcrzT3sSK7lYDrR5_8LqGnkLQysJZzZn/view?usp=sharing,Switchgear and Protection ,NITG,EEE,THIRD,NULL
+9,EE351,https://drive.google.com/file/d/10Q5se7rwL983CHiMyhovWr3k9n3r1zzk/view?usp=sharing,Power System Analysis,NITG,EEE,THIRD,NULL
+10,EE352,https://drive.google.com/file/d/1ji_reZqNc2gQ9j44cTu-8vmyjNsAr_xs/view?usp=sharing,Power Electronics ,NITG,EEE,THIRD,NULL
+11,EE353,https://drive.google.com/file/d/1MqgV7iVdYxNIYQDM2c2AkoE12UmyyaQf/view?usp=sharing,Integrated circuits ,NITG,EEE,THIRD,NULL
+12,EE354,https://drive.google.com/file/d/1LzcUGQZtVBxsvaEIHdhY1ZndFgaI6nPm/view?usp=sharing,Electrical Simulation Lab ,NITG,EEE,THIRD,NULL
+13,EE355,https://drive.google.com/file/d/1zOOgvcK3RYSY44uerRUTcGflKliGSqZV/view?usp=sharing,Control Systems Lab,NITG,EEE,THIRD,NULL
+14,EE356,,Mini Project/Training,NITG,EEE,THIRD,NULL

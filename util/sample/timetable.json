@@ -1,0 +1,175 @@
+{
+    "id": 1,
+    "branch_code": "EEE",
+    "year": "FIRST",
+    "college": "NITG",
+    "branch": 2,
+    "days": {
+        "MON": [
+            {
+                "subject": 1,
+                "subjects_code": "MA100",
+                "subject_name": "Mathematics - 1",
+                "faculty": 1,
+                "faculty_name": "Dr. Ravi Prasad",
+                "start_time": "9:00:00",
+                "end_time": "11:00:00"
+            },
+            {
+                "subject": 1,
+                "subjects_code": "PH100",
+                "subject_name": "Physics",
+                "faculty": 1,
+                "faculty_name": "Dr. Reddy",
+                "start_time": "11:00:00",
+                "end_time": "13:00:00"
+            },
+            {
+                "subject": 1,
+                "subjects_code": "ME151",
+                "subject_name": "Engineering Drawing",
+                "faculty": 1,
+                "faculty_name": "Dr. B Santhi",
+                "start_time": "14:00:00",
+                "end_time": "17:00:00"
+            }
+        ],
+        "TUE": [
+            {
+                "subject": 1,
+                "subjects_code": "MA100",
+                "subject_name": "Mathematics - 1",
+                "faculty": 1,
+                "faculty_name": "Dr. Ravi Prasad",
+                "start_time": "9:00:00",
+                "end_time": "11:00:00"
+            },
+            {
+                "subject": 1,
+                "subjects_code": "PH100",
+                "subject_name": "Physics",
+                "faculty": 1,
+                "faculty_name": "Dr. Reddy",
+                "start_time": "11:00:00",
+                "end_time": "13:00:00"
+            },
+            {
+                "subject": 1,
+                "subjects_code": "ME151",
+                "subject_name": "Engineering Drawing",
+                "faculty": 1,
+                "faculty_name": "Dr. B Santhi",
+                "start_time": "14:00:00",
+                "end_time": "17:00:00"
+            }
+        ],
+        "WED": [
+            {
+                "subject": 1,
+                "subjects_code": "MA100",
+                "subject_name": "Mathematics - 1",
+                "faculty": 1,
+                "faculty_name": "Dr. Ravi Prasad",
+                "start_time": "9:00:00",
+                "end_time": "11:00:00"
+            },
+            {
+                "subject": 1,
+                "subjects_code": "PH100",
+                "subject_name": "Physics",
+                "faculty": 1,
+                "faculty_name": "Dr. Reddy",
+                "start_time": "11:00:00",
+                "end_time": "13:00:00"
+            },
+            {
+                "subject": 1,
+                "subjects_code": "ME151",
+                "subject_name": "Engineering Drawing",
+                "faculty": 1,
+                "faculty_name": "Dr. B Santhi",
+                "start_time": "14:00:00",
+                "end_time": "17:00:00"
+            }
+        ],
+        "THU": [
+            {
+                "subject": 1,
+                "subjects_code": "MA100",
+                "subject_name": "Mathematics - 1",
+                "faculty": 1,
+                "faculty_name": "Dr. Ravi Prasad",
+                "start_time": "9:00:00",
+                "end_time": "11:00:00"
+            },
+            {
+                "subject": 1,
+                "subjects_code": "PH100",
+                "subject_name": "Physics",
+                "faculty": 1,
+                "faculty_name": "Dr. Reddy",
+                "start_time": "11:00:00",
+                "end_time": "13:00:00"
+            },
+            {
+                "subject": 1,
+                "subjects_code": "ME151",
+                "subject_name": "Engineering Drawing",
+                "faculty": 1,
+                "faculty_name": "Dr. B Santhi",
+                "start_time": "14:00:00",
+                "end_time": "17:00:00"
+            }
+        ],
+        "FRI": [
+            {
+                "subject": 1,
+                "subjects_code": "MA100",
+                "subject_name": "Mathematics - 1",
+                "faculty": 1,
+                "faculty_name": "Dr. Ravi Prasad",
+                "start_time": "9:00:00",
+                "end_time": "11:00:00"
+            },
+            {
+                "subject": 1,
+                "subjects_code": "PH100",
+                "subject_name": "Physics",
+                "faculty": 1,
+                "faculty_name": "Dr. Reddy",
+                "start_time": "11:00:00",
+                "end_time": "13:00:00"
+            },
+            {
+                "subject": 1,
+                "subjects_code": "ME151",
+                "subject_name": "Engineering Drawing",
+                "faculty": 1,
+                "faculty_name": "Dr. B Santhi",
+                "start_time": "14:00:00",
+                "end_time": "17:00:00"
+            }
+        ],
+        "SAT": [
+            {
+                "subject": 1,
+                "subjects_code": "MA100",
+                "subject_name": "Mathematics - 1",
+                "faculty": 1,
+                "faculty_name": "Dr. Ravi Prasad",
+                "start_time": "9:00:00",
+                "end_time": "11:00:00"
+            },
+            {
+                "subject": 1,
+                "subjects_code": "PH100",
+                "subject_name": "Physics",
+                "faculty": 1,
+                "faculty_name": "Dr. Reddy",
+                "start_time": "11:00:00",
+                "end_time": "13:00:00"
+            }
+        ],
+        "SUN": []
+    }
+}

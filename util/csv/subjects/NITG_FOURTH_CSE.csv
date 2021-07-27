@@ -1,0 +1,8 @@
+id,subject_code,name,college,branch,year,description,portion_link
+1,CS400,Foundations of cryptography,NITG,CSE,FOURTH,NULL,https://drive.google.com/file/d/1NR-HU14Bx6k_yAmR1BktUMcGPg03DWPY/view?usp=sharing
+2,CS401,Introduction to Machine Learning ,NITG,CSE,FOURTH,NULL,https://drive.google.com/file/d/18ZqImcP8ZYya3i68nujjKn6Ic9QgnbFr/view?usp=sharing
+3,HS400,Management,NITG,CSE,FOURTH,NULL,https://drive.google.com/file/d/1rYoDIqi6oskM9bV6PuqhPnoIqmoDzUlz/view?usp=sharing
+4,CS402,Seminar,NITG,CSE,FOURTH,NULL,https://drive.google.com/file/d/1Qy5iCJ18Wcgxu89eKYMXm-KSykzDidrx/view?usp=sharing
+5,CS403,Security Laboratory ,NITG,CSE,FOURTH,NULL,
+6,CS449,Major Project-I,NITG,CSE,FOURTH,NULL,
+7,CS499,Major Project – II,NITG,CSE,FOURTH,NULL,

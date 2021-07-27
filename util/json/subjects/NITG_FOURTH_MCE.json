@@ -1,0 +1,62 @@
+[
+    {
+        "id": "1",
+        "subject_code": "ME400",
+        "name": "Production and Operations Management",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/12BecDqyE3xAU2In2dCfybSi4hDWjWJ9W/view?usp=sharing"
+    },
+    {
+        "id": "2",
+        "subject_code": "ME401",
+        "name": "Automatic Control ",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/12BecDqyE3xAU2In2dCfybSi4hDWjWJ9W/view?usp=sharing"
+    },
+    {
+        "id": "3",
+        "subject_code": "ME402",
+        "name": "Seminar",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": ""
+    },
+    {
+        "id": "4",
+        "subject_code": "ME449",
+        "name": "Major Project-I",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": ""
+    },
+    {
+        "id": "5",
+        "subject_code": "ME450",
+        "name": "Industrial Engineering and Operation Research",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1A0Shc9emoAmjSsRPBmbuNw9Ak1ntFkSc/view?usp=sharing"
+    },
+    {
+        "id": "6",
+        "subject_code": "ME499",
+        "name": "Major Project II",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": ""
+    }
+]

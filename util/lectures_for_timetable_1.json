@@ -1,0 +1,86 @@
+[
+  {
+    "subject": "PH100",
+    "start_time": "09:00:00",
+    "end_time": "11:00:00",
+    "teacher": "Dr. Reddy"
+  },
+  {
+    "subject": "MA150",
+    "start_time": "09:00:00",
+    "end_time": "11:00:00",
+    "teacher": "Mr. Lingeshwaran"
+  },
+  {
+    "subject": "HU100",
+    "start_time": "09:00:00",
+    "end_time": "11:00:00",
+    "teacher": "Mrs. Ghosal"
+  },
+  {
+    "subject": "MA150",
+    "start_time": "09:00:00",
+    "end_time": "11:00:00",
+    "teacher": "Dr. Prasad"
+  },
+  {
+    "subject": "MA150",
+    "start_time": "11:00:00",
+    "end_time": "13:00:00",
+    "teacher": "Mr. Lingeshwaran"
+  },
+  {
+    "subject": "HU100",
+    "start_time": "11:00:00",
+    "end_time": "13:00:00",
+    "teacher": "Mrs. Ghosal"
+  },
+  {
+    "subject": "ME101",
+    "start_time": "11:00:00",
+    "end_time": "13:00:00",
+    "teacher": "B Santhi"
+  },
+  {
+    "subject": "MA150",
+    "start_time": "11:00:00",
+    "end_time": "13:00:00",
+    "teacher": "Dr. Prasad"
+  },
+  {
+    "subject": "PE150",
+    "start_time": "11:00:00",
+    "end_time": "13:00:00",
+    "teacher": "Dr. Prasanth"
+  },
+  {
+    "subject": "ME151",
+    "start_time": "14:00:00",
+    "end_time": "17:00:00",
+    "teacher": "Dr. Tiwari"
+  },
+  {
+    "subject": "EE152",
+    "start_time": "14:00:00",
+    "end_time": "17:00:00",
+    "teacher": "Dr. Das"
+  },
+  {
+    "subject": "ME101",
+    "start_time": "14:00:00",
+    "end_time": "17:00:00",
+    "teacher": "B Santhi"
+  },
+  {
+    "subject": "PH101",
+    "start_time": "14:00:00",
+    "end_time": "17:00:00",
+    "teacher": "Dr. Reddy"
+  },
+  {
+    "subject": "CY151",
+    "start_time": "14:00:00",
+    "end_time": "17:00:00",
+    "teacher": "Dr. Babu"
+  }
+]

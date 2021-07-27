@@ -1,0 +1,142 @@
+[
+    {
+        "id": "1",
+        "subject_code": "CS200",
+        "name": "Principles of Data Communications",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1GW07PNHnPOe169HUPBkPp5JKMbYac9N1/view?usp=sharing"
+    },
+    {
+        "id": "2",
+        "subject_code": "CS201",
+        "name": "Data Structures",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1GL9RqV77IXLn-cKGU2ToH77HZRxdUiZ7/view?usp=sharing"
+    },
+    {
+        "id": "3",
+        "subject_code": "CS202",
+        "name": "Computer Organization and Architecture",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1pPaDoY22Y7epGQolAXjri3tMsNft8ky5/view?usp=sharing"
+    },
+    {
+        "id": "4",
+        "subject_code": "CS203",
+        "name": "Discrete Mathematics",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1jqlXRt0FJjMT3csYj60r2UYe98uCM44f/view?usp=sharing"
+    },
+    {
+        "id": "5",
+        "subject_code": "MA200",
+        "name": "Mathematics-III ",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1r9OzkggCi2-kqgOhZwXT0hZmiLYW6WxD/view?usp=sharing"
+    },
+    {
+        "id": "6",
+        "subject_code": "CS204",
+        "name": "Data Structures Laboratory ",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/18udc8u0yyNeCjH6t-IFQcVedlsXTUqeS/view?usp=sharing"
+    },
+    {
+        "id": "7",
+        "subject_code": "CS250",
+        "name": "Digital Systems Design",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1xHdB6KPzhGTQUmrCJml4seZb0qHfjGpQ/view?usp=sharing"
+    },
+    {
+        "id": "8",
+        "subject_code": "HS250",
+        "name": "Economics",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1J40DWZMiRQUealxMpNIdK1nkX_x1Xsxx/view?usp=sharing"
+    },
+    {
+        "id": "9",
+        "subject_code": "CS251",
+        "name": "Systems Programming",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/16Qy1EJg_EnaGByMpgnWSOTNmHwoqWKs8/view?usp=sharing"
+    },
+    {
+        "id": "10",
+        "subject_code": "CS252",
+        "name": "Object Oriented Programming ",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1vNgg13VDVKpgPILLox2c6lNY02zPdVzv/view?usp=sharing"
+    },
+    {
+        "id": "11",
+        "subject_code": "MA250",
+        "name": "Mathematics-IV",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1r22gsEoKGUAMu0ScjgmKnCL92PNyxoj-/view?usp=sharing"
+    },
+    {
+        "id": "12",
+        "subject_code": "CS253",
+        "name": "Object Oriented Programming Laboratory",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1CU6yvqTBiAayARRBPo2ISoi19EyOq5bE/view?usp=sharing"
+    },
+    {
+        "id": "13",
+        "subject_code": "CS254",
+        "name": "Digital Systems Laboratory",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1Ek0YrjnJJjdeSaOcx7uO4hlm0qR74eU9/view?usp=sharing"
+    },
+    {
+        "id": "14",
+        "subject_code": "VE200",
+        "name": "Value Education ",
+        "college": "NITG",
+        "branch": "CSE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1AiUnLgD_LpFV9IpvnrF8SE3v-gUwj9sX/view?usp=sharing"
+    }
+]

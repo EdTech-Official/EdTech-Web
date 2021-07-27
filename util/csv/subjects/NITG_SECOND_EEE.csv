@@ -1,0 +1,16 @@
+id,subject_code,name,college,branch,year,description,portion_link
+1,MA200,Mathematics-III,NITG,EEE,SECOND,NULL,https://drive.google.com/file/d/18JEqN7gU0OscuLHItGnjJi8nFVqgTIS5/view?usp=sharing
+2,EE200,Electromagnetic Theory,NITG,EEE,SECOND,NULL,https://drive.google.com/file/d/1FaYXecGg7GAWVaVVp2o4KdPbEsFvsK5B/view?usp=sharing
+3,EE201,Analog Electronics,NITG,EEE,SECOND,NULL,https://drive.google.com/file/d/1-svYBgvpCkiFIoduMo5oJEgMvQFoySMc/view?usp=sharing
+4,EE202,Circuit Theory,NITG,EEE,SECOND,NULL,https://drive.google.com/file/d/15cyf-pnTigMIrsyIFgCrygDpqKIGzXen/view?usp=sharing
+5,EE203,Electrical Measurements & Instrumentation,NITG,EEE,SECOND,NULL,https://drive.google.com/file/d/1Dtly4WngxGUu7HNEGhHHHpOFIOIrSV7w/view?usp=sharing
+6,EE204,Circuit Theory Lab,NITG,EEE,SECOND,NULL,https://drive.google.com/file/d/1Z0AHIS5L1glLf6dEskwhDz9gqXncnZWA/view?usp=sharing
+7,EE205,Electrical Measurements and Instrumentation Lab,NITG,EEE,SECOND,NULL,https://drive.google.com/file/d/1bnrE1-eJ44OQWfv467sLcTi9s3r1dvMh/view?usp=sharing
+8,MA250,Numerical Methods (Maths 4),NITG,EEE,SECOND,NULL,https://drive.google.com/file/d/1p26RGAnZMRYvGGDTmGGBUX7TAmjRqiVv/view?usp=sharing
+9,EE250,Digital Electronics,NITG,EEE,SECOND,NULL,https://drive.google.com/file/d/1yT26VYAyGbjiHl0rXMK78QlrP56iy9SP/view?usp=sharing
+10,EE251,Electrical Power Generation ,NITG,EEE,SECOND,NULL,https://drive.google.com/file/d/1Wkj9zSXG-fRuBlYCIRsgdPglUY5v9kft/view?usp=sharing
+11,EE252,Electrical Machines-I,NITG,EEE,SECOND,NULL,https://drive.google.com/file/d/13O6e0BeUqnr1oBQczEu_o0RfHjYUam0Z/view?usp=sharing
+12,HS250,Economics,NITG,EEE,SECOND,NULL,https://drive.google.com/file/d/1Dy5_t8CwmeqphX3YQ2a_4fJtuFQaF1a9/view?usp=sharing
+13,EE253,Electrical Machines-I Lab,NITG,EEE,SECOND,NULL,https://drive.google.com/file/d/1a2LqqJVCqBzo2bJcGh51aYld32o8xOF8/view?usp=sharing
+14,EE254,Analog and Digital Electronics Lab ,NITG,EEE,SECOND,NULL,https://drive.google.com/file/d/1myzujbPVVtpC5_36kmHTpGUJ97uxPlV0/view?usp=sharing
+15,VE200,Value Education,NITG,EEE,SECOND,NULL,https://drive.google.com/file/d/1WdOMY_aFp0BruLmrrdwb5o_Tzyw8jc1q/view?usp=sharing

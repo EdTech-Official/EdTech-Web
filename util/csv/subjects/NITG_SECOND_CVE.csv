@@ -1,0 +1,19 @@
+id,subject_code,name,college,branch,year,description,portion_link
+1,MA200,Mathematics-III,NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/1mXYWsdZZMbg4UAAcVRZDEjrRoHiQruPt/view?usp=sharing
+2,CV200,Mechanics of Solids ,NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/1GqqzcmoMfsJA2sO3ZxuBe02tIyx0zSkx/view?usp=sharing
+3,CV201,Mechanics of Fluids,NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/1MgtyMFYue-hdMtYGc9UOm-nChG0seS2n/view?usp=sharing
+4,CV202,Engineering Earth Sciences,NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/1FvaoJ8e0fzrCKCMLUE5rSqYnGAQLLqvG/view?usp=sharing
+5,CV203,Planning and Functional Design of Buildings,NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/1HC9IckwwlUhHh1VMxf9T_ed_EE3WZI1X/view?usp=sharing
+6,CV204,Fluid Mechanics Lab,NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/16gWY9YrABIRXQBXJmkZ7jCZh2fxQym7o/view?usp=sharing
+7,CV205,Material Testing Lab-I,NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/1xoqYklDru9IH-0gk6NYqF1vhUCi1aDIp/view?usp=sharing
+8,CV206,Geology Lab,NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/1doBNlF0ndClNIxSacGTeP9vCIFRzFcVB/view?usp=sharing
+9,VE200,Value Education,NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/12LEaY2-O8d1fM98UG5qjUBT40PLd3ksL/view?usp=sharing
+10,MA250,Mathematics-IV (Computational Methods for Civil Engineering),NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/1cHqTh27bn6gwCB-MU9Mt77TSkIWY6Q_N/view?usp=sharing
+11,CV250,Structural Analysis-I,NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/15XSl0Ck2_DeNAm7T5teSQvk4cVzjDaK8/view?usp=sharing
+12,CV251,Surveying,NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/1NWbU4KYVyuY9yX224kUqNBjhDNnVxai5/view?usp=sharing
+13,CV252,Building Material and Construction Technology,NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/1vc77x4eSq7mj9nGXQNavM-9wlrZpXEzt/view?usp=sharing
+14,CV253,Environmental Engineering-I ,NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/1fAob6J8786fIWKO1OOO2JSOHhmmT2c7O/view?usp=sharing
+15,CV254,Geotechnical Engineering-I,NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/1US0jSBtJnwTjMe62B648gJuw-EJjIA7E/view?usp=sharing
+16,CV255,Surveying Lab,NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/19W7m1Iv7pOQOhjRxdCfCCKZTwARZA-m6/view?usp=sharing
+17,CV256,Material Testing Lab-II,NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/1fODnBlb6KPQWq77tlravbYB6xPv3OBzC/view?usp=sharing
+18,CV257,Geotechnical Engineering Lab,NITG,CVE,SECOND,NULL,https://drive.google.com/file/d/1fEiBIOK1wdcq4GmNgTQOPswu1F-i9zed/view?usp=sharing

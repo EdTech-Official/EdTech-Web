@@ -1,0 +1,443 @@
+[
+    {
+        "name": "Dr. Damodar Reddy Edla",
+        "department": "Department of Computer Science and Engineering",
+        "branch_code": "CSE",
+        "designation": "Assistant Professor, Computer Science and Engineering",
+        "description": "Artificial Intelligence; Cognitive Neuroscience; Brain Computer Interface; Medical Imaging; Wireless Sensor Networks; Cloud Computing; Deep Learning; Information Security; Intelligent Forensics; Internet of Medical Things (IoMT);",
+        "phone": "0832-2404216",
+        "email": "dr.reddy@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Veena Thenkanidiyoor",
+        "department": "Department of Computer Science and Engineering",
+        "branch_code": "CSE",
+        "designation": "Associate Professor, Computer Science and Engineering",
+        "description": "Deep Learning, Kernel Methods, Computer Vision, Speech Processing, Content based Information Retrieval, Pattern Recognition",
+        "phone": "0832-2404216",
+        "email": "veenat@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Purushothama B.R",
+        "department": "Department of Computer Science and Engineering",
+        "branch_code": "CSE",
+        "designation": "Assistant Professor, Computer Science and Engineering",
+        "description": "Information Security, Cryptography, Cloud Security, Key Management, Security Analytics",
+        "phone": "0832-2404216",
+        "email": "puru@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Keshavamurthy B.N.",
+        "department": "Department of Computer Science and Engineering",
+        "branch_code": "CSE",
+        "designation": "Associate Professor & Head, Computer Science and Engineering",
+        "description": "Data Mining, Privacy Preserving Data Mining, Stream Data Mining, social Media Mining.",
+        "phone": "0832-2404212",
+        "email": "bnkeshav.fcse@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. S. Mini",
+        "department": "Department of Computer Science and Engineering",
+        "branch_code": "CSE",
+        "designation": "Assistant Professor, Computer Science and Engineering",
+        "description": "Wireless Sensor Networks, Swarm Intelligence, Combinatorial Optimization, Internet of Things",
+        "phone": "",
+        "email": "mini@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Pravati Swain",
+        "department": "Department of Computer Science and Engineering",
+        "branch_code": "CSE",
+        "designation": "Assistant Professor, Computer Science and Engineering",
+        "description": "Software Defined Network, 5G Cellular Network, Performance Modeling of Computer Networks using Markov model, Game theory.",
+        "phone": "0832-2404212",
+        "email": "pravati@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Venkatanareshbabu Kuppili",
+        "department": "Department of Computer Science and Engineering",
+        "branch_code": "CSE",
+        "designation": "Assistant Professor, Computer Science and Engineering",
+        "description": "Big Data Analytics, Artificial Intelligence, Deep Learning, Soft Computing",
+        "phone": "0832-2404212",
+        "email": "venkatanaresh@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Modi Chirag Navinchandra",
+        "department": "Department of Computer Science and Engineering",
+        "branch_code": "CSE",
+        "designation": "Assistant Professor, Computer Science and Engineering",
+        "description": "Blockchain, Cryptography and Network Security, Information Security and Privacy, Cloud Computing, Visual Computing",
+        "phone": "0832-2404213",
+        "email": "cnmodi@nitgoa.ac.in"
+    },
+    {
+        "name": "Mrs. Helga V Lobo",
+        "department": "Department of Computer Science and Engineering",
+        "branch_code": "CSE",
+        "designation": "Faculty on contract, Computer Science and Engineering",
+        "description": "Robotics, Machine learning",
+        "phone": "",
+        "email": "helgadsa@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Suresh Mikkili",
+        "department": "Department of Electrical and Electronics Engineering",
+        "branch_code": "EEE",
+        "designation": "Assistant Professor, Electrical and Electronics Engineering",
+        "description": "Grid Integrated Renewable Energy Systems, Power Quality issues, Smart Electric Grid, Power Electronics Applications to Power Systems, and Applications of Soft Computing Techniques.",
+        "phone": "0832-2404214",
+        "email": "mikkili.suresh@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. B. Venugopal Reddy",
+        "department": "Department of Electrical and Electronics Engineering",
+        "branch_code": "EEE",
+        "designation": "Associate Professor, Electrical and Electronics Engineering",
+        "description": "Multilevel inverters, Renewable energy systems,Open-end Winding Induction Motor Drives.",
+        "phone": "-",
+        "email": "bvenugopal_reddy@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Sreeraj E S",
+        "department": "Department of Electrical and Electronics Engineering",
+        "branch_code": "EEE",
+        "designation": "Assistant Professor, Electrical and Electronics Engineering",
+        "description": "Power electronics, Renewable energy",
+        "phone": "-",
+        "email": "sreeraj@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Amol D. Rahulkar",
+        "department": "Department of Electrical and Electronics Engineering",
+        "branch_code": "EEE",
+        "designation": "Associate Professor & Head, Electrical and Electronics Engineering",
+        "description": "Digital Signal/Image Processing, Wavelets and Filter-Banks, Biometrics, FPGA Accelerators, Control Systems",
+        "phone": "0832-2404218",
+        "email": "amol.rahulkar@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. C.Vyjayanthi",
+        "department": "Department of Electrical and Electronics Engineering",
+        "branch_code": "EEE",
+        "designation": "Associate Professor, Electrical and Electronics Engineering",
+        "description": "Restructured Power Systems; Planning, Operation and Control of Power Systems; Electric Arc Furnace Operations; Smart Electric Grids; FACTS; AC/DC Microgrids.",
+        "phone": "0832-2404218",
+        "email": "c.vyjayanthi@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Soumitra Das",
+        "department": "Department of Electrical and Electronics Engineering",
+        "branch_code": "EEE",
+        "designation": "Assistant Professor, Electrical and Electronics Engineering",
+        "description": "Power Electronics, Multilevel Converter, Pulsewidth Modulation, Switched Reluctance Motor and Drives, Renewable Energy Sources",
+        "phone": "0832-2404-218",
+        "email": "sdas@nitgoa.ac.in"
+    },
+    {
+        "name": "Mrs. Anudevi Samuel",
+        "department": "Department of Electrical and Electronics Engineering",
+        "branch_code": "EEE",
+        "designation": "Faculty on contract, Electrical and Electronics Engineering",
+        "description": "Distributed Generation in Power System, Non linear Optimization techniques,Fuzzy logic",
+        "phone": "",
+        "email": "ad.dksamuel@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Ansal.V",
+        "department": "Department of Electrical and Electronics Engineering",
+        "branch_code": "EEE",
+        "designation": "Faculty on contract, Electrical and Electronics Engineering",
+        "description": "Power Electronics, Power Quality",
+        "phone": "",
+        "email": "ansal.v@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Vasantha M.H",
+        "department": "Department of Electronics and Communication Engineering",
+        "branch_code": "ECE",
+        "designation": "Associate Professor, Electronics and Communication Engineering",
+        "description": "Low voltage, Low power analog mixed signal circuits, Continuous-time filter Circuits, System on Chip,",
+        "phone": "0832-2404200-(220)",
+        "email": "vasanthmh@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. T. Veerakumar",
+        "department": "Department of Electronics and Communication Engineering",
+        "branch_code": "ECE",
+        "designation": "Associate Professor, Electronics and Communication Engineering",
+        "description": "Image Compression, Image Denoising, Object detection and tracking,and Medical Image Analysis",
+        "phone": "-",
+        "email": ""
+    },
+    {
+        "name": "Dr. Anirban Chatterjee",
+        "department": "Department of Electronics and Communication Engineering",
+        "branch_code": "ECE",
+        "designation": "Assistant Professor, Electronics and Communication Engineering",
+        "description": "Antenna design, Design of Phased Array Antenna, RF and Microwave, Electromagnetics, Image frequency (IF) rejection in modern receiver systems, Array Beam Pattern Synthesis, Evolutionary Algorithms.",
+        "phone": "0832-2404220",
+        "email": "snanirban@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Nithin Kumar Y.B.",
+        "department": "Department of Electronics and Communication Engineering",
+        "branch_code": "ECE",
+        "designation": "Assistant Professor & Head, Electronics and Communication Engineering",
+        "description": "Analog and Mixed Signal Design, Data Converter",
+        "phone": "0832-2404220",
+        "email": "nithin.shastri@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Trilochan Panigrahi",
+        "department": "Department of Electronics and Communication Engineering",
+        "branch_code": "ECE",
+        "designation": "Associate Professor, Electronics and Communication Engineering",
+        "description": "Distributed Signal Processing, Array Signal Processing, IoT and Nano WSN.",
+        "phone": "204",
+        "email": "tpanigrahi@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Shivnarayan Patidar",
+        "department": "Department of Electronics and Communication Engineering",
+        "branch_code": "ECE",
+        "designation": "Assistant Professor, Electronics and Communication Engineering",
+        "description": "Signal Analysis and Processing, Biomedical Signal Analysis and Processing, Machine Learning, Multi-resolution Analysis, Time-frequency Analysis, Wavelet Transforms.",
+        "phone": "",
+        "email": "shivnarayan.patidar@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Prashanth G.R",
+        "department": "Department of Electronics and Communication Engineering",
+        "branch_code": "ECE",
+        "designation": "Associate Professor, Electronics and Communication Engineering",
+        "description": "Bio-photonics, Bio-Sensors",
+        "phone": "",
+        "email": "grprashanth@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Lalat Indu Giri",
+        "department": "Department of Electronics and Communication Engineering",
+        "branch_code": "ECE",
+        "designation": "Assistant Professor, Electronics and Communication Engineering",
+        "description": "Infrared Thermography, One dimensional nanostructures, Clean energy sources and systems",
+        "phone": "204",
+        "email": "lig@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Pragati Patel",
+        "department": "Department of Electronics and Communication Engineering",
+        "branch_code": "ECE",
+        "designation": "Assistant Professor, Electronics and Communication Engineering",
+        "description": "Antennas, RF and Microwave, Wireless Power Transmission",
+        "phone": "204",
+        "email": "pragati@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Mallikarjun Erramshetty",
+        "department": "Department of Electronics and Communication Engineering",
+        "branch_code": "ECE",
+        "designation": "Assistant Professor, Electronics and Communication Engineering",
+        "description": "Microwave Imaging, Terahertz Imaging, Inverse Problems",
+        "phone": "",
+        "email": "emallikarjuna@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Devesh Dwivedi",
+        "department": "Department of Electronics and Communication Engineering",
+        "branch_code": "ECE",
+        "designation": "Visiting Faculty, Electronics and Communication Engineering",
+        "description": "Memory, Analog and Mixed Signal, High Speed Serial Links, Cores, Test Chip, Custom Layout",
+        "phone": "",
+        "email": ""
+    },
+    {
+        "name": "Dr. B. Santhi",
+        "department": "Department of Mechanical Engineering",
+        "branch_code": "MCE",
+        "designation": "Assistant Professor, Mechanical Engineering",
+        "description": "Design for Assembly,Ergonomics, Virtual Reality, Reverse Engineering,Product Design for Elderly and Kids, Creative Engineering Design",
+        "phone": "",
+        "email": "santhi@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. PRASENJIT DEY",
+        "department": "Department of Mechanical Engineering",
+        "branch_code": "MCE",
+        "designation": "Assistant Professor, Mechanical Engineering",
+        "description": "Experimental and Numerical Fluid Flow, CFD, Multi-Phase Flow, Micro and Nano Heat Transfer.",
+        "phone": "212",
+        "email": "prasenjit.dey@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Pankaj Kumar",
+        "department": "Department of Mechanical Engineering",
+        "branch_code": "MCE",
+        "designation": "Faculty on contract, Mechanical Engineering",
+        "description": "Fracture mechanics, Cyclic plasticity, Fatigue failure, Cryogenic deformation, Finite element method, extended finite element method, Computational mechanics",
+        "phone": "",
+        "email": "pankaj@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Manvendra Tiwari",
+        "department": "Department of Mechanical Engineering",
+        "branch_code": "MCE",
+        "designation": "Faculty on contract, Mechanical Engineering",
+        "description": "Single phase- multi-phase heat transfer, Heat exchanger performance improvement, Renewable Energy applications",
+        "phone": "",
+        "email": "manvendrabesu@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Anoop A D",
+        "department": "Department of Mechanical Engineering",
+        "branch_code": "MCE",
+        "designation": "Faculty on contract, Mechanical Engineering",
+        "description": "Tribology, Rolling contact fatigue, Bearing and gear materials",
+        "phone": "",
+        "email": "anoop@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Harish N",
+        "department": "Department of Civil Engineering",
+        "branch_code": "CVE",
+        "designation": "Assistant Professor, Civil Engineering",
+        "description": "Structural Analysis, Coastal Engineering, Development of Sustainable Materials, Application of Soft Computing Techniques in Civil/Coastal Engineering, 3D Printing",
+        "phone": "",
+        "email": "harishn@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Harikumar M",
+        "department": "Department of Civil Engineering",
+        "branch_code": "CVE",
+        "designation": "Assistant Professor, Civil Engineering",
+        "description": "Experimental Soil Mechanics, Hybrid Geosynthetics for soil slopes, Sustainability in Geotechnical Engineering, Model Foundation studies, Unconventional Earth Reinforcement Techniques, Expert Systems in Geotechnical Engineering, Artificial Neural Networks",
+        "phone": "",
+        "email": "harikumar@nitgoa.ac.in"
+    },
+    {
+        "name": "Ms. Vanessa Fernandes",
+        "department": "Department of Civil Engineering",
+        "branch_code": "CVE",
+        "designation": "Faculty on contract, Civil Engineering",
+        "description": "Advances in soil nailing design and construction, Measurement and estimation of saturated hydraulic conductivity of soil",
+        "phone": "",
+        "email": "vf0793@nitgoa.ac.in"
+    },
+    {
+        "name": "Mr. Tanvesh Ulhas Dabholkar",
+        "department": "Department of Civil Engineering",
+        "branch_code": "CVE",
+        "designation": "Faculty on contract, Civil Engineering",
+        "description": "Performance based design, Seismic vulnerability analysis, Structural Analysis",
+        "phone": "",
+        "email": "tdabholkar@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Prasenjit Ghosh",
+        "department": "Department of Civil Engineering",
+        "branch_code": "CVE",
+        "designation": "Faculty on contract, Civil Engineering",
+        "description": "",
+        "phone": "",
+        "email": "prasenjit@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Saidi Reddy Parne",
+        "department": "Department of Applied Sciences",
+        "branch_code": "APS",
+        "designation": "Associate Professor of Physics, Applied Sciences",
+        "description": "Photonics, Fiber Bragg Grating Sensors, Fiber Optic Sensors, Magnetic Motor, Material Characterization, Nanoscale Matter",
+        "phone": "0832-2404201",
+        "email": "psreddy@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Velavan Kathirvelu",
+        "department": "Department of Applied Sciences",
+        "branch_code": "APS",
+        "designation": "Associate Professor of Chemistry, Applied Sciences",
+        "description": "Electron Paramagnetic Resonance of Transition Metal Ions and Organic Free Radicals",
+        "phone": "0832-2404217",
+        "email": "velavan@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Ragoju Ravi",
+        "department": "Department of Applied Sciences",
+        "branch_code": "APS",
+        "designation": "Assistant Professor of Mathematics, Applied Sciences",
+        "description": "Applied Mathematics; Fluid Mechanics; Convective Instability problems; Heat and Mass Transfer",
+        "phone": "212",
+        "email": "ravi@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Ravi Prasad K. J.",
+        "department": "Department of Applied Sciences",
+        "branch_code": "APS",
+        "designation": "Assistant Professor of Mathematics, Applied Sciences",
+        "description": "Bio-medical Imaging, Inverse problems and Numerical Optimization",
+        "phone": "",
+        "email": "k.j.raviprasad@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. L. Shangerganesh",
+        "department": "Department of Applied Sciences",
+        "branch_code": "APS",
+        "designation": "Assistant Professor of Mathematics, Applied Sciences",
+        "description": "Mathematical Biology, Finite Element Methods & Partial Differential Equations",
+        "phone": "0832-2404212",
+        "email": "shangerganesh@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Suman Gandi",
+        "department": "Department of Applied Sciences",
+        "branch_code": "APS",
+        "designation": "Faculty on contract, Applied Sciences",
+        "description": "Sodium/Lithium-Ion batteries, glass and glass-ceramic materials for energy storage systems, mass transport in ceramics (particularly at grain boundaries); high-temperature corrosion; sol-gel processing of ceramics; self-cleaning/antibacterial coatings of glasses; bulk metallic glasses; high entropy alloys; catalysts and adsorbents for environmental pollution abatement; and the mechanical properties of glasses.",
+        "phone": "",
+        "email": "gandisuman@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Gundlapally Shiva Kumar Reddy",
+        "department": "Department of Applied Sciences",
+        "branch_code": "APS",
+        "designation": "Faculty on contract, Applied Sciences",
+        "description": "",
+        "phone": "",
+        "email": "gshivakumarreddy913@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. R.S.Achyuthlal Babu",
+        "department": "Department of Applied Sciences",
+        "branch_code": "APS",
+        "designation": "Faculty on contract, Applied Sciences",
+        "description": "",
+        "phone": "",
+        "email": "rsababu3@gmail.com"
+    },
+    {
+        "name": "Dr. Sarani Ghosal Mondal",
+        "department": "Department of Humanities and Social Sciences",
+        "branch_code": "HSS",
+        "designation": "Associate Professor of English & Head, Humanities and Social Sciences",
+        "description": "American Literature, Indian Writing in English and ELT",
+        "phone": "",
+        "email": "sarani@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Sunil Kumar",
+        "department": "Department of Humanities and Social Sciences",
+        "branch_code": "HSS",
+        "designation": "Assistant Professor of Economics, Humanities and Social Sciences",
+        "description": "R&D, Patents, and Productivity. IPR, Firms innovation, and growth. IPR and Sustainable Development",
+        "phone": "212",
+        "email": "sunilkumar@nitgoa.ac.in"
+    },
+    {
+        "name": "Dr. Gajanan T. Hivale",
+        "department": "Department of Humanities and Social Sciences",
+        "branch_code": "HSS",
+        "designation": "Assistant Professor, Humanities and Social Sciences",
+        "description": "English Language and Literature, Indian Writing in English",
+        "phone": "",
+        "email": "gajananhivale@nitgoa.ac.in"
+    }
+]

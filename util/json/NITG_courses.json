@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "course_code": "BTECH",
+        "college": "NITG",
+        "name": "Bachelor of Technology",
+        "description": "Eligibility: Candidates must have passed in 10+2 from a recognized board + JEE Main exam. Selection: Entrance test merit through JEE Main exam and JOSAA counselling."
+    },
+    {
+        "id": "2",
+        "course_code": "MTECH",
+        "college": "NITG",
+        "name": "Master of Technology",
+        "description": "Eligibility: Candidates must have passed in Graduation + GATE exam. Selection: Merit secured in GATE exam and CCMT Counselling."
+    },
+    {
+        "id": "3",
+        "course_code": "PHD",
+        "college": "NITG",
+        "name": "Doctor of Philosophy",
+        "description": "Eligibility: Completed Post Graduation from a recognized board. Selection: Written test + Personal Interview conducted by Institute. * Candidates who have cleared UGC NET exam are exempted from the written test."
+    }
+]

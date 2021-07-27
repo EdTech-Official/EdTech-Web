@@ -1,0 +1,72 @@
+[
+    {
+        "id": "1",
+        "subject_code": "EE400",
+        "name": "Electrical Drives",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/16J2fKRnOEcVUmtv-ShG80mWvOH0oyvVG/view?usp=sharing"
+    },
+    {
+        "id": "2",
+        "subject_code": "HS400",
+        "name": "Management ",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": ""
+    },
+    {
+        "id": "3",
+        "subject_code": "EE401",
+        "name": "Power Electronics & Drives Lab ",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1ZUYpKuAbT8pvuR0Sm690k03YIpn9gwWJ/view?usp=sharing"
+    },
+    {
+        "id": "4",
+        "subject_code": "EE402",
+        "name": "Seminar",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": ""
+    },
+    {
+        "id": "5",
+        "subject_code": "EE403",
+        "name": "Programme Major Project-I",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": ""
+    },
+    {
+        "id": "6",
+        "subject_code": "EE450",
+        "name": "Power System Operation and Control",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1qh2cl7mDpALnfiB8z8IuZr9LE9JeIae3/view?usp=sharing"
+    },
+    {
+        "id": "7",
+        "subject_code": "EE452",
+        "name": "Programme Major Project-II",
+        "college": "NITG",
+        "branch": "EEE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": ""
+    }
+]

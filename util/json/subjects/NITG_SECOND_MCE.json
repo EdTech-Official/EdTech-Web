@@ -1,0 +1,172 @@
+[
+    {
+        "id": "1",
+        "subject_code": "MA200",
+        "name": "Mathematics-III",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1Q9NGX2f78XxaKTunDbqT9LWSm34yLTH6/view?usp=sharing"
+    },
+    {
+        "id": "2",
+        "subject_code": "ME200",
+        "name": "Mechanics of Solids",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1nVXa4RgJukD6fuuWV4oK_qhaYzPiWMZ2/view?usp=sharing"
+    },
+    {
+        "id": "3",
+        "subject_code": "ME201",
+        "name": "Materials and Metallurgical Engineering",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1nRXiw3qNpNyw9etGEyGwurAAHRMibvmj/view?usp=sharing"
+    },
+    {
+        "id": "4",
+        "subject_code": "ME202",
+        "name": "Fluid Mechanics",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1Ft7W0qNn5B2cu4SeE5g79_g-GLDw1JEp/view?usp=sharing"
+    },
+    {
+        "id": "5",
+        "subject_code": "ME203",
+        "name": "Electrical and Electronics Technology",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1GBW9j7zBO5bzYhKu-QLelWaEqHGtLUmY/view?usp=sharing"
+    },
+    {
+        "id": "6",
+        "subject_code": "ME204",
+        "name": "Basic Thermodynamics",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1K10IuvSvzyapHdepdkm7qkE7yIb1Cosn/view?usp=sharing"
+    },
+    {
+        "id": "7",
+        "subject_code": "ME205",
+        "name": "Machine Drawing",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1ZY3kibpFMsSLJ1hPItKSTxv1UdgI31Z0/view?usp=sharing"
+    },
+    {
+        "id": "8",
+        "subject_code": "ME206",
+        "name": "Electrical and Electronics Technology Lab",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1BumM4aIOXyMis9AfqyrXXFqUpA2ZATXn/view?usp=sharing"
+    },
+    {
+        "id": "9",
+        "subject_code": "MA250",
+        "name": "Mathematics-IV (Numerical Methods and Statistics) ",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1QaKXgRD9RK-D6dpPKIpwIyoGZQ5Fymgy/view?usp=sharing"
+    },
+    {
+        "id": "10",
+        "subject_code": "ME250",
+        "name": "Applied Thermodynamics ",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1pWHHZrL_wci5__l72ceYEtA9JAIL9q9H/view?usp=sharing"
+    },
+    {
+        "id": "11",
+        "subject_code": "ME251",
+        "name": "Power Plant Engineering",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/14nr4bklVuwE7OegOGZyU0IFKiJYVl1Id/view?usp=sharing"
+    },
+    {
+        "id": "12",
+        "subject_code": "ME252",
+        "name": "Manufacturing Technology-I",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1yU9eccisN7P7AQ2xxHr8OD5i7BJzFKRX/view?usp=sharing"
+    },
+    {
+        "id": "13",
+        "subject_code": "ME253",
+        "name": "Mechanics of Machinery",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1ygz3wcui70qfhrvAhpV_Sq1dDd0Yn2A-/view?usp=sharing"
+    },
+    {
+        "id": "14",
+        "subject_code": "ME254",
+        "name": "Measurements and Metrology",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/188m-U2gb_df63760hHPPXwF6w3rFJCF7/view?usp=sharing"
+    },
+    {
+        "id": "15",
+        "subject_code": "ME255",
+        "name": "Mechanics of Solids Lab",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1aKIatOdacXXRDhj1m1kO6O7MeC5gp9A4/view?usp=sharing"
+    },
+    {
+        "id": "16",
+        "subject_code": "ME256",
+        "name": "Fluid Mechanics Lab",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1yAWHJGr7A-pKm0ceNoN99Flg-jGWMofe/view?usp=sharing"
+    },
+    {
+        "id": "17",
+        "subject_code": "VE200",
+        "name": "Value Education",
+        "college": "NITG",
+        "branch": "MCE",
+        "year": "SECOND",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1QrbH14K128bspnIfSqCl_nK_GrfhxxcG/view?usp=sharing"
+    }
+]

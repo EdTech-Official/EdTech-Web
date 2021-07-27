@@ -1,0 +1,62 @@
+[
+    {
+        "id": "1",
+        "subject_code": "CV400",
+        "name": "Profession Practice (Construction Planning and Management) ",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/17fhBfEbXwuTHMzwdu4-hr7alWDX6X9Uy/view?usp=sharing"
+    },
+    {
+        "id": "2",
+        "subject_code": "CV401",
+        "name": "Estimation, Costing & Specifications",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": "https://drive.google.com/file/d/1pnXlfmpiqF0ikxMphsLZ0IUrTyXPNgF2/view?usp=sharing"
+    },
+    {
+        "id": "3",
+        "subject_code": "CV402",
+        "name": "Mini Project/Industrial Training",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": ""
+    },
+    {
+        "id": "4",
+        "subject_code": "CV449",
+        "name": "Major Project-I",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": ""
+    },
+    {
+        "id": "5",
+        "subject_code": "CV450",
+        "name": "Seminar",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": ""
+    },
+    {
+        "id": "6",
+        "subject_code": "CV499",
+        "name": "Major Project II",
+        "college": "NITG",
+        "branch": "CVE",
+        "year": "FOURTH",
+        "description": "NULL",
+        "portion_link": ""
+    }
+]
