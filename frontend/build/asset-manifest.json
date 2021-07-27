@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bbd8c6cd.chunk.css",
+    "main.js": "/static/js/main.efdb6cdd.chunk.js",
+    "main.js.map": "/static/js/main.efdb6cdd.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.3a0da56d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.3a0da56d.js.map",
+    "static/js/2.44b0b344.chunk.js": "/static/js/2.44b0b344.chunk.js",
+    "static/js/2.44b0b344.chunk.js.map": "/static/js/2.44b0b344.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.bbd8c6cd.chunk.css.map": "/static/css/main.bbd8c6cd.chunk.css.map",
+    "static/js/2.44b0b344.chunk.js.LICENSE.txt": "/static/js/2.44b0b344.chunk.js.LICENSE.txt",
+    "static/media/EdTech.60341c97.svg": "/static/media/EdTech.60341c97.svg",
+    "static/media/Waimakariri.3ea33f90.png": "/static/media/Waimakariri.3ea33f90.png",
+    "static/media/whitelogo.602f62f5.png": "/static/media/whitelogo.602f62f5.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3a0da56d.js",
+    "static/js/2.44b0b344.chunk.js",
+    "static/css/main.bbd8c6cd.chunk.css",
+    "static/js/main.efdb6cdd.chunk.js"
+  ]
+}

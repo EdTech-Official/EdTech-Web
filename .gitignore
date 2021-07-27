@@ -9,7 +9,6 @@ frontend/node_modules
 /coverage
 
 # production
-frontend/build
 
 # misc
 frontend/.env
