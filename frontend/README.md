@@ -30,13 +30,13 @@ src
     │
     └───Recommendation
     |   │   Recommendation.js
-        │
+    │
     └───people
     |   │   People.js
-        │
+    │
     └───about
     |   │   About.js
-        │
+    │
     └───user
         │   User.js
 
