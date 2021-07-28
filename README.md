@@ -3,13 +3,12 @@
 One stop destination to all the needs of a contemporary college student.
 Just Register and find the solutions to all your problems at our [Website](https://deepshetye.github.io/edtech/).
 
-This git repo contains frontend code and the api code is available at [Github Repo](https://github.com/RajNykDhulapkar/edtech-dj).
 
 The technologies/tools shown below are just used for frontend and the Api is built on pure Python.
 
 If you find any bug or have any suggestion, You can post them in issues section of this github repository.
 
-**Copyright © 2021 All Rights Reserved By [Deep Shetye](https://github.com/deepshetye)**
+**Copyright © 2021 All Rights Reserved By [EdTech](https://github.com/EdTech-Official)**
 
 <br />
 
@@ -56,19 +55,18 @@ If you find any bug or have any suggestion, You can post them in issues section 
 
 ## Screenshots
 
-
-<img align="left" alt="Visual Studio Code" src="https://imgur.com/ArvEjYP" />
+![Sign Up Page](https://i.imgur.com/rFYYxcM.png)
 
 **Sign Up page** 👆
 
 <br />
 
-<img align="left" alt="Visual Studio Code" src="https://imgur.com/xj701Wx" />
+![Sign In Page](https://i.imgur.com/4acqUn2.png)
 
 **Sign In page** 👆
 
 <br />
 
-<img align="left" alt="Visual Studio Code" src="https://imgur.com/undefined" />
+![User Preference Form](https://i.imgur.com/GSYr4kZ.png)
 
 **User Preference Form** 👆
