@@ -65,7 +65,7 @@ ROOT_URLCONF = 'edtech_dj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # Added directory of React Static folder  ~ Deep Shetye
+        # Added directory of React Static folder  ~ Deep Shetye + 3 line
         'DIRS': [
             os.path.join(BASE_DIR, 'frontend/build')
         ],
@@ -93,7 +93,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -133,7 +132,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Initialized path for Static React File  ~Deep Shetye
+# For Heroku deployment || ref: 'http://whitenoise.evans.io/en/stable/django.html'  ~Deep Shetye + 1 lines
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Initialized path for Static React File  ~Deep Shetye + 3 lines
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/build/static')
 ]
