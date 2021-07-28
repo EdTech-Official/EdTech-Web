@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+    web:
+        build: .
+        command: python manage.py runserver 0.0.0.0:8000
+        ports: 
+            - 8000:8000
+
+# Use command   `docker-compose build`   to build the project
+#      + The above command will install all the requirements and build the image 
+
+# Use command   `docker-compose up` to run the container
+
+# If you don't have docker-compose installed use the following commands
+# `sudo apt-get -y install python-pip`   &&   `sudo pip install docker-compose`
+# sudo docker-compose --version    <-- If everything went well
+
+
+#  Error while fetching server API version: ('Connection aborted.', ConnectionRefusedError(61, 'Connection refused'))[12728] Failed to execute script docker-compose
+#  for this error : `sudo gpasswd -a $USER docker` && `newgrp docker`  
