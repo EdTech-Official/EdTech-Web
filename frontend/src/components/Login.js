@@ -111,7 +111,7 @@ const Login = () => {
             var user = result.user;
             setCurrentUser(user);
           });
-        document.getElementById("sign-up-form").reset();
+        // document.getElementById("sign-in-form").reset();
         break;
 
       default:
@@ -153,12 +153,11 @@ const Login = () => {
                   required
                 />
               </div>
-              <input
+              <button
                 type="submit"
-                value="Login"
                 className="btn"
                 onClick={() => handleSignIn(6)}
-              />
+              >Login</button>
 
               <p className="social-text">Or Sign In with Social Platforms</p>
 
