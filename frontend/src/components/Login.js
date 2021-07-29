@@ -111,6 +111,7 @@ const Login = () => {
             var user = result.user;
             setCurrentUser(user);
           });
+          // Has to be checked whether form has to be reset
         // document.getElementById("sign-in-form").reset();
         break;
 
