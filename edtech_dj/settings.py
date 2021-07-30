@@ -62,6 +62,11 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'edtech_dj.urls'
 
+# Initialized path for Static React File  ~Deep Shetye + 3 lines
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'frontend/build/static')
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -134,11 +139,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # For Heroku deployment || ref: 'http://whitenoise.evans.io/en/stable/django.html'  ~Deep Shetye + 1 lines
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# Initialized path for Static React File  ~Deep Shetye + 3 lines
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'frontend/build/static')
-]
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',

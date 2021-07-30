@@ -19,10 +19,11 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 
 urlpatterns = [
+    # Added extra path referencing React Static HTML   ~ Deep Shetye + 1 line
+    path('', TemplateView.as_view(template_name='index.html')),
+
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
     url(r'^nested_admin/', include('nested_admin.urls')),
 
-    # Added extra path referencing React Static HTML   ~ Deep Shetye + 1 line
-    path('', TemplateView.as_view(template_name='index.html'))
 ]
