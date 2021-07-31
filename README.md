@@ -3,10 +3,8 @@
 One stop destination to all the needs of a contemporary college student.
 Just Register and find the solutions to all your problems at our [Website](https://deepshetye.github.io/edtech/).
 
-
-The technologies/tools shown below are just used for frontend and the Api is built on pure Python.
-
 If you find any bug or have any suggestion, You can post them in issues section of this github repository.
+Please refer to [CONTRIBUTING](CONTRIBUTING.md) file to know more.
 
 **Copyright © 2021 All Rights Reserved By [EdTech](https://github.com/EdTech-Official)**
 
@@ -34,22 +32,14 @@ If you find any bug or have any suggestion, You can post them in issues section 
 <img align="left" alt="Visual Studio Code" width="30px" src="https://cdn.icon-icons.com/icons2/936/PNG/512/github-logo_icon-icons.com_73546.png" />
 <img align="left" alt="Visual Studio Code" width="30px" src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_django_icon_130645.png" />
 
-
 <br />
 <br />
 <br />
 
-## Contributors
+## 📌 Potential Maintainers :
 
-> **Deep Shetye**
->> [LinkedIn](https://www.linkedin.com/in/deepshetye/) \
->> [GitHub](https://github.com/deepshetye) \
->> [Instragram](https://www.instagram.com/deepshetye_/)
-
-> **Raj Naik Dhulapkar**
->> [LinkedIn](https://www.linkedin.com/in/raj-naik-dhulapkar-4133811b4/) \
->> [GitHub](https://github.com/RajNykDhulapkar) \
->> [Instragram](https://www.instagram.com/rajnykdhulapkar/)
+[Deep Shetye](https://github.com/deepshetye)\
+[Raj Naik Dhulapkar](https://github.com/RajNykDhulapkar)
 
 <br />
 
@@ -70,3 +60,13 @@ If you find any bug or have any suggestion, You can post them in issues section 
 ![User Preference Form](https://i.imgur.com/GSYr4kZ.png)
 
 **User Preference Form** 👆
+
+</br>
+
+## 📌 Credits :
+
+This project exists, thanks to all the people who contribute.
+
+<a href="https://github.com/EdTech-Official/EdTech-Web/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=EdTech-Official/EdTech-Web" />
+</a>
