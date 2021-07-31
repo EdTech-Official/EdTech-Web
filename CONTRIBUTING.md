@@ -34,7 +34,10 @@ Thank you for considering and taking the time to contribute! Before contributing
 
 1. Updated browser
 2. Node.js installed (If not download it [here](https://nodejs.org/en/download/)).
-3. Any text editor of your choice.
+  + Use the command "`node --version`" to check if installed
+3. Python3 installed (If not download it [here](https://www.python.org/downloads/)).
+  + Use the command "`python3 --version`" to check if installed
+5. Any text editor of your choice.
 
 ### ⚡ 3. Skill set :
 
@@ -43,16 +46,3 @@ Thank you for considering and taking the time to contribute! Before contributing
 3. [ReactJS](https://reactjs.org/)
 4. Mobile development Experience in Any Tech (optionally)
 5. [Ionic](https://ionicframework.com/) / [Capacitor](https://capacitorjs.com/) (optionally)
-
-## 📌 Potential Maintainers :
-
-[Deep Shetye](https://github.com/deepshetye)\
-[Raj Naik Dhulapkar](https://github.com/RajNykDhulapkar)
-
-<!-- ## 📌 Credits :
-
-This project exists, thanks to all the people who contribute.
-
-<a href="https://github.com/codeforcauseorg/edu-client/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=codeforcauseorg/edu-client" />
-</a> -->
