@@ -46,13 +46,13 @@ Thank you for considering and taking the time to contribute! Before contributing
 
 ## 📌 Potential Maintainers :
 
-[Deep Shetye](https://github.com/KeenWarrior)\
-[Raj Naik Dhulapkar](https://github.com/kunal-kushwaha)\
+[Deep Shetye](https://github.com/deepshetye)\
+[Raj Naik Dhulapkar](https://github.com/RajNykDhulapkar)
 
-## 📌 Credits :
+<!-- ## 📌 Credits :
 
 This project exists, thanks to all the people who contribute.
 
 <a href="https://github.com/codeforcauseorg/edu-client/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=codeforcauseorg/edu-client" />
-</a>
+</a> -->
