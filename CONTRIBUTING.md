@@ -22,7 +22,7 @@
    Use `python3 --version` to check if installed (If not download it [here](https://www.python.org/downloads/))
 5. Any text editor of your choice.
 
-### ⚡ 3. Skill set :
+### ⚡ 3. Skill Set Required :
 
 1. Knowledge of git & github.
 2. JavaScript
@@ -170,12 +170,17 @@ After doing the changes, and when tests are successfully passing you can push yo
 
 By this time you can see a message on your GitHub fork as `your fork is ahead of EdTech-Official: master by <number> of commits` and you can also see a button `Compare and pull request`.
 
-1. Click on `Compare and pull request` button.(Refer image no.1)
-2. You will see a template.(Refer image no.2)
-3. Fill the template completely by describing your change, cause of change, issue getting fixed etc.
-4. After filling the template completely click on `Pull request`
-   <img src="./doc/images/compareAndpull.png" alt="Demo copy image" align="center"/>
-   <img src="./doc/images/pull.png" alt="Demo copy image" align="center"/>
+1. Click on `Contribute` and then `Open Pull Request`.(Refer image no.1)
+2. You'll be redirected to page where you'll see the made changes.
+3. Click on `Create pull request` button.(Refer image no.2)
+4. You will see a template.(Refer image no.3)
+5. Fill the template completely by describing your change, cause of change, issue getting fixed etc.
+6. After filling the template completely click on `Pull request`
+   <img src="https://i.imgur.com/u4bp0m7.jpg" alt="Demo copy image" align="center"/>
+
+   <img src="https://i.imgur.com/1FD1Rwg.jpg" alt="Demo copy image" align="center"/>
+
+   <img src="https://i.imgur.com/KDZ8GMi.jpg" alt="Demo copy image" align="center"/>
 
 [new-issue]: https://github.com/EdTech-Official/EdTech-Web/issues/new
 [github-repo]: https://github.com/EdTech-Official/EdTech-Web
