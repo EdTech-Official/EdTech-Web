@@ -1,7 +1,23 @@
-# EdTech
+<h1 align="center">
+    ✨ EdTech ✨
+</h1>
 
-One stop destination to all the needs of a contemporary college student.
-Just Register and find the solutions to all your problems at our [Website](https://deepshetye.github.io/edtech/).
+<blockquote align="center"> <b><i>
+    One stop destination to all the needs of a contemporary college student.</i></b>
+</blockquote>
+
+</br>
+
+<div align="center">
+
+![Issues tag](https://img.shields.io/github/issues/EdTech-Official/EdTech-Web)
+![Forks tag](https://img.shields.io/github/forks/EdTech-Official/EdTech-Web)
+![Stars](https://img.shields.io/github/stars/EdTech-Official/EdTech-Web?style=social)
+![Licence](https://img.shields.io/github/license/EdTech-Official/EdTech-Web)
+<!-- ![twitter](https://img.shields.io/twitter/follow/codeforcauseIn?style=social)
+[![Discord](https://img.shields.io/discord/717102560909197493.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/jBHPxUz) -->
+
+</div>
 
 If you find any bug or have any suggestion, You can post them in issues section of this github repository.
 Please refer to [CONTRIBUTING](CONTRIBUTING.md) file to know more.
@@ -9,6 +25,13 @@ Please refer to [CONTRIBUTING](CONTRIBUTING.md) file to know more.
 **Copyright © 2021 All Rights Reserved By [EdTech](https://github.com/EdTech-Official)**
 
 <br />
+
+
+## ❤️ Note to new contributors
+
+Thank you for considering and taking the time to contribute! Before contributing kindly read and follow [Code of Conduct](CODE_OF_CONDUCT.md). To help new developers/contributors there are set of instructions added in [CONTRIBUTING.md](CONTRIBUTING.md). Which describes the intial stages for working on this project. Also refer the [MIT License](LICENSE).
+
+</br>
 
 ## Features
 
