@@ -60,7 +60,7 @@ Be sure to include as much detail as possible including step-by-step description
 1. Firstly you have to make your own copy of the project. For that, you have to fork the repository. You can find the fork button on the top-right side of the browser window. (Refer to the image below )
 2. Kindly wait till it gets forked.
 3. After that copy will look like `<your-user-name>/EdTech-Web` forked from `EdTech-Official/EdTech-Web`.
-   <img src="./doc/images/fork.png" alt="Demo fork image" align="center"/>
+   <img src="https://i.imgur.com/5gEx3Fu.jpg" alt="Demo fork image" align="center"/>
 
 ### 🚩 Clone repository :
 
@@ -69,8 +69,8 @@ Be sure to include as much detail as possible including step-by-step description
 3. Right-click there and click on `git bash`. A terminal window will pop up
 4. Type the command `git clone <your-fork-url>.git` and hit enter. (Refer to the image to copy URL)
 5. Wait for few seconds till the project gets copied
-6. Type the command `cd edu-client` and hit enter.
-   <img src="./doc/images/copy.png" alt="Demo copy image" align="center"/>
+6. Type the command `cd EdTech-Web` and hit enter.
+   <img src="https://i.imgur.com/WIcywBN.jpg" alt="Demo copy image" align="center"/>
 
 ### 🚩 Setting up remote :
 
@@ -80,21 +80,21 @@ Be sure to include as much detail as possible including step-by-step description
 
 ```console
 
-origin  https://github.com/<your-user-name>/edu-client.git (fetch)
-origin  https://github.com/<your-user-name>/edu-client.git (push)
+origin  https://github.com/<your-user-name>/EdTech-Web.git (fetch)
+origin  https://github.com/<your-user-name>/EdTech-Web.git (push)
 
 ```
 
-4. Now type the command `git remote add upstream https://github.com/codeforcauseorg/edu-client.git` this will set-upstream as the main directory.
-5. Again type in the command `git remote -v` to check if the remote has been set up correctly.
-6. It should show something like this :
+1. Now type the command `git remote add upstream https://github.com/EdTech-Official/EdTech-Web.git` this will set-upstream as the main directory.
+2. Again type in the command `git remote -v` to check if the remote has been set up correctly.
+3. It should show something like this :
 
 ```console
 
-origin  https://github.com/<your-user-name>/edu-client.git (fetch)
-origin  https://github.com/<your-user-name>/edu-client.git (push)
-upstream        https://github.com/codeforcauseorg/edu-client.git (fetch)
-upstream        https://github.com/codeforcauseorg/edu-client.git (push)
+origin  https://github.com/<your-user-name>/EdTech-Web.git (fetch)
+origin  https://github.com/<your-user-name>/EdTech-Web.git (push)
+upstream        https://github.com/EdTech-Official/EdTech-Web.git (fetch)
+upstream        https://github.com/EdTech-Official/EdTech-Web.git (push)
 
 ```
 
@@ -114,71 +114,48 @@ Whenever you want to contribute to any project. It is a best practice that you s
 2. Copy all the default content from the `.env.example` file to the `.env` file.
 3. You can edit this `.env` file to provide your own project credentials if needed in the future for specific tweaks and tests.
 
-## 📌 Setting up project using `npm` :
+## 📌 Setting up project using `yarn` :
 
 1. Open this cloned folder in the text editor of your choice.
-2. If you want to use the project using `npm` then that comes alongside when you download and install node js.
-
-### 🚩 Running in Development mode :
-
-1. Open the terminal and type in `npm install`, to install all the dependencies.
-2. Run: `npm start`
-3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-4. The page will reload if you make edits.
-
-### 🚩 Testing changes :
-
-1. After doing changes type `npm test`. This launches the test runner in the interactive watch mode.
-2. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### 🚩 Building project :
-
-1. Run the command `npm run build`
-2. Builds the app for production to the `build` folder.
-3. It correctly bundles React in production mode and optimizes the build for the best performance.
-4. The build is minified and the filenames include the hashes.
-   Your app is ready to be deployed!
-5. See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-Skip the yarn part and proceed to the pushing the changes section [here](#-pushing-your-changes)
-
-## 📌 Setting up project using `yarn`
-
-1. Open this cloned folder in the text editor of your choice.
-2. If you want to use the project using `yarn` then you can do either of the following
-   1. Download Yarn Package manager [here](https://classic.yarnpkg.com/en/docs/install)
-   2. If you already have `npm` installed you can simply type in `npm install --global yarn.
-   3. If you already have `choco` installed you can simply type in `choco install yarn`
-   4. If you already have `scoop` installed you can simply type in `scoop install yarn`
+2. If you do not have `yarn` installed then you can do either of the following:
+   - Download Yarn Package manager [here](https://classic.yarnpkg.com/en/docs/install)
+   - If you already have `npm` installed you can simply type in `npm install --global yarn`.
+   - If you already have `choco` installed you can simply type in `choco install yarn`
+   - If you already have `scoop` installed you can simply type in `scoop install yarn`
 3. To check if the yarn has been installed correctly type in `yarn --version` this should show you the current version of yarn.
+4. Open the terminal and type the following commands in it.
+   ```
+    cd frontend &&
+    yarn install 
+   ```
 
 ### 🚩 Running in Development mode :
 
-1. Open the terminal and type in `yarn install`, to install all the dependencies.
-2. Run: `yarn start`
-3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-4. The page will reload if you make edits.
-5. You will also see any lint errors in the console.
+1. Run: `yarn start`
+2. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. The page will reload if you make edits.
+4. You will also see any lint errors in the console.
 
 ### 🚩 Testing changes :
 
-1. After changes type `yarn test`. This launches the test runner in the interactive watch mode.
-2. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> Not yet implemented
+<!-- 1. After doing changes type `npm test`. This launches the test runner in the interactive watch mode.
+2. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information. -->
 
 ### 🚩 Building project :
 
-1. Run the command `yarn build`
+1. Run the command `yarn run build`
 2. Builds the app for production to the `build` folder.
 3. It correctly bundles React in production mode and optimizes the build for the best performance.
 4. The build is minified and the filenames include the hashes.
    Your app is ready to be deployed!
-5. See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### 🚩 Running storybook :
 
-1. Run the command `npm run storybook`
+> Not yet implemented.
+<!-- 1. Run the command `npm run storybook`
 2. wait on `localhost:6000`
-3. write stories for the component in the `stories` folder under the `src` folder.
+3. write stories for the component in the `stories` folder under the `src` folder. -->
 
 ## 📌 Pushing your changes
 
@@ -191,15 +168,15 @@ After doing the changes, and when tests are successfully passing you can push yo
 
 ## 📌 Creating a pull request
 
-By this time you can see a message on your GitHub fork as `your fork is ahead of codeforcause: master by <number> of commits` and you can also see a button `Compare and pull request`.
+By this time you can see a message on your GitHub fork as `your fork is ahead of EdTech-Official: master by <number> of commits` and you can also see a button `Compare and pull request`.
 
-1. Click on `Compare and pull request` button.(Refer image no 1)
-2. You will see a template.(Refer image no 2)
+1. Click on `Compare and pull request` button.(Refer image no.1)
+2. You will see a template.(Refer image no.2)
 3. Fill the template completely by describing your change, cause of change, issue getting fixed etc.
 4. After filling the template completely click on `Pull request`
    <img src="./doc/images/compareAndpull.png" alt="Demo copy image" align="center"/>
    <img src="./doc/images/pull.png" alt="Demo copy image" align="center"/>
 
-[new-issue]: https://github.com/codeforcauseorg/edu-client/issues/new
-[github-repo]: https://github.com/codeforcauseorg/edu-client/
-[issues-list]: https://github.com/codeforcauseorg/edu-client/issues
+[new-issue]: https://github.com/EdTech-Official/EdTech-Web/issues/new
+[github-repo]: https://github.com/EdTech-Official/EdTech-Web
+[issues-list]: https://github.com/EdTech-Official/EdTech-Web/issues
