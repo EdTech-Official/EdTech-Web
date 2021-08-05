@@ -33,7 +33,7 @@ urlpatterns = [
          views.FacultyDetail.as_view(), name='faculty-detail'),
     path('recommendation-list/', views.RecommendationList.as_view(),
          name='recommendation-list'),
-    # path('textbook-list/', views.TextbookList.as_view(), name='textbook-list'),
+    path('textbook-list/', views.TextbookList.as_view(), name='textbook-list'),
     # path('textbook-detail/<str:pk>/', views.TextbookDetail.as_view(), name='textbook-detail'),
     # path('branch-list/', views.BranchList.as_view(), name="branch-list"),
     # path('branch-detail/<str:pk>/', views.BranchDetail.as_view(), name="branch-detail"),

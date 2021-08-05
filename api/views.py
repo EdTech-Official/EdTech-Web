@@ -311,6 +311,21 @@ class RecommendationList(ListAPIView):
     search_fields = ['title', ]
 
 
+class TextbookList(ListAPIView, MultipleFieldLookupMixin):
+    """
+    List all textbooks [GET]
+    """
+    # return the list of subjects in a college
+    queryset = Textbook.objects.all()
+    serializer_class = TextbookSerializer
+    pagination_class = ResultsSetPagination
+
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
+    filterset_fields = ['year', 'college', 'branch__branch_code',
+                        'subject__subject_code', 'course__course_code']
+    search_fields = ['title', 'author',
+                     'subject_name', 'subject__subject_code']
+
 # # function based views
 
 # @api_view(['GET'])

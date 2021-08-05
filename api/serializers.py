@@ -77,6 +77,11 @@ class RecommendationSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class TextbookSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Textbook
+        fields = '__all__'
+
 # class TextbookSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = Textbook

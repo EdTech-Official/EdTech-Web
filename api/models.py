@@ -153,7 +153,7 @@ class Textbook(models.Model):
 
     title = models.CharField(max_length=150)
     author = models.CharField(max_length=100)
-    link = models.URLField(max_length=35)
+    link = models.URLField(max_length=250)
     cover_image = models.URLField(max_length=200)
     college = models.ForeignKey(
         College, on_delete=models.DO_NOTHING, related_name="textbooks", blank=True, null=True)
@@ -164,9 +164,6 @@ class Textbook(models.Model):
     course = models.ForeignKey(
         Course, on_delete=models.DO_NOTHING, related_name="textbooks", blank=True, null=True)
     year = models.CharField(max_length=8, choices=YEARS, default='FIRST')
-    # posted_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='textbooks')
-    # date_posted = models.DateTimeField(default=timezone.now)
-    # description = models.TextField()
 
     def __str__(self):
         return self.title
