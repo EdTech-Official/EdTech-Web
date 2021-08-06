@@ -154,6 +154,7 @@ class Textbook(models.Model):
     title = models.CharField(max_length=150)
     author = models.CharField(max_length=100)
     link = models.URLField(max_length=250)
+    is_affiliate = models.BooleanField(default=False)
     cover_image = models.URLField(max_length=200)
     college = models.ForeignKey(
         College, on_delete=models.DO_NOTHING, related_name="textbooks", blank=True, null=True)
