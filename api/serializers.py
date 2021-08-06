@@ -30,10 +30,17 @@ class CollegeSerializer(QueryFieldsMixin, serializers.ModelSerializer):
         fields = '__all__'
 
 
+class TextbookSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Textbook
+        fields = '__all__'
+
+
 class SubjectSerializer(QueryFieldsMixin, serializers.ModelSerializer):
     # portions = PortionSerializer(Portion, many=True, read_only=True)
     # portions = serializers.HyperlinkedRelatedField(many=True, view_name="portion-detail", read_only=True)
     branch_code = serializers.CharField(source='branch.branch_code')
+    textbooks = TextbookSerializer(Textbook, many=True, read_only=True)
 
     class Meta:
         model = Subject
@@ -76,11 +83,6 @@ class RecommendationSerializer(serializers.ModelSerializer):
         model = Recommendation
         fields = '__all__'
 
-
-class TextbookSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Textbook
-        fields = '__all__'
 
 # class TextbookSerializer(serializers.ModelSerializer):
 #     class Meta:

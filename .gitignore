@@ -29,3 +29,5 @@ frontend/yarn-error.log*
 /venv
 /test
 /util
+/test
+/util
