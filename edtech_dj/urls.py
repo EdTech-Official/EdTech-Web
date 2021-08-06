@@ -21,6 +21,13 @@ from django.views.generic import TemplateView
 urlpatterns = [
     # Added extra path referencing React Static HTML   ~ Deep Shetye + 1 line
     path('', TemplateView.as_view(template_name='index.html')),
+    path('portion', TemplateView.as_view(template_name='index.html')),
+    path('textbook', TemplateView.as_view(template_name='index.html')),
+    path('notes', TemplateView.as_view(template_name='index.html')),
+    path('recommendation', TemplateView.as_view(template_name='index.html')),
+    path('faculty', TemplateView.as_view(template_name='index.html')),
+    path('about', TemplateView.as_view(template_name='index.html')),
+    path('user', TemplateView.as_view(template_name='index.html')),
 
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
