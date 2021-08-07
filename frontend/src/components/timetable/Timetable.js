@@ -1,30 +1,19 @@
 import React, { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../Auth";
-const axios = require("axios");
+import { getTimetable } from "../../http"
 
 const Timetable = () => {
   const { currentUserData } = useContext(AuthContext);
-
   const [loading, setLoading] = useState(true);
   const [tturl, setTturl] = useState(null);
 
-  const getTimetable = () => {
-    axios
-      .get(`${process.env.REACT_APP_API_URL}gtimetable-detail/${currentUserData[0].value}/${currentUserData[1].value}/${currentUserData[2].value}/`, {
-        params: {
-          page: 1,
-          page_size: 100
-        },
-      })
-      .then((res) => {
-        const results = res.data;
-        setTturl(results.gsheet_src);
-        setLoading(false);
-      });
-  };
-
   useEffect(() => {
-    getTimetable();
+    (async () => {
+      const result = await getTimetable(currentUserData);
+      console.log(result)
+      setTturl(result)
+      setLoading(false);
+    })()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

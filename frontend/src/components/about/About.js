@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../Auth";
-const axios = require("axios");
+import { getCollegeDetails } from "../../http";
 
 const About = () => {
   const { currentUserData } = useContext(AuthContext);
@@ -8,23 +8,12 @@ const About = () => {
   const [loading, setLoading] = useState(true);
   const [collegeResult, setCollegeResult] = useState(null);
 
-  const getSubjects = () => {
-    axios
-      .get(`${process.env.REACT_APP_API_URL}college-list/`, {
-        params: {
-          college_code: currentUserData[0].value,
-        },
-      })
-      .then((res) => {
-        const results = res.data.results;
-        setCollegeResult(results[0]);
-        setLoading(false);
-      });
-    return;
-  };
-
   useEffect(() => {
-    getSubjects();
+    (async () => {
+      const result = await getCollegeDetails(currentUserData);
+      setCollegeResult(result[0]);
+      setLoading(false);
+    })()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

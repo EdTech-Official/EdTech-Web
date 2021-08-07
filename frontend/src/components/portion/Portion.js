@@ -1,36 +1,18 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../Auth";
-const axios = require("axios");
+import { getSubjectsWithPortion } from '../../http';
 
 const Portion = () => {
   const { currentUserData } = useContext(AuthContext);
-
   const [subjects, setSubjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const getSubjects = () => {
-    axios
-      .get(
-        `${process.env.REACT_APP_API_URL}subject-list/${currentUserData[0].value}/`,
-        {
-          params: {
-            page: 1,
-            page_size: 100,
-            year: currentUserData[2].value,
-            branch__branch_code: currentUserData[1].value,
-          },
-        }
-      )
-      .then((res) => {
-        const results = res.data.results;
-        setSubjects(results);
-        setLoading(false);
-      });
-    return;
-  };
-
   useEffect(() => {
-    getSubjects();
+    (async () => {
+      const result = await getSubjectsWithPortion(currentUserData);
+      setSubjects(result)
+      setLoading(false);
+    })()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -58,9 +40,10 @@ const Portion = () => {
               <a 
                 href={`https://drive.google.com/file/d/${subject.portion_link}/view?usp=sharing`}
                 target="_blank"
+                key={subject.subject_code}
                 rel="noopener noreferrer"
               >
-                <div className="gd-fs gd-fs-elm" key={subject.subject_code}>
+                <div className="gd-fs gd-fs-elm">
                   <i className="bx bxs-folder"></i>
                   <span
                     className="gd-fs-n gd-fs-elm"
