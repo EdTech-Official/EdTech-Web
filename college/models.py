@@ -85,11 +85,11 @@ class Subject(models.Model):
 
 class Portion(models.Model):
     link = models.URLField(max_length=35, default="")
-    subject = models.ManyToManyField(
+    subjects = models.ManyToManyField(
         Subject, related_name="portions")
-    college = models.ManyToManyField(
+    colleges = models.ManyToManyField(
         College, related_name='portions')
-    branch = models.ManyToManyField(
+    branches = models.ManyToManyField(
         Branch, related_name='portions')
-    year = models.ManyToManyField(
+    years = models.ManyToManyField(
         Year, related_name='portions')

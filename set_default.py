@@ -96,6 +96,40 @@ def populate_subjects(SubjectClass, CollegeClass, BranchClass, YearClass, jsonFi
     os.chdir(current_dir)
 
 
+def populate_portions(PortionsClass, SubjectClass, CollegeClass, BranchClass, YearClass, jsonFilePath='./util/json/subjects/merged_subjects.json'):
+    """./util/json/subjects/merged_subjects.json"""
+    """json files dir: 
+         ./util/json/subjects     
+    """
+    current_dir = os.getcwd()
+    os.chdir('./util/json/subjects')
+    for file in os.listdir():
+        json_data = open(file, 'r')
+        dict_data = json.load(json_data)
+       
+        for item in dict_data:
+            instance = PortionsClass.objects.filter(link=item['portion_link'])
+            if len(instance) == 0:
+                college = item['college']
+                college = CollegeClass.objects.get(college_code=college)
+                por = PortionsClass(link=item['portion_link'])
+                por.save()
+                por.subjects.add(*SubjectClass.objects.filter(subject_code=item['subject_code']))
+                por.colleges.add(college)
+                por.branches.add(*BranchClass.objects.filter(branch_code=item['branch']))
+                por.years.add(*YearClass.objects.filter(year=item['year']))
+            else:
+                college = item['college']
+                college = CollegeClass.objects.get(college_code=college)
+                instance = instance[0]
+                instance.subjects.add(*SubjectClass.objects.filter(subject_code=item['subject_code']))
+                instance.colleges.add(college)
+                instance.branches.add(*BranchClass.objects.filter(branch_code=item['branch']))
+                instance.years.add(*YearClass.objects.filter(year=item['year']))
+
+    os.chdir(current_dir)
+
+
 
 def populate_gtimetable(GtimetableClass, CollegeClass, BranchClass, jsonFilePath):
     '''college, branch, year, gsheet_src'''
