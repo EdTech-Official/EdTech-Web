@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'api.apps.ApiConfig',
+    'college.apps.CollegeConfig',
     'django_filters',
     'corsheaders',
     'nested_admin',

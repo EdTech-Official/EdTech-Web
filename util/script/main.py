@@ -2,9 +2,10 @@ import csv
 import json
 import os
 
-UTIL_PATH = r'C:\X1_Enter\Web Development\community projects\edtech_dj\util'
-SUBJECTS_CSV_PATH = r'C:\X1_Enter\Web Development\community projects\edtech_dj\util\csv\subjects'
-GTIMETABLE_CSV_PATH = r'C:\X1_Enter\Web Development\community projects\edtech_dj\util\csv\gtimetable'
+UTIL_PATH = r'C:\X1_Enter\Web Development\community projects\EdTech-Web\util'
+SUBJECTS_CSV_PATH = r'C:\X1_Enter\Web Development\community projects\EdTech-Web\util\csv\subjects'
+SUBJECTS_JSON_PATH = r'C:\X1_Enter\Web Development\community projects\EdTech-Web\util\json\subjects'
+GTIMETABLE_CSV_PATH = r'C:\X1_Enter\Web Development\community projects\EdTech-Web\util\csv\gtimetable'
 
 os.chdir(UTIL_PATH)
 
@@ -29,7 +30,32 @@ def convert_to_json_data_subjects():
 
 
 
+def csv_merger(dirpath=SUBJECTS_CSV_PATH):
+    os.chdir(dirpath)
+    with open('./merged_subjects.csv', 'w', newline='') as writeFile:
+        fieldnames = ['id', 'subject_code', 'name', 'college', 'branch', 'year', 'description', 'portion_link']
+        csv_writer = csv.DictWriter(writeFile, fieldnames=fieldnames)
+        csv_writer.writeheader()
+        # files = os.listdir()
+        for file in os.listdir():
+            if file == 'merged_subjects.csv':
+                continue
+            with open(file, 'r') as readFile:
+                csv_reader = csv.DictReader(readFile, fieldnames=fieldnames)
+                # print(list(csv_reader)[1:])
+
+                for row in list(csv_reader)[1:]:
+                    csv_writer.writerow(row)
+
+                # for j in range(len(rows)):
+                #     csv_writer.writerow(rows[j])
+
+
+
+
 if __name__ == '__main__':
     # convert_to_json_data("NITG_branches", "NITG_branches")
     # convert_to_json_data_subjects()
-    convert_to_json_data('NITG.csv', 'NITG.json', GTIMETABLE_CSV_PATH)
+    convert_to_json_data('merged_subjects.csv', 'merged_subjects.json', SUBJECTS_CSV_PATH)
+    # csv_merger()
+    # pass

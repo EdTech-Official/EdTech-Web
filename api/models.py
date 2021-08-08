@@ -3,10 +3,11 @@ from django.db import models
 from django.db.models import base
 from django.db.models.aggregates import Max
 from django.db.models.base import Model
-from django.db.models.deletion import CASCADE, DO_NOTHING
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.validators import BaseValidator, RegexValidator, MaxValueValidator, MinValueValidator
+
+from college.models import *
 
 
 """
@@ -50,89 +51,89 @@ MODELS:
 """
 
 
-class College(models.Model):
-    """ Model for all the Colleges """
+# class College(models.Model):
+#     """ Model for all the Colleges """
 
-    college_code = models.CharField(
-        max_length=12, unique=True, primary_key=True)
-    name = models.CharField(max_length=180)
-    established = models.PositiveIntegerField(default=datetime.date.today(
-    ).year, validators=[MinValueValidator(1900), MaxValueValidator(2050)])
-    location = models.CharField(max_length=30)
-    full_address = models.CharField(max_length=200, default="", blank=True)
-    link_image = models.URLField(max_length=200, blank=True)
-    website_link = models.URLField(max_length=200, blank=True)
-    static_map_src = models.URLField(max_length=330, blank=True)
-    email = models.EmailField(max_length=100, blank=True)
-    linkedin = models.URLField(max_length=60, blank=True)
-    instagram = models.URLField(max_length=60, blank=True)
-    facebook = models.URLField(max_length=60, blank=True)
-    twitter = models.URLField(max_length=60, blank=True)
-    youtube = models.URLField(max_length=60, blank=True)
-    description = models.TextField(default="")
+#     college_code = models.CharField(
+#         max_length=12, unique=True, primary_key=True)
+#     name = models.CharField(max_length=180)
+#     established = models.PositiveIntegerField(default=datetime.date.today(
+#     ).year, validators=[MinValueValidator(1900), MaxValueValidator(2050)])
+#     location = models.CharField(max_length=30)
+#     full_address = models.CharField(max_length=200, default="", blank=True)
+#     link_image = models.URLField(max_length=200, blank=True)
+#     website_link = models.URLField(max_length=200, blank=True)
+#     static_map_src = models.URLField(max_length=330, blank=True)
+#     email = models.EmailField(max_length=100, blank=True)
+#     linkedin = models.URLField(max_length=60, blank=True)
+#     instagram = models.URLField(max_length=60, blank=True)
+#     facebook = models.URLField(max_length=60, blank=True)
+#     twitter = models.URLField(max_length=60, blank=True)
+#     youtube = models.URLField(max_length=60, blank=True)
+#     description = models.TextField(default="")
 
-    def __str__(self):
-        return self.name
-
-
-class Course(models.Model):
-    """Model for all the Colleges """
-
-    course_code = models.CharField(max_length=10)
-    college = models.ForeignKey(
-        College, on_delete=DO_NOTHING, related_name='courses')
-    name = models.CharField(max_length=150)
-    description = models.TextField()
-
-    class Meta:
-        unique_together = ('course_code', 'college',)
-
-    def __str__(self):
-        return f"{self.course_code}: {self.name}"
+#     def __str__(self):
+#         return self.name
 
 
-class Branch(models.Model):
-    """ Model for all the Branches """
-    branch_code = models.CharField(max_length=8)
-    college = models.ForeignKey(
-        College, on_delete=DO_NOTHING, related_name='branches')
-    name = models.CharField(max_length=150)
-    description = models.TextField()
+# class Course(models.Model):
+#     """Model for all the Colleges """
 
-    class Meta:
-        unique_together = ('branch_code', 'college',)
+#     course_code = models.CharField(max_length=10)
+#     college = models.ForeignKey(
+#         College, on_delete=models.DO_NOTHING, related_name='courses')
+#     name = models.CharField(max_length=150)
+#     description = models.TextField()
 
-    def __str__(self):
-        return f"{self.branch_code}: {self.name}"
+#     class Meta:
+#         unique_together = ('course_code', 'college',)
+
+#     def __str__(self):
+#         return f"{self.course_code}: {self.name}"
 
 
-class Subject(models.Model):
+# class Branch(models.Model):
+#     """ Model for all the Branches """
+#     branch_code = models.CharField(max_length=8)
+#     college = models.ForeignKey(
+#         College, on_delete=models.DO_NOTHING, related_name='branches')
+#     name = models.CharField(max_length=150)
+#     description = models.TextField()
 
-    """Model for all the Subjects"""
+#     class Meta:
+#         unique_together = ('branch_code', 'college',)
 
-    YEARS = [
-        ('FIRST', 'FIRST'),
-        ('SECOND', 'SECOND'),
-        ('THIRD', 'THIRD'),
-        ('FOURTH', 'FOURTH'),
-    ]
+#     def __str__(self):
+#         return f"{self.branch_code}: {self.name}"
 
-    subject_code = models.CharField(max_length=8)
-    college = models.ForeignKey(
-        College, on_delete=DO_NOTHING, related_name='subjects')
-    branch = models.ForeignKey(
-        Branch, on_delete=DO_NOTHING, related_name='subjects')
-    name = models.CharField(max_length=150)
-    year = models.CharField(max_length=8, choices=YEARS, default='FIRST')
-    description = models.TextField(default="")
-    portion_link = models.CharField(max_length=35, default="")
 
-    class Meta:
-        # unique_together = ('subject_code', 'college',)
-        unique_together = ('subject_code', 'college', 'branch',)
+# class Subject(models.Model):
 
-    def __str__(self):
-        return f"({self.college.college_code}, {self.branch.branch_code}): {self.subject_code}: {self.name}"
+#     """Model for all the Subjects"""
+
+#     YEARS = [
+#         ('FIRST', 'FIRST'),
+#         ('SECOND', 'SECOND'),
+#         ('THIRD', 'THIRD'),
+#         ('FOURTH', 'FOURTH'),
+#     ]
+
+#     subject_code = models.CharField(max_length=8)
+#     college = models.ForeignKey(
+#         College, on_delete=models.DO_NOTHING, related_name='subjects')
+#     branch = models.ForeignKey(
+#         Branch, on_delete=models.DO_NOTHING, related_name='subjects')
+#     name = models.CharField(max_length=150)
+#     year = models.CharField(max_length=8, choices=YEARS, default='FIRST')
+#     description = models.TextField(default="")
+#     portion_link = models.CharField(max_length=35, default="")
+
+#     class Meta:
+#         # unique_together = ('subject_code', 'college',)
+#         unique_together = ('subject_code', 'college', 'branch',)
+
+#     def __str__(self):
+#         return f"({self.college.college_code}, {self.branch.branch_code}): {self.subject_code}: {self.name}"
 
 
 class Contributor(models.Model):
@@ -162,8 +163,8 @@ class Textbook(models.Model):
         Subject, on_delete=models.DO_NOTHING, related_name="textbooks")
     branch = models.ForeignKey(
         Branch, on_delete=models.DO_NOTHING, related_name="textbooks", blank=True, null=True)
-    course = models.ForeignKey(
-        Course, on_delete=models.DO_NOTHING, related_name="textbooks", blank=True, null=True)
+    # course = models.ForeignKey(
+    #     Course, on_delete=models.DO_NOTHING, related_name="textbooks", blank=True, null=True)
     year = models.CharField(max_length=8, choices=YEARS, default='FIRST')
 
     def __str__(self):
@@ -209,8 +210,8 @@ class Material(models.Model):
         Subject, on_delete=models.DO_NOTHING, related_name="materials", blank=True, null=True)
     branch = models.ForeignKey(
         Branch, on_delete=models.DO_NOTHING, related_name="materials", blank=True, null=True)
-    course = models.ForeignKey(
-        Course, on_delete=models.DO_NOTHING, related_name="materials", blank=True, null=True)
+    # course = models.ForeignKey(
+    #     Course, on_delete=models.DO_NOTHING, related_name="materials", blank=True, null=True)
     year = models.CharField(max_length=8, choices=YEARS, default='FIRST')
     # posted_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='materials')
     # date_posted = models.DateTimeField(default=timezone.now)
@@ -223,9 +224,9 @@ class Material(models.Model):
 class Recommendation(models.Model):
     title = models.CharField(max_length=250)
     recommended_by_faculty = models.ForeignKey(
-        Faculty, on_delete=DO_NOTHING, blank=True, null=True, related_name='recommendations')
+        Faculty, on_delete=models.DO_NOTHING, blank=True, null=True, related_name='recommendations')
     recommended_by_contributor = models.ForeignKey(
-        Contributor, on_delete=DO_NOTHING, blank=True, null=True, related_name='recommendations')
+        Contributor, on_delete=models.DO_NOTHING, blank=True, null=True, related_name='recommendations')
     link = models.URLField(max_length=200)
 
     def __str__(self):

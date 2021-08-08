@@ -24,6 +24,8 @@ from .models import *
 from .serializers import *
 from .mixins import *
 
+from college.models import *
+
 
 # utility classes
 class ResultsSetPagination(PageNumberPagination):
@@ -95,35 +97,35 @@ class CollegeDetail(RetrieveAPIView):
 """ Course"""
 
 
-class CourseList(ListAPIView):
-    """
-    List Courses in a College [GET]
-    """
+# class CourseList(ListAPIView):
+#     """
+#     List Courses in a College [GET]
+#     """
 
-    # return the list of subjects
-    serializer_class = CourseSerializer
-    pagination_class = ResultsSetPagination
-    lookup_url_kwarg = 'college_code'
+#     # return the list of subjects
+#     serializer_class = CourseSerializer
+#     pagination_class = ResultsSetPagination
+#     lookup_url_kwarg = 'college_code'
 
-    def get_queryset(self):
-        college_code = self.kwargs.get(self.lookup_url_kwarg)
-        courses = Course.objects.filter(college=college_code)
-        return courses
+#     def get_queryset(self):
+#         college_code = self.kwargs.get(self.lookup_url_kwarg)
+#         courses = Course.objects.filter(college=college_code)
+#         return courses
 
 
-class CourseDetail(RetrieveAPIView):
-    """
-    Retrieve a course in a college [GET]
-    """
-    queryset = Course.objects.all()
-    serializer_class = CourseSerializer
-    lookup_fields = ('college_code', 'course_code',)
+# class CourseDetail(RetrieveAPIView):
+#     """
+#     Retrieve a course in a college [GET]
+#     """
+#     queryset = Course.objects.all()
+#     serializer_class = CourseSerializer
+#     lookup_fields = ('college_code', 'course_code',)
 
-    def get_object(self):
-        college_code = self.kwargs.get('college_code')
-        course_code = self.kwargs.get('course_code')
-        college = College.objects.get(college_code=college_code)
-        return Course.objects.get(college=college.college_code, course_code=course_code)
+#     def get_object(self):
+#         college_code = self.kwargs.get('college_code')
+#         course_code = self.kwargs.get('course_code')
+#         college = College.objects.get(college_code=college_code)
+#         return Course.objects.get(college=college.college_code, course_code=course_code)
 
 
 """ Branch """

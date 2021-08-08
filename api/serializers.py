@@ -7,11 +7,13 @@ from .models import *
 
 from drf_queryfields import QueryFieldsMixin
 
+from college.models import *
 
-class CourseSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Course
-        fields = '__all__'
+
+# class CourseSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Course
+#         fields = '__all__'
 
 
 class BranchSerializer(serializers.ModelSerializer):
@@ -20,9 +22,15 @@ class BranchSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class BranchForCollegeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Branch
+        fields = ['name', 'branch_code']
+
+
 class CollegeSerializer(QueryFieldsMixin, serializers.ModelSerializer):
-    courses = CourseSerializer(Course, many=True, read_only=True)
-    branches = BranchSerializer(Branch, many=True, read_only=True)
+    # courses = CourseSerializer(Course, many=True, read_only=True)
+    branches = BranchForCollegeSerializer(Branch, many=True, read_only=True)
     # url = serializers.HyperlinkedIdentityField(view_name="college-detail")
 
     class Meta:
