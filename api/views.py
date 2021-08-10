@@ -29,6 +29,8 @@ from college.models import *
 
 from rest_framework.reverse import reverse
 
+from content.models import *
+
 
 # utility classes
 class ResultsSetPagination(PageNumberPagination):
@@ -111,6 +113,41 @@ def apiOverview(request):
             "path": "/api/portion-detail/450/",
             "name": "portion-detail",
             "fields": "id, url, link, subjects, colleges, branches, years",
+            "method_allowed": "GET, PUT, DELETE",
+            "permissions": "AllowAny"
+        },
+        "Gtimetable List": {
+            "url": reverse('gtimetable-list', request=request),
+            "path": "/api/gtimetable-list/",
+            "name": "gtimetable-list",
+            "fields": "id, url, link, subjects, colleges, branches, years",
+            "filter_fields": "branches__branch_code, colleges__college_code, subjects_subject_code, years__year",
+            "search_fields": "subjects__name, branches__branch_code, subjects_subject_code",
+            "method_allowed": "GET, POST",
+            "permissions": "AllowAny"
+        },
+        "Gtimetable Detail": {
+            "url": reverse('gtimetable-detail', request=request, args=[10]),
+            "path": "/api/gtimetable-detail/10/",
+            "name": "gtimetable-detail",
+            "fields": "id, url, link, subjects, colleges, branches, years",
+            "method_allowed": "GET, PUT, DELETE",
+            "permissions": "AllowAny"
+        },
+        "Contributor List": {
+            "url": reverse('contributor-list', request=request),
+            "path": "/api/contributor-list/",
+            "name": "contributor-list",
+            "fields": "url, name, slug, instagram, twitter, linkedin",
+            "search_fields": "name",
+            "method_allowed": "GET, POST",
+            "permissions": "AllowAny"
+        },
+        "Contributor Detail": {
+            "url": reverse('contributor-detail', request=request, args=['raj-dhulapkar']),
+            "path": "/api/contributor-detail/raj-dhulapkar/",
+            "name": "contributor-detail",
+            "fields": "url, name, slug, instagram, twitter, linkedin",
             "method_allowed": "GET, PUT, DELETE",
             "permissions": "AllowAny"
         },
@@ -242,21 +279,27 @@ class FacultyDetail(RetrieveAPIView):
 """ Gtimetable """
 
 
+class GtimetableList(ListAPIView):
+    """
+    List all Gtimetables [GET]
+    """
+    # return the list of faculty in a college
+    queryset = Gtimetable.objects.all()
+    serializer_class = GtimetableSerializer
+    pagination_class = ResultsSetPagination
+
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['college__college_code',
+                        'branch__branch_code', 'year__year']
+
+
 class GtimetableDetail(RetrieveAPIView):
     """
     Retrieve a Gtimetable of a year of a branch in a college [GET]
     """
     queryset = Gtimetable.objects.all()
     serializer_class = GtimetableSerializer
-    lookup_fields = ('college_code', 'branch_code', 'year',)
-
-    def get_object(self):
-        college_code = self.kwargs.get('college_code')
-        year = self.kwargs.get('year')
-        branch_code = self.kwargs.get('branch_code')
-        college = College.objects.get(college_code=college_code)
-        branch = Branch.objects.get(branch_code=branch_code)
-        return Gtimetable.objects.get(college=college.college_code, branch=branch.id, year=year)
+    lookup_fields = 'pk'
 
 
 class ContributorList(ListAPIView):
@@ -267,43 +310,45 @@ class ContributorList(ListAPIView):
     queryset = Contributor.objects.all()
     serializer_class = ContributorSerializer
     pagination_class = ResultsSetPagination
+    filter_backends = [filters.SearchFilter, ]
+    search_fields = ['name', ]
 
 
 class ContributorDetail(RetrieveAPIView):
     queryset = Contributor.objects.all()
     serializer_class = ContributorSerializer
-    lookup_field = 'pk'
+    lookup_field = 'slug'
 
 
-class MaterialList(ListAPIView):
-    """
-    List all contributor [GET]
-    """
-    # return the list of subjects in a college
-    queryset = Material.objects.all()
-    serializer_class = MaterialSerializer
-    pagination_class = ResultsSetPagination
+# class MaterialList(ListAPIView):
+#     """
+#     List all contributor [GET]
+#     """
+#     # return the list of subjects in a college
+#     queryset = Material.objects.all()
+#     serializer_class = MaterialSerializer
+#     pagination_class = ResultsSetPagination
 
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
-    filterset_fields = ['year', 'college', 'branch__branch_code',
-                        'subject__subject_code', 'course__course_code']
-    search_fields = ['title', 'contributor_name',
-                     'subject_name', 'subject__subject_code']
+#     filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
+#     filterset_fields = ['year', 'college', 'branch__branch_code',
+#                         'subject__subject_code', 'course__course_code']
+#     search_fields = ['title', 'contributor_name',
+#                      'subject_name', 'subject__subject_code']
 
 
-class RecommendationList(ListAPIView):
-    """
-    List all faculty in a college [GET]
-    """
-    # return the list of faculty in a college
-    queryset = Recommendation.objects.all()
-    serializer_class = RecommendationSerializer
-    pagination_class = ResultsSetPagination
+# class RecommendationList(ListAPIView):
+#     """
+#     List all faculty in a college [GET]
+#     """
+#     # return the list of faculty in a college
+#     queryset = Recommendation.objects.all()
+#     serializer_class = RecommendationSerializer
+#     pagination_class = ResultsSetPagination
 
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
-    filterset_fields = ['recommended_by_faculty__name',
-                        'recommended_by_contributor__name']
-    search_fields = ['title', ]
+#     filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
+#     filterset_fields = ['recommended_by_faculty__name',
+#                         'recommended_by_contributor__name']
+#     search_fields = ['title', ]
 
 
 class TextbookList(ListAPIView, MultipleFieldLookupMixin):

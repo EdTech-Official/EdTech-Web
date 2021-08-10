@@ -56,6 +56,7 @@ def csv_merger(dirpath=SUBJECTS_CSV_PATH):
 if __name__ == '__main__':
     # convert_to_json_data("NITG_branches", "NITG_branches")
     # convert_to_json_data_subjects()
-    convert_to_json_data('merged_subjects.csv', 'merged_subjects.json', SUBJECTS_CSV_PATH)
+    # convert_to_json_data('merged_subjects.csv', 'merged_subjects.json', SUBJECTS_CSV_PATH)
     # csv_merger()
+    convert_to_json_data('contributors.csv', 'contributors.json', os.path.join(UTIL_PATH, 'csv'))
     # pass

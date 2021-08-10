@@ -51,14 +51,6 @@ MODELS:
 """
 
 
-class Contributor(models.Model):
-    name = models.CharField(max_length=100)
-    social_link = models.URLField(max_length=100)
-
-    def __str__(self):
-        return self.name
-
-
 class Textbook(models.Model):
     YEARS = [
         ('FIRST', 'FIRST'),
@@ -81,47 +73,6 @@ class Textbook(models.Model):
     # course = models.ForeignKey(
     #     Course, on_delete=models.DO_NOTHING, related_name="textbooks", blank=True, null=True)
     year = models.CharField(max_length=8, choices=YEARS, default='FIRST')
-
-    def __str__(self):
-        return self.title
-
-
-class Material(models.Model):
-    YEARS = [
-        ('FIRST', 'FIRST'),
-        ('SECOND', 'SECOND'),
-        ('THIRD', 'THIRD'),
-        ('FOURTH', 'FOURTH'),
-    ]
-
-    title = models.CharField(max_length=150)
-    link = models.URLField(max_length=200)
-    contributor = models.ForeignKey(
-        Contributor, on_delete=models.DO_NOTHING, related_name="materials", blank=True, null=True)
-    college = models.ForeignKey(
-        College, on_delete=models.DO_NOTHING, related_name="materials", blank=True, null=True)
-    subject = models.ForeignKey(
-        Subject, on_delete=models.DO_NOTHING, related_name="materials", blank=True, null=True)
-    branch = models.ForeignKey(
-        Branch, on_delete=models.DO_NOTHING, related_name="materials", blank=True, null=True)
-    # course = models.ForeignKey(
-    #     Course, on_delete=models.DO_NOTHING, related_name="materials", blank=True, null=True)
-    year = models.CharField(max_length=8, choices=YEARS, default='FIRST')
-    # posted_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='materials')
-    # date_posted = models.DateTimeField(default=timezone.now)
-    # description = models.TextField()
-
-    def __str__(self):
-        return self.title
-
-
-class Recommendation(models.Model):
-    title = models.CharField(max_length=250)
-    recommended_by_faculty = models.ForeignKey(
-        Faculty, on_delete=models.DO_NOTHING, blank=True, null=True, related_name='recommendations')
-    recommended_by_contributor = models.ForeignKey(
-        Contributor, on_delete=models.DO_NOTHING, blank=True, null=True, related_name='recommendations')
-    link = models.URLField(max_length=200)
 
     def __str__(self):
         return self.title

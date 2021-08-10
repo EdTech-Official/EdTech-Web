@@ -112,4 +112,4 @@ class Gtimetable(models.Model):
                              related_name="gsheettables", blank=True, null=True)
 
     def __str__(self):
-        return f"{self.college.college_code}: Timetable for {self.branch.branch_code} {self.year} year."
+        return f"{self.college.college_code}: Timetable for {self.branch.branch_code} {self.year.year} year."

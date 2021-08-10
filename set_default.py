@@ -6,6 +6,10 @@ import datetime
 import os
 
 
+def list_objects(modelClass):
+    for item in modelClass.objects.all():
+        print(item)
+
 def populate_colleges(CollegeClass, jsonFilePath='./util/json/colleges.json'):
     """./util/json/colleges.json"""
     json_data = open(jsonFilePath, 'r')
@@ -134,30 +138,41 @@ def populate_portions(PortionsClass, SubjectClass, CollegeClass, BranchClass, Ye
 
 
 
-def populate_gtimetable(GtimetableClass, CollegeClass, BranchClass, jsonFilePath):
-    '''college, branch, year, gsheet_src'''
+def populate_gtimetable(GtimetableClass, CollegeClass, BranchClass, YearClass, jsonFilePath='./util/json/gtimetable/NITG.json'):
+    '''college, branch, year, gsheet_src
+    command:
+        populate_gtimetable(Gtimetable, College, Branch, Year)
+    '''
     json_data = open(jsonFilePath, 'r')
     dict_data = json.load(json_data)
 
     for item in dict_data:
-        college = item['college']
-        college = CollegeClass.objects.get(college_code=college)
-        branch = item['branch']
 
         if item['gsheet_src'] == "":
             del item['gsheet_src']
         else:
             item['gsheet_src'] = item['gsheet_src'].split('/')[-2]
 
-        del item['id']
-        del item['college']
-        del item['branch']
-        sheet = GtimetableClass(**item,
-                                college=college,
-                                branch=BranchClass.objects.get(
-                                    college=college, branch_code=branch)
+        sheet = GtimetableClass(gsheet_src=item['gsheet_src'],
+                                college=CollegeClass.objects.get(college_code='NITG'),
+                                branch=BranchClass.objects.get(branch_code=item['branch']),
+                                year=YearClass.objects.get(year=item['year'])
                                 )
         sheet.save()
+
+
+def populate_contributors(ContributorClass, jsonFilePath='./util/json/contributors.json'):
+    """
+        command:populate_contributors(Contributor)
+
+    """
+    json_data = open(jsonFilePath, 'r')
+    dict_data = json.load(json_data)
+
+    for item in dict_data:
+        del item['id']
+        contributor = ContributorClass(**item)
+        contributor.save()
 
 
 def populate_users(UserClass, jsonFilePath):
@@ -168,10 +183,6 @@ def populate_users(UserClass, jsonFilePath):
         user = UserClass(**item)
         user.save()
 
-
-def list_objects(modelClass):
-    for item in modelClass.objects.all():
-        print(item)
 
 
 def populate_textbooks(TextbookClass, branches, courses, subjects, users, jsonFilePath):

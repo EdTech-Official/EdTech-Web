@@ -8,6 +8,7 @@ from .models import *
 from drf_queryfields import QueryFieldsMixin
 
 from college.models import *
+from content.models import *
 
 
 # class CourseSerializer(serializers.ModelSerializer):
@@ -73,10 +74,10 @@ class CollegeSerializer(QueryFieldsMixin, serializers.ModelSerializer):
         fields = '__all__'
 
 
-class TextbookSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Textbook
-        fields = '__all__'
+# class TextbookSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Textbook
+#         fields = '__all__'
 
 
 class PortionSerializer(serializers.ModelSerializer):
@@ -119,23 +120,31 @@ class SubjectSerializer(QueryFieldsMixin, serializers.ModelSerializer):
 
 class GtimetableSerializer(serializers.ModelSerializer):
     branch_code = serializers.CharField(source='branch.branch_code')
+    url = serializers.HyperlinkedIdentityField(
+        view_name='gtimetable-detail',
+        lookup_field='pk'
+    )
 
     class Meta:
         model = Gtimetable
         fields = '__all__'
 
 
-class MaterialSerializer(serializers.ModelSerializer):
-    contributor_name = serializers.CharField(source='contributor.name')
-    contributor_link = serializers.CharField(source='contributor.social_link')
+# class MaterialSerializer(serializers.ModelSerializer):
+#     contributor_name = serializers.CharField(source='contributor.name')
+#     contributor_link = serializers.CharField(source='contributor.social_link')
 
-    class Meta:
-        model = Material
-        fields = '__all__'
+#     class Meta:
+#         model = Material
+#         fields = '__all__'
 
 
 class ContributorSerializer(serializers.HyperlinkedModelSerializer):
-    materials = MaterialSerializer(Material, many=True, read_only=True)
+    # materials = MaterialSerializer(Material, many=True, read_only=True)
+    url = serializers.HyperlinkedIdentityField(
+        view_name='contributor-detail',
+        lookup_field='slug'
+    )
 
     class Meta:
         model = Contributor
@@ -154,16 +163,16 @@ class FacultySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class RecommendationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Recommendation
-        fields = '__all__'
-
-
-# class TextbookSerializer(serializers.ModelSerializer):
+# class RecommendationSerializer(serializers.ModelSerializer):
 #     class Meta:
-#         model = Textbook
+#         model = Recommendation
 #         fields = '__all__'
+
+
+class TextbookSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Textbook
+        fields = '__all__'
 
 
 # class MaterialSerializer(serializers.ModelSerializer):
