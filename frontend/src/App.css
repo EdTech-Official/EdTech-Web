@@ -17,7 +17,7 @@
 body{
   position: relative;
   font-size: var(--normal-font-size);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 
 .login_container{
@@ -856,22 +856,27 @@ color: #5f6368;
 
 /* '#696371 */
 .tx-bk {
-  border-radius: 5px;
-  margin: 20px 0 20px 30px;
+  border-radius: 10px;
+  margin: 20px 0 20px 15px;
   display: inline-block;
   height: 220px;
-  border: 1px solid rgb(218, 218, 218);
-  width: 179px;
+  border: none;
+  /* border: 1px solid rgb(218, 218, 218); */
+  width: 150px;
   overflow: hidden;
 }
 
-.tx-bk:hover {
-  border: 1px solid rgb(32,31,33);
-}
+/* .tx-bk:hover {
+  border: 1px solid rgb(218, 218, 218);
+} */
 
 .tx-bk-img{
-  height: 170px;
-  width: 177px
+  height: 140px;
+  margin-top: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  width: auto;
 }
 
 .book {
@@ -879,19 +884,15 @@ color: #5f6368;
   border-radius: 1rem;
   padding: 1rem 2rem;
 }
-.tx-bk h1 {
-  margin-top: 0.5rem;
-}
+
 .tx-bk p {
   color: #617d98;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   margin-top: 0.25rem;
 }
 .book p {
   margin-top: 0.5rem;
 }
-
-
 
 
 
