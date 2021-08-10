@@ -80,7 +80,7 @@ class CollegeSerializer(QueryFieldsMixin, serializers.ModelSerializer):
 #         fields = '__all__'
 
 
-class PortionSerializer(serializers.ModelSerializer):
+class PortionSerializer(QueryFieldsMixin, serializers.ModelSerializer):
     url = serializers.HyperlinkedIdentityField(
         view_name='portion-detail',
         lookup_field='pk'
