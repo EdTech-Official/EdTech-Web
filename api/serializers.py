@@ -16,19 +16,54 @@ from college.models import *
 #         fields = '__all__'
 
 
+"""related fields"""
+
+
+class SubjectListingField(serializers.RelatedField):
+    def to_representation(self, value):
+        return f"{value.subject_code}"
+
+
+class BranchesListingField(serializers.RelatedField):
+    def to_representation(self, value):
+        return f"{value.branch_code}"
+
+
+class YearsListingField(serializers.RelatedField):
+    def to_representation(self, value):
+        return f"{value.year}"
+
+
+"""end related fields"""
+
+
 class BranchSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(
+        view_name='branch-detail',
+        lookup_field='pk'
+    )
+
     class Meta:
         model = Branch
         fields = '__all__'
 
 
 class BranchForCollegeSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(
+        view_name='branch-detail',
+        lookup_field='pk'
+    )
+
     class Meta:
         model = Branch
-        fields = ['name', 'branch_code']
+        fields = ['url', 'name', 'branch_code', ]
 
 
 class CollegeSerializer(QueryFieldsMixin, serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(
+        view_name='college-detail',
+        lookup_field='college_code'
+    )
     # courses = CourseSerializer(Course, many=True, read_only=True)
     branches = BranchForCollegeSerializer(Branch, many=True, read_only=True)
     # url = serializers.HyperlinkedIdentityField(view_name="college-detail")
@@ -44,11 +79,38 @@ class TextbookSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class PortionSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(
+        view_name='portion-detail',
+        lookup_field='pk'
+    )
+    subjects = SubjectListingField(many=True, read_only=True)
+    branches = BranchesListingField(many=True, read_only=True)
+    years = YearsListingField(many=True, read_only=True)
+
+    class Meta:
+        model = Portion
+        fields = '__all__'
+
+
+class PortionForSubjectSerializer(serializers.ModelSerializer):
+
+    url = serializers.HyperlinkedIdentityField(
+        view_name='portion-detail',
+        lookup_field='pk'
+    )
+
+    class Meta:
+        model = Portion
+        fields = ['url', 'link', ]
+
+
 class SubjectSerializer(QueryFieldsMixin, serializers.ModelSerializer):
-    # portions = PortionSerializer(Portion, many=True, read_only=True)
-    # portions = serializers.HyperlinkedRelatedField(many=True, view_name="portion-detail", read_only=True)
-    branch_code = serializers.CharField(source='branch.branch_code')
-    textbooks = TextbookSerializer(Textbook, many=True, read_only=True)
+    url = serializers.HyperlinkedIdentityField(
+        view_name='subject-detail',
+        lookup_field='pk'
+    )
+    portions = PortionForSubjectSerializer(Portion, many=True, read_only=True)
 
     class Meta:
         model = Subject
@@ -81,6 +143,12 @@ class ContributorSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class FacultySerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(
+        view_name='faculty-detail',
+        lookup_field='pk'
+    )
+    branch_name = serializers.CharField(source='branch.name')
+
     class Meta:
         model = Faculty
         fields = '__all__'

@@ -99,7 +99,9 @@ def populate_subjects(SubjectClass, CollegeClass, BranchClass, YearClass, jsonFi
 def populate_portions(PortionsClass, SubjectClass, CollegeClass, BranchClass, YearClass, jsonFilePath='./util/json/subjects/merged_subjects.json'):
     """./util/json/subjects/merged_subjects.json"""
     """json files dir: 
-         ./util/json/subjects     
+         ./util/json/subjects 
+
+        populate_portions(Portion, Subject, College, Branch, Year)    
     """
     current_dir = os.getcwd()
     os.chdir('./util/json/subjects')
@@ -109,7 +111,7 @@ def populate_portions(PortionsClass, SubjectClass, CollegeClass, BranchClass, Ye
        
         for item in dict_data:
             instance = PortionsClass.objects.filter(link=item['portion_link'])
-            if len(instance) == 0:
+            if len(instance) == 0 or item['portion_link'] == '':
                 college = item['college']
                 college = CollegeClass.objects.get(college_code=college)
                 por = PortionsClass(link=item['portion_link'])
@@ -118,6 +120,7 @@ def populate_portions(PortionsClass, SubjectClass, CollegeClass, BranchClass, Ye
                 por.colleges.add(college)
                 por.branches.add(*BranchClass.objects.filter(branch_code=item['branch']))
                 por.years.add(*YearClass.objects.filter(year=item['year']))
+
             else:
                 college = item['college']
                 college = CollegeClass.objects.get(college_code=college)
@@ -214,7 +217,12 @@ def populate_lectures(LectureClass, SubjectClass, jsonFilePath):
         lecture.save()
 
 
-def populate_faculty(FacultyClass, BranchClass, CollegeClass, jsonFilePath):
+def populate_faculty(FacultyClass, BranchClass, CollegeClass, jsonFilePath='./util/json/faculty/nitgoa.json'):
+    """
+    command:
+        populate_faculty(Faculty, Branch, College)
+
+    """
     json_data = open(jsonFilePath, 'r')
     dict_data = json.load(json_data)
 
@@ -224,7 +232,7 @@ def populate_faculty(FacultyClass, BranchClass, CollegeClass, jsonFilePath):
             college=CollegeClass.objects.get(college_code='NITG'),
             designation=person['designation'],
             email=person['email'],
-            description=person['description'],
+            phone_number=person['phone'],
             branch=BranchClass.objects.get(branch_code=person['branch_code'])
         )
         prof.save()

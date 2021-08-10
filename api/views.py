@@ -1,3 +1,4 @@
+from django.db.models.query import QuerySet
 from api.filters import SubjectFilter
 from rest_framework import serializers
 from rest_framework import filters
@@ -26,6 +27,8 @@ from .mixins import *
 
 from college.models import *
 
+from rest_framework.reverse import reverse
+
 
 # utility classes
 class ResultsSetPagination(PageNumberPagination):
@@ -39,29 +42,79 @@ class ResultsSetPagination(PageNumberPagination):
 @api_view(['GET'])
 def apiOverview(request):
     api_urls = {
-        'List Colleges': {
-            'path': '/college-list/',
-            'params': ['college_code', 'search', 'fields', 'page_size', 'page', 'format'],
-            'methods': ['GET']
+        "College List": {
+            "url": reverse('college-list', request=request),
+            "path": "/api/college-list/",
+            "name": "college-list",
+            "fields": "college_code, url, branches, name, established, location, full_address, link_image, website_link, static_map_src, email, linkedin, instagram, facebook, twitter, youtube",
+            "filter_fields": "college_code",
+            "search_fields": "college_code, name, location",
+            "method_allowed": "GET, POST",
+            "permissions": "AllowAny"
         },
-        'College Detail View': {
-            'path': '/textbook-detail/<str:college_code>/',
-            'methods': ['GET']
+        "College Detail": {
+            "url": reverse('college-detail', request=request, args=["NITG"]),
+            "path": "/api/college-detail/NITG/",
+            "name": "college-detail",
+            "fields": "college_code, branches, name, established, location, full_address, link_image, website_link, static_map_src, email, linkedin, instagram, facebook, twitter, youtube",
+            "method_allowed": "GET, PUT, DELETE",
+            "permissions": "AllowAny"
         },
-        'List Teachers': {
-            'path': '/faculty-list/',
-            'params': ['branch', 'is_teaching_staff', 'college', 'page_size', 'page', 'format', 'search'],
-            'search_fields': ['name', 'designation'],
-            'methods': ['GET']
+        "Subject List": {
+            "url": reverse('subject-list', request=request),
+            "path": "/api/subject-list/",
+            "name": "subject-list",
+            "fields": "id, url, portions, subject_code, name, colleges, branches, years",
+            "filter_fields": "subject_code, colleges__college_code, branches__branch_code, years__year",
+            "search_fields": "subject_code, name, branches__branch_code",
+            "method_allowed": "GET, POST",
+            "permissions": "AllowAny"
         },
-        'List Courses': '/course-list/',
-        'Course Detail View': '/course-detail/<str:pk>/',
-        'List Branches': '/branch-list/',
-        'Branche Detail View': '/branch-detail/<str:pk>/',
-        'List Subjects': '/subject-list/',
-        'Subject Detail View': '/subject-detail/<str:pk>/',
-        'List Users': '/user-list/',
-        'User Detail View': '/user-detail/<str:username>/',
+        "Subject Detail": {
+            "url": reverse('subject-detail', request=request, args=[450]),
+            "path": "/api/subject-detail/450/",
+            "name": "subject-detail",
+            "fields": "id, url, portions, subject_code, name, colleges, branches, years",
+            "method_allowed": "GET, PUT, DELETE",
+            "permissions": "AllowAny"
+        },
+        "Faculty List": {
+            "url": reverse('faculty-list', request=request),
+            "path": "/api/faculty-list/",
+            "name": "faculty-list",
+            "fields": "id, url, name, branch_name, designation, email, phone_number, is_teaching_staff, branch, college",
+            "filter_fields": "branch__branch_code, college__college_code, is_teaching_staff",
+            "search_fields": "name, branch__name, branch__branch_code, designation",
+            "method_allowed": "GET, POST",
+            "permissions": "AllowAny"
+        },
+        "Faculty Detail": {
+            "url": reverse('faculty-detail', request=request, args=[80]),
+            "path": "/api/faculty-detail/450/",
+            "name": "faculty-detail",
+            "fields": "id, url, name, branch_name, designation, email, phone_number, is_teaching_staff, branch, college",
+            "method_allowed": "GET, PUT, DELETE",
+            "permissions": "AllowAny"
+        },
+        "Portion List": {
+            "url": reverse('portion-list', request=request),
+            "path": "/api/portion-list/",
+            "name": "portion-list",
+            "fields": "id, url, link, subjects, colleges, branches, years",
+            "filter_fields": "branches__branch_code, colleges__college_code, subjects_subject_code, years__year",
+            "search_fields": "subjects__name, branches__branch_code, subjects_subject_code",
+            "method_allowed": "GET, POST",
+            "permissions": "AllowAny"
+        },
+        "Portion Detail": {
+            "url": reverse('portion-detail', request=request, args=[200]),
+            "path": "/api/portion-detail/450/",
+            "name": "portion-detail",
+            "fields": "id, url, link, subjects, colleges, branches, years",
+            "method_allowed": "GET, PUT, DELETE",
+            "permissions": "AllowAny"
+        },
+
     }
 
     return Response(api_urls)
@@ -94,71 +147,26 @@ class CollegeDetail(RetrieveAPIView):
     lookup_field = 'college_code'
 
 
-""" Course"""
-
-
-# class CourseList(ListAPIView):
-#     """
-#     List Courses in a College [GET]
-#     """
-
-#     # return the list of subjects
-#     serializer_class = CourseSerializer
-#     pagination_class = ResultsSetPagination
-#     lookup_url_kwarg = 'college_code'
-
-#     def get_queryset(self):
-#         college_code = self.kwargs.get(self.lookup_url_kwarg)
-#         courses = Course.objects.filter(college=college_code)
-#         return courses
-
-
-# class CourseDetail(RetrieveAPIView):
-#     """
-#     Retrieve a course in a college [GET]
-#     """
-#     queryset = Course.objects.all()
-#     serializer_class = CourseSerializer
-#     lookup_fields = ('college_code', 'course_code',)
-
-#     def get_object(self):
-#         college_code = self.kwargs.get('college_code')
-#         course_code = self.kwargs.get('course_code')
-#         college = College.objects.get(college_code=college_code)
-#         return Course.objects.get(college=college.college_code, course_code=course_code)
-
-
 """ Branch """
 
 
 class BranchList(ListAPIView):
     """
-    List all Branches in a college [GET]
+    List all Branches in a branches [GET]
     """
     # return the list of subjects in a college
+    queryset = Branch.objects.all()
     serializer_class = BranchSerializer
     pagination_class = ResultsSetPagination
-    lookup_url_kwarg = 'college_code'
-
-    def get_queryset(self):
-        college_code = self.kwargs.get(self.lookup_url_kwarg)
-        courses = Branch.objects.filter(college=college_code)
-        return courses
 
 
 class BranchDetail(RetrieveAPIView):
     """
-    Retrieve a course in a college [GET]
+    Retrieve a course in a branch [GET]
     """
     queryset = Branch.objects.all()
     serializer_class = BranchSerializer
-    lookup_fields = ('college_code', 'branch_code',)
-
-    def get_object(self):
-        college_code = self.kwargs.get('college_code')
-        branch_code = self.kwargs.get('branch_code')
-        college = College.objects.get(college_code=college_code)
-        return Branch.objects.get(college=college.college_code, branch_code=branch_code)
+    lookup_field = 'pk'
 
 
 """ Subject """
@@ -169,37 +177,66 @@ class SubjectList(ListAPIView):
     List all subjects in a college [GET]
     """
     # return the list of subjects in a college
+    queryset = Subject.objects.all()
     serializer_class = SubjectSerializer
     pagination_class = ResultsSetPagination
-    lookup_url_kwarg = 'college_code'
 
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
-    filterset_fields = ['subject_code', 'year', 'branch__branch_code']
-    search_fields = ['name', 'subject_code', 'branch__branch_code']
-    # filter_class = SubjectFilter  # branch
-    # filterset_fields = ['subject_code', 'branch__branch_code', 'course__course_code', 'year',]
-
-    def get_queryset(self):
-        college_code = self.kwargs.get(self.lookup_url_kwarg)
-        subjects = Subject.objects.filter(college=college_code)
-        return subjects
+    filterset_fields = ['years__year', 'subject_code',
+                        'branches__branch_code', 'colleges__college_code']
+    search_fields = ['name', 'subject_code', 'branches__branch_code']
 
 
 class SubjectDetail(RetrieveAPIView):
     """
-    Retrieve a timetable of a branch in a college [GET]
+    Retrieve a subject [GET]
     """
     queryset = Subject.objects.all()
     serializer_class = SubjectSerializer
-    lookup_fields = ('college_code', 'branch_code', 'year',)
+    lookup_field = 'pk'
 
-    def get_object(self):
-        college_code = self.kwargs.get('college_code')
-        year = self.kwargs.get('year')
-        branch_code = self.kwargs.get('branch_code')
-        college = College.objects.get(college_code=college_code)
-        branch = Branch.objects.get(branch_code=branch_code)
-        return Subject.objects.get(college=college.college_code, branch=branch.id, year=year)
+
+class PortionList(ListAPIView):
+    queryset = Portion.objects.all()
+    serializer_class = PortionSerializer
+
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
+    filterset_fields = ['years__year',
+                        'subjects__subject_code',
+                        'branches__branch_code', 'colleges__college_code']
+    search_fields = ['subjects_subject_code',
+                     'subjects_name', 'branches__branch_code']
+
+
+class PortionDetail(RetrieveAPIView):
+    queryset = Portion.objects.all()
+    serializer_class = PortionSerializer
+    lookup_field = 'pk'
+
+
+class FacultyList(ListAPIView):
+    """
+    List all faculty in a college [GET]
+    """
+    # return the list of faculty in a college
+    queryset = Faculty.objects.all()
+    serializer_class = FacultySerializer
+    pagination_class = ResultsSetPagination
+
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
+    filterset_fields = ['branch__branch_code',
+                        'is_teaching_staff', 'college__college_code']
+    search_fields = ['name', 'branch__name',
+                     'branch__branch_code', 'designation']
+
+
+class FacultyDetail(RetrieveAPIView):
+    """
+    Retrieve a Faculty of a year of a branch in a college [GET]
+    """
+    queryset = Faculty.objects.all()
+    serializer_class = FacultySerializer
+    lookup_field = 'pk'
 
 
 """ Gtimetable """
@@ -230,18 +267,6 @@ class ContributorList(ListAPIView):
     queryset = Contributor.objects.all()
     serializer_class = ContributorSerializer
     pagination_class = ResultsSetPagination
-    # lookup_url_kwarg = 'college_code'
-
-    # filter_backends = [DjangoFilterBackend, filters.SearchFilter,]
-    # filterset_fields = ['subject_code', 'year', 'branch__branch_code']
-    # search_fields = ['name', 'subject_code', 'branch__branch_code']
-    # filter_class = SubjectFilter  # branch
-    # filterset_fields = ['subject_code', 'branch__branch_code', 'course__course_code', 'year',]
-
-    # def get_queryset(self):
-    #     college_code = self.kwargs.get(self.lookup_url_kwarg)
-    #     subjects = Subject.objects.filter(college=college_code)
-    #     return subjects
 
 
 class ContributorDetail(RetrieveAPIView):
@@ -266,37 +291,6 @@ class MaterialList(ListAPIView):
                      'subject_name', 'subject__subject_code']
 
 
-class FacultyList(ListAPIView):
-    """
-    List all faculty in a college [GET]
-    """
-    # return the list of faculty in a college
-    serializer_class = FacultySerializer
-    pagination_class = ResultsSetPagination
-    lookup_url_kwarg = 'college_code'
-
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
-    filterset_fields = ['branch__branch_code', 'is_teaching_staff']
-    search_fields = ['name', 'branch__name',
-                     'branch__branch_code', 'designation']
-    # filter_class = SubjectFilter  # branch
-    # filterset_fields = ['subject_code', 'branch__branch_code', 'course__course_code', 'year',]
-
-    def get_queryset(self):
-        college_code = self.kwargs.get(self.lookup_url_kwarg)
-        faculty = Faculty.objects.filter(college=college_code)
-        return faculty
-
-
-class FacultyDetail(RetrieveAPIView):
-    """
-    Retrieve a Faculty of a year of a branch in a college [GET]
-    """
-    queryset = Faculty.objects.all()
-    serializer_class = FacultySerializer
-    lookup_field = 'pk'
-
-
 class RecommendationList(ListAPIView):
     """
     List all faculty in a college [GET]
@@ -305,7 +299,6 @@ class RecommendationList(ListAPIView):
     queryset = Recommendation.objects.all()
     serializer_class = RecommendationSerializer
     pagination_class = ResultsSetPagination
-    # lookup_url_kwarg = 'college_code'
 
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
     filterset_fields = ['recommended_by_faculty__name',

@@ -4,8 +4,6 @@ import datetime
 
 # Create your models here.
 
-# models to be defined college, branch, year,
-
 
 class College(models.Model):
     """ Model for all the Colleges """
@@ -37,9 +35,6 @@ class Branch(models.Model):
     colleges = models.ManyToManyField(
         College, related_name='branches')
     name = models.CharField(max_length=150)
-
-    # class Meta:
-    # unique_together = ('branch_code', 'college',)
 
     def __str__(self):
         return f"{self.branch_code}: {self.name}"
@@ -74,10 +69,6 @@ class Subject(models.Model):
     name = models.CharField(max_length=150)
     years = models.ManyToManyField(
         Year, related_name='subjects')
-    # portion_link = models.CharField(max_length=35, default="")
-
-    # class Meta:
-    #     unique_together = ('subject_code', 'college', 'branch',)
 
     def __str__(self):
         return f"({self.college.college_code}, {self.branch.branch_code}): {self.subject_code}: {self.name}"
@@ -93,3 +84,32 @@ class Portion(models.Model):
         Branch, related_name='portions')
     years = models.ManyToManyField(
         Year, related_name='portions')
+
+
+class Faculty(models.Model):
+    """Model for all Faculty"""
+    name = models.CharField(max_length=50)
+    designation = models.CharField(max_length=80)
+    email = models.EmailField(max_length=254)
+    phone_number = models.CharField(max_length=17, blank=True)
+    branch = models.ForeignKey(
+        Branch, on_delete=models.DO_NOTHING, blank=False, related_name='faculty')
+    college = models.ForeignKey(
+        College, on_delete=models.DO_NOTHING, blank=False, related_name='faculty')
+    is_teaching_staff = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Gtimetable(models.Model):
+    gsheet_src = models.URLField(max_length=90)
+    college = models.ForeignKey(
+        College, on_delete=models.DO_NOTHING, related_name="gsheettables")
+    branch = models.ForeignKey(Branch, on_delete=models.DO_NOTHING,
+                               related_name="gsheettables", blank=True, null=True)
+    year = models.ForeignKey(Year, on_delete=models.DO_NOTHING,
+                             related_name="gsheettables", blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.college.college_code}: Timetable for {self.branch.branch_code} {self.year} year."
