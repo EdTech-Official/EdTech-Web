@@ -11,7 +11,7 @@ const About = () => {
   useEffect(() => {
     (async () => {
       const result = await getCollegeDetails(currentUserData);
-      setCollegeResult(result[0]);
+      setCollegeResult(result);
       setLoading(false);
     })()
     // eslint-disable-next-line react-hooks/exhaustive-deps

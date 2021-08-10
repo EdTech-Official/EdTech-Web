@@ -8,18 +8,35 @@ const api = axios.create({
     }
 })
 
+export const getTimetable = async (currentUserData) => {
+  let result;
+  await api
+    .get(`/api/gtimetable-list/`, {
+      params: {
+        college__college_code: currentUserData[0].value,
+        branch__branch_code: currentUserData[1].value,
+        year__year: currentUserData[2].value
+      },
+    })
+    .then((res) => {
+      result = res.data.results[0].gsheet_src;
+    });
+  return result;
+};
+
 export const getSubjectsWithPortion = async (currentUserData) => {
     let result;
     await api
       .get(
-        `/api/subject-list/${currentUserData[0].value}/`,
+        `/api/portion-list/`,
         {
           params: {
             page: 1,
             page_size: 100,
-            year: currentUserData[2].value,
-            branch__branch_code: currentUserData[1].value,
-            fields: "subject_code,portion_link"
+            years__year: currentUserData[2].value,
+            branches__branch_code: currentUserData[1].value,
+            colleges__college_code: currentUserData[0].value,
+            fields: "subjects,link"
           },
         }
       )
@@ -68,47 +85,28 @@ export const getBooks = async (subjectCode, currentUserData) => {
     return result;
 };
 
-export const getTimetable = async (currentUserData) => {
-    let result;
-    await api
-      .get(`/api/gtimetable-detail/${currentUserData[0].value}/${currentUserData[1].value}/${currentUserData[2].value}/`, {
-        params: {
-          page: 1,
-          page_size: 100
-        },
-      })
-      .then((res) => {
-        result = res.data.gsheet_src;
-      });
-    return result;
+export const getFacultyDetails = async (currentUserData) => {
+  let result;
+  await api
+    .get(`/api/faculty-list/${currentUserData[0].value}`, {
+      params: {
+        page: 1,
+        page_size: 100
+      },
+    })
+    .then((res) => {
+      result = res.data.results;
+      console.log(result)
+    });
+  return result;
 };
 
 export const getCollegeDetails = async (currentUserData) => {
     let result;
     await api
-      .get(`/api/college-list/`, {
-        params: {
-          college_code: currentUserData[0].value,
-        },
-      })
+      .get(`/api/college-detail/${currentUserData[0].value}/`)
       .then((res) => {
-        result = res.data.results;
-      });
-    return result;
-};
-
-export const getFacultyDetails = async (currentUserData) => {
-    let result;
-    await api
-      .get(`/api/faculty-list/${currentUserData[0].value}`, {
-        params: {
-          page: 1,
-          page_size: 100
-        },
-      })
-      .then((res) => {
-        result = res.data.results;
-        console.log(result)
+        result = res.data;
       });
     return result;
 };

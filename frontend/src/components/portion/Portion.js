@@ -1,18 +1,18 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../Auth";
-import { getSubjectsWithPortion } from '../../http';
+import { getSubjectsWithPortion } from "../../http";
 
 const Portion = () => {
   const { currentUserData } = useContext(AuthContext);
-  const [subjects, setSubjects] = useState([]);
+  const [result, setResult] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
       const result = await getSubjectsWithPortion(currentUserData);
-      setSubjects(result)
+      setResult(result);
       setLoading(false);
-    })()
+    })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -35,25 +35,28 @@ const Portion = () => {
             SUBJECTS
             <hr style={{ marginTop: "7px" }} />
           </h6>
-          {subjects.map((subject) => {
-            return (
-              <a 
-                href={`https://drive.google.com/file/d/${subject.portion_link}/view?usp=sharing`}
-                target="_blank"
-                key={subject.subject_code}
-                rel="noopener noreferrer"
-              >
-                <div className="gd-fs gd-fs-elm">
-                  <i className="bx bxs-folder"></i>
-                  <span
-                    className="gd-fs-n gd-fs-elm"
-                    style={{ marginLeft: "10px" }}
-                  >
-                    {subject.subject_code}
-                  </span>
-                </div>
-              </a>
-            );
+          {result.map((subjects) => {
+            return subjects.subjects.map((subject) => {
+              return (
+                <a
+                  // href={`https://drive.google.com/file/d/${subjects.link}/view?usp=sharing`}
+                  href={`${subjects.link}`}
+                  target="_blank"
+                  key={subject}
+                  rel="noopener noreferrer"
+                >
+                  <div className="gd-fs gd-fs-elm">
+                    <i className="bx bxs-folder"></i>
+                    <span
+                      className="gd-fs-n gd-fs-elm"
+                      style={{ marginLeft: "10px" }}
+                    >
+                      {subject}
+                    </span>
+                  </div>
+                </a>
+              );
+            });
           })}
         </div>
       )}
