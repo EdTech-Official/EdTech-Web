@@ -241,8 +241,8 @@ class PortionList(ListAPIView):
     filterset_fields = ['years__year',
                         'subjects__subject_code',
                         'branches__branch_code', 'colleges__college_code']
-    search_fields = ['subjects_subject_code',
-                     'subjects_name', 'branches__branch_code']
+    search_fields = ['subjects__subject_code',
+                     'subjects__name', 'branches__branch_code']
 
 
 class PortionDetail(RetrieveAPIView):
