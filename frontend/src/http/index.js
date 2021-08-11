@@ -101,7 +101,7 @@ export const getFacultyDetails = async (currentUserData) => {
   return result;
 };
 
-export const getCollegeDetails = async (currentUserData) => {
+export const GetCollegeDetails = async (currentUserData) => {
     let result;
     await api
       .get(`/api/college-detail/${currentUserData[0].value}/`)
