@@ -24,28 +24,6 @@ export const getTimetable = async (currentUserData) => {
   return result;
 };
 
-export const getSubjectsWithPortion = async (currentUserData) => {
-    let result;
-    await api
-      .get(
-        `/api/portion-list/`,
-        {
-          params: {
-            page: 1,
-            page_size: 100,
-            years__year: currentUserData[2].value,
-            branches__branch_code: currentUserData[1].value,
-            colleges__college_code: currentUserData[0].value,
-            fields: "subjects,link"
-          },
-        }
-      )
-      .then((res) => {
-        result = res.data.results;
-      });
-    return result;
-};
-
 export const getSubjects = async (currentUserData) => {
     let result;
     await api
@@ -99,16 +77,6 @@ export const getFacultyDetails = async (currentUserData) => {
       console.log(result)
     });
   return result;
-};
-
-export const GetCollegeDetails = async (currentUserData) => {
-    let result;
-    await api
-      .get(`/api/college-detail/${currentUserData[0].value}/`)
-      .then((res) => {
-        result = res.data;
-      });
-    return result;
 };
 
 export default api;

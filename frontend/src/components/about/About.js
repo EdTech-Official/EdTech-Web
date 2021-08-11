@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext } from "react";
 import { AuthContext } from "../../Auth";
-import { GetCollegeDetails } from "../../http";
 import useSWR from "swr";
 
 const About = () => {
   const { currentUserData } = useContext(AuthContext);
 
   const { data, error } = useSWR(
-    `${process.env.REACT_APP_API_URL}/api/college-detail/${currentUserData[0].value}/`
+    `${process.env.REACT_APP_API_URL}/api/college-detail/${currentUserData[0].value}/`,
+    {revalidateOnFocus: false}
   );
 
   if (error) {
