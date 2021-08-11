@@ -1,9 +1,12 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../Auth";
 import { firebaseApp } from "../firebase";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const TopNavBar = () => {
+
+  let history = useHistory();
+
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
@@ -37,6 +40,7 @@ const TopNavBar = () => {
         setSelectedBranch(null);
         setSelectedYear(null);
       });
+    history.push("/")
   };
 
   return (

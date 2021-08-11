@@ -1,41 +1,30 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { AuthContext } from "../../Auth";
-import { getSubjectsWithPortion } from "../../http";
+import useSWR from "swr";
 
 const Portion = () => {
   const { currentUserData } = useContext(AuthContext);
-  const [result, setResult] = useState([]);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    (async () => {
-      const result = await getSubjectsWithPortion(currentUserData);
-      setResult(result);
-      setLoading(false);
-    })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { data, error } = useSWR(
+    `${process.env.REACT_APP_API_URL}/api/portion-list/?page=1&page_size=100&years__year=${currentUserData[2].value}&branches__branch_code=${currentUserData[1].value}&colleges__college_code=${currentUserData[0].value}&fields=subjects,link`,
+    {revalidateOnFocus: false}
+  );
 
+  if (error) {
+    return <div className="main_content_body">Error while Fetching Data...</div>;
+  }
+
+  if(!data){
+    return <div className="main_content_body" >Loading...</div>
+  }
   return (
     <div className="main_content_body">
-      {loading ? (
-        <h1
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            height: "inherit",
-            alignItems: "center",
-          }}
-        >
-          Loading.....
-        </h1>
-      ) : (
         <div id="textbook-block">
           <h6 style={{ margin: "15px 20px", color: "rgb(32 31 33)" }}>
             SUBJECTS
             <hr style={{ marginTop: "7px" }} />
           </h6>
-          {result.map((subjects) => {
+          {data.results.map((subjects) => {
             return subjects.subjects.map((subject) => {
               return (
                 <a
@@ -59,7 +48,6 @@ const Portion = () => {
             });
           })}
         </div>
-      )}
     </div>
   );
 };

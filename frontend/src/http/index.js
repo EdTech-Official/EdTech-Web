@@ -8,44 +8,6 @@ const api = axios.create({
     }
 })
 
-export const getTimetable = async (currentUserData) => {
-  let result;
-  await api
-    .get(`/api/gtimetable-list/`, {
-      params: {
-        college__college_code: currentUserData[0].value,
-        branch__branch_code: currentUserData[1].value,
-        year__year: currentUserData[2].value
-      },
-    })
-    .then((res) => {
-      result = res.data.results[0].gsheet_src;
-    });
-  return result;
-};
-
-export const getSubjectsWithPortion = async (currentUserData) => {
-    let result;
-    await api
-      .get(
-        `/api/portion-list/`,
-        {
-          params: {
-            page: 1,
-            page_size: 100,
-            years__year: currentUserData[2].value,
-            branches__branch_code: currentUserData[1].value,
-            colleges__college_code: currentUserData[0].value,
-            fields: "subjects,link"
-          },
-        }
-      )
-      .then((res) => {
-        result = res.data.results;
-      });
-    return result;
-};
-
 export const getSubjects = async (currentUserData) => {
     let result;
     await api
@@ -99,16 +61,6 @@ export const getFacultyDetails = async (currentUserData) => {
       console.log(result)
     });
   return result;
-};
-
-export const getCollegeDetails = async (currentUserData) => {
-    let result;
-    await api
-      .get(`/api/college-detail/${currentUserData[0].value}/`)
-      .then((res) => {
-        result = res.data;
-      });
-    return result;
 };
 
 export default api;
