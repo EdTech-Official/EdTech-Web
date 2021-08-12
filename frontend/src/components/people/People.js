@@ -17,7 +17,7 @@ const People = () => {
         })()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
+ 
     return (
         <div className="main_content_body">
             <FacultyCard />
