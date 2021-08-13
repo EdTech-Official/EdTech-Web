@@ -1,26 +1,38 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import FacultyCard from './FacultyCard';
 import { AuthContext } from "../../Auth";
-// import { getFacultyDetails } from '../../http';
+import useSWR from "swr";
 
 const People = () => {
 
     const { currentUserData } = useContext(AuthContext);
-    const [facultyDetails, setFacultyDetails] = useState([]);
-    // const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        (async () => {
-            const result = await getFacultyDetails(currentUserData);
-            setFacultyDetails(result)
-            // setLoading(false);
-        })()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    const { data, error } = useSWR(
+        `${process.env.REACT_APP_API_URL}/api/faculty-list/?page=1&page_size=100&branch__branch_code=${currentUserData[1].value}&college__college_code=${currentUserData[0].value}`,
+        {revalidateOnFocus: false}
+    );
+
+    if (error) {
+        return <div className="main_content_body">Error while Fetching...</div>;
+    }
+
+    if (!data) {
+        return (
+        <div className="main_content_body" style={{ marginTop: "5px" }}>
+            Loading
+        </div>
+        );
+    }
 
     return (
         <div className="main_content_body">
-            <FacultyCard />
+            {
+                data.results.map( person => (
+                    <div key={person.name} style={{display: 'inline-block'}}>
+                        <FacultyCard personDetail={person} />
+                    </div>
+                ))
+            }
         </div>
     )
 }
