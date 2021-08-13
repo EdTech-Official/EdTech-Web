@@ -305,12 +305,15 @@ body{
 
 .person_name{
   margin-bottom: 2.5px;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  text-align: center;
   margin-top: 9.5px;
 }
 
 .person_designation{
   margin-top: 8px;
+  font-size: 0.7rem;
+  text-align: center;
 }
 
 .arr_container, .cancel{
