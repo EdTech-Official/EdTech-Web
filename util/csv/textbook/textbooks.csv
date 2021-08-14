@@ -1,0 +1,20 @@
+id,title,author,amazon_link,is_affiliate_link,cover_image,college ,subject ,branch,year
+1,Materials Science,V Rajendran,https://amzn.to/3AE6N8g,1,"https://images-na.ssl-images-amazon.com/images/I/515R8ayY-6L._SX377_BO1,204,203,200_.jpg",NITG,PH150,CSE;EEE;ECE;MCE;CVE,FIRST
+2,Material Science,S L Kakani,https://amzn.to/37Wq60t,1,"https://images-na.ssl-images-amazon.com/images/I/5165OKYvLyL._SX343_BO1,204,203,200_.jpg",NITG,PH150,CSE;EEE;ECE;MCE;CVE,FIRST
+3,Materials Science and Engineering: A First Course,Raghavan V,https://www.amazon.in/dp/8120350928/,0,"https://images-na.ssl-images-amazon.com/images/I/51zNCuGAl-L._SX327_BO1,204,203,200_.jpg",NITG,PH150,CSE;EEE;ECE;MCE;CVE,FIRST
+4,Materials Science and Engineering: An Introduction,"William D. Callister Jr. , David G. Rethwisch",https://amzn.to/3yOBLKe,1,"https://images-na.ssl-images-amazon.com/images/I/51GZwtH2vbL._SX388_BO1,204,203,200_.jpg",NITG,PH150,CSE;EEE;ECE;MCE;CVE,FIRST
+5,Mechanics of Solids,S. S. Bhavikatti,https://amzn.to/3sdoFUA,0,"https://images-na.ssl-images-amazon.com/images/I/314WxIxqlLL._BO1,204,203,200_.jpg",NITG,ME150,CSE;EEE;ECE;MCE;CVE,FIRST
+6,Engineering Mechanics,R C Hibbeler,https://www.amazon.in/dp/9332584745,0,"https://images-na.ssl-images-amazon.com/images/I/51aCUvRGDLL._SX398_BO1,204,203,200_.jpg",NITG,ME100,CSE;EEE;ECE;MCE;CVE,FIRST
+7,Engineering Mechanics Statics Dynamics,"Irving Herman Shames, G. Krishna Mohana Rao",https://www.amazon.in/dp/8177581236,0,"https://images-na.ssl-images-amazon.com/images/I/419p5nRngnL._SX258_BO1,204,203,200_.jpg",NITG,ME100,CSE;EEE;ECE;MCE;CVE,FIRST
+8,Introduction to Linear Algebra,Gilbert Strang,https://amzn.to/3CviuA0,1,"https://images-na.ssl-images-amazon.com/images/I/41Qxd6fnlyL._SX401_BO1,204,203,200_.jpg",NITG,MA150,CSE;EEE;ECE;MCE;CVE,FIRST
+9,Linear Algebra and Its Applications,"David C. Lay, Steven R. Lay",https://amzn.to/3irZESi,1,"https://images-na.ssl-images-amazon.com/images/I/51DwrFPH2uL._SX398_BO1,204,203,200_.jpg",NITG,MA150,CSE;EEE;ECE;MCE;CVE,FIRST
+10,Ordinary And Partial Differential Equations,M.D. Raisinghania,https://amzn.to/2WWMQef,1,"https://images-na.ssl-images-amazon.com/images/I/512vt-6IkeL._SX353_BO1,204,203,200_.jpg",NITG,MA150,CSE;EEE;ECE;MCE;CVE,FIRST
+11,Concepts of Modern Physics,Arthur Beiser,https://www.amazon.in/dp/9351341852,0,"https://images-na.ssl-images-amazon.com/images/I/51dMSWMv0NL._SX370_BO1,204,203,200_.jpg",NITG,PH100,CSE;EEE;ECE;MCE;CVE,FIRST
+12,Fundamental of Physics,Jearl Walker,https://amzn.to/2VEeqfA,1,https://m.media-amazon.com/images/I/51WvAjrza4L.jpg,NITG,PH100,CSE;EEE;ECE;MCE;CVE,FIRST
+13,Let Us C,Yashavant Kanetkar,https://amzn.to/3xnZq2Q,1,"https://images-na.ssl-images-amazon.com/images/I/51JMYC97+3L._SX348_BO1,204,203,200_.jpg",NITG,CS100,CSE;EEE;ECE;MCE;CVE,FIRST
+14,Thomas' Calculus,George B. Thomas,https://www.amazon.in/dp/9353060419,0,"https://images-na.ssl-images-amazon.com/images/I/51itILNsjJL._SX383_BO1,204,203,200_.jpg",NITG,MA100,CSE;EEE;ECE;MCE;CVE,FIRST
+15,Engineering-Chemistry-Jain,Jain,https://amzn.to/3CmM0rA,1,"https://images-na.ssl-images-amazon.com/images/I/51By1ZZKaYL._SX373_BO1,204,203,200_.jpg",NITG,CY150,CSE;EEE;ECE;MCE;CVE,FIRST
+16,Fundamentals of Electric Circuits,Matthew N. O. Sadiku,https://amzn.to/3lEtdlG,1,"https://images-na.ssl-images-amazon.com/images/I/41GUwpfivKL._SX374_BO1,204,203,200_.jpg",NITG,EE151,CSE;EEE;ECE;MCE;CVE,FIRST
+17,Advanced Engineering Mathematics,Erwin Kreyszig,https://amzn.to/3jQurrB,1,"https://images-na.ssl-images-amazon.com/images/I/51vlzzkNlSL._SX399_BO1,204,203,200_.jpg",NITG,MA100,CSE;EEE;ECE;MCE;CVE,FIRST
+18,Differential Equations and Their Applications,M. Braun,https://amzn.to/3jzWrzl,1,"https://images-na.ssl-images-amazon.com/images/I/41Y8ezvV+BL._SX324_BO1,204,203,200_.jpg",NITG,MA100,CSE;EEE;ECE;MCE;CVE,FIRST
+19,Charotar Publication Engineering Drawing,N.D. Bhatt,https://www.amazon.in/dp/9380358962/,0,https://m.media-amazon.com/images/I/91pcwzxkGYL._AC_UY327_FMwebp_QL65_.jpg,NITG,ME101,CSE;EEE;ECE;MCE;CVE,FIRST
