@@ -69,6 +69,7 @@ def apiOverview(request):
             "fields": "id, url, portions, subject_code, name, colleges, branches, years",
             "filter_fields": "subject_code, colleges__college_code, branches__branch_code, years__year",
             "search_fields": "subject_code, name, branches__branch_code",
+            "other_params": "fields",
             "method_allowed": "GET, POST",
             "permissions": "AllowAny"
         },
@@ -105,6 +106,7 @@ def apiOverview(request):
             "fields": "id, url, link, subjects, colleges, branches, years",
             "filter_fields": "branches__branch_code, colleges__college_code, subjects_subject_code, years__year",
             "search_fields": "subjects__name, branches__branch_code, subjects_subject_code",
+            "other_params": "fields",
             "method_allowed": "GET, POST",
             "permissions": "AllowAny"
         },
@@ -361,264 +363,253 @@ class TextbookList(ListAPIView, MultipleFieldLookupMixin):
     pagination_class = ResultsSetPagination
 
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
-    filterset_fields = ['year', 'college', 'branch__branch_code',
-                        'subject__subject_code', 'course__course_code']
+    filterset_fields = ['colleges__college_code', 'branches__branch_code',
+                        'subjects__subject_code', 'years__year']
     search_fields = ['title', 'author',
-                     'subject_name', 'subject__subject_code']
-
-# # function based views
-
-# @api_view(['GET'])
-# def UserList(request):
-# 	users = User.objects.all()
-# 	serializer = UserSerializer(users, many=True)
-# 	return Response(serializer.data)
+                     'subjects__name', 'subjects__subject_code',
+                     'branches__name', 'branches__branch_code']
 
 
-# @api_view(['GET'])
-# def userDetail(request, username):
-# 	user = User.objects.get(username=username)
-# 	serializer = UserSerializer(user, many=False)
-# 	return Response(serializer.data)
+class TextbookDetail(RetrieveAPIView):
+    queryset = Textbook.objects.all()
+    serializer_class = TextbookSerializer
+    lookup_field = 'pk'
 
-# # end function based views
+    # # function based views
 
+    # @api_view(['GET'])
+    # def UserList(request):
+    # 	users = User.objects.all()
+    # 	serializer = UserSerializer(users, many=True)
+    # 	return Response(serializer.data)
 
-# """ Subject """
-# class SubjectList(ListAPIView):
-# 	"""
-# 	List all Subjects [GET] or create a new Subject [POST]
-# 	"""
+    # @api_view(['GET'])
+    # def userDetail(request, username):
+    # 	user = User.objects.get(username=username)
+    # 	serializer = UserSerializer(user, many=False)
+    # 	return Response(serializer.data)
 
-# 	# return the list of subjects
-# 	queryset = Subject.objects.all()
-# 	serializer_class = SubjectSerializer
-# 	pagination_class = ResultsSetPagination
+    # # end function based views
 
-# 	filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
-# 	filterset_fields = ['year',]
-# 	search_fields = ['name', 'subject_code']
+    # """ Subject """
+    # class SubjectList(ListAPIView):
+    # 	"""
+    # 	List all Subjects [GET] or create a new Subject [POST]
+    # 	"""
 
+    # 	# return the list of subjects
+    # 	queryset = Subject.objects.all()
+    # 	serializer_class = SubjectSerializer
+    # 	pagination_class = ResultsSetPagination
 
-# 	def post(self, request, format=None):
-# 		serializer = SubjectSerializer(data=request.data)
-# 		if serializer.is_valid():
-# 			serializer.save()
-# 			return Response(serializer.data, status=status.HTTP_201_CREATED)
+    # 	filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
+    # 	filterset_fields = ['year',]
+    # 	search_fields = ['name', 'subject_code']
 
-# 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    # 	def post(self, request, format=None):
+    # 		serializer = SubjectSerializer(data=request.data)
+    # 		if serializer.is_valid():
+    # 			serializer.save()
+    # 			return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+    # 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# class SubjectDetail(APIView):
-# 	"""
-# 	Retrieve [GET], update [PUT] or delete [DELETE] a Subject instance.
-# 	"""
-# 	def get_object(self, pk):
-# 		try:
-# 			return Subject.objects.get(pk=pk)
-# 		except Subject.DoesNotExist:
-# 			raise Http404
+    # class SubjectDetail(APIView):
+    # 	"""
+    # 	Retrieve [GET], update [PUT] or delete [DELETE] a Subject instance.
+    # 	"""
+    # 	def get_object(self, pk):
+    # 		try:
+    # 			return Subject.objects.get(pk=pk)
+    # 		except Subject.DoesNotExist:
+    # 			raise Http404
 
-# 	def get(self, request, pk, format=None):
-# 		subject = self.get_object(pk)
-# 		serializer = SubjectSerializer(subject)
-# 		return Response(serializer.data)
+    # 	def get(self, request, pk, format=None):
+    # 		subject = self.get_object(pk)
+    # 		serializer = SubjectSerializer(subject)
+    # 		return Response(serializer.data)
 
-# 	def put(self, request, pk, format=None):
-# 		subject = self.get_object(pk)
-# 		serializer = SubjectSerializer(subject, data=request.data)
-# 		if serializer.is_valid():
-# 			serializer.save()
-# 			return Response(serializer.data)
-# 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    # 	def put(self, request, pk, format=None):
+    # 		subject = self.get_object(pk)
+    # 		serializer = SubjectSerializer(subject, data=request.data)
+    # 		if serializer.is_valid():
+    # 			serializer.save()
+    # 			return Response(serializer.data)
+    # 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# 	def delete(self, request, pk, format=None):
-# 		subject = self.get_object(pk)
-# 		subject.delete()
-# 		return Response(status=status.HTTP_204_NO_CONTENT)
+    # 	def delete(self, request, pk, format=None):
+    # 		subject = self.get_object(pk)
+    # 		subject.delete()
+    # 		return Response(status=status.HTTP_204_NO_CONTENT)
 
+    #
 
-#
+    # """ Course """
+    # class CourseList(ListAPIView):
+    # 	"""
+    # 	List all Subjects [GET] or create a new Course
+    # 	"""
 
-# """ Course """
-# class CourseList(ListAPIView):
-# 	"""
-# 	List all Subjects [GET] or create a new Course
-# 	"""
+    # 	# return the list of subjects
+    # 	queryset = Course.objects.all()
+    # 	serializer_class = CourseSerializer
+    # 	pagination_class = ResultsSetPagination
 
-# 	# return the list of subjects
-# 	queryset = Course.objects.all()
-# 	serializer_class = CourseSerializer
-# 	pagination_class = ResultsSetPagination
+    # 	def post(self, request, format=None):
+    # 		serializer = CourseSerializer(data=request.data)
+    # 		if serializer.is_valid():
+    # 			serializer.save()
+    # 			return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+    # 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# 	def post(self, request, format=None):
-# 		serializer = CourseSerializer(data=request.data)
-# 		if serializer.is_valid():
-# 			serializer.save()
-# 			return Response(serializer.data, status=status.HTTP_201_CREATED)
+    # class CourseDetail(APIView):
+    # 	"""
+    # 	Retrieve, update or delete a Course instance.
+    # 	"""
+    # 	def get_object(self, pk):
+    # 		try:
+    # 			return Course.objects.get(pk=pk)
+    # 		except Course.DoesNotExist:
+    # 			raise Http404
 
-# 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    # 	def get(self, request, pk, format=None):
+    # 		course = self.get_object(pk)
+    # 		serializer = CourseSerializer(course)
+    # 		return Response(serializer.data)
 
+    # 	def put(self, request, pk, format=None):
+    # 		course = self.get_object(pk)
+    # 		serializer = CourseSerializer(course, data=request.data)
+    # 		if serializer.is_valid():
+    # 			serializer.save()
+    # 			return Response(serializer.data)
+    # 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# class CourseDetail(APIView):
-# 	"""
-# 	Retrieve, update or delete a Course instance.
-# 	"""
-# 	def get_object(self, pk):
-# 		try:
-# 			return Course.objects.get(pk=pk)
-# 		except Course.DoesNotExist:
-# 			raise Http404
+    # 	def delete(self, request, pk, format=None):
+    # 		course = self.get_object(pk)
+    # 		course.delete()
+    # 		return Response(status=status.HTTP_204_NO_CONTENT)
 
-# 	def get(self, request, pk, format=None):
-# 		course = self.get_object(pk)
-# 		serializer = CourseSerializer(course)
-# 		return Response(serializer.data)
+    # """  Textbook  """
 
-# 	def put(self, request, pk, format=None):
-# 		course = self.get_object(pk)
-# 		serializer = CourseSerializer(course, data=request.data)
-# 		if serializer.is_valid():
-# 			serializer.save()
-# 			return Response(serializer.data)
-# 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    # class TextbookList(ListAPIView):
+    # 	"""
+    # 	List all Textbooks [GET] or create a new Textbook.
+    # 	"""
+    # 	queryset = Textbook.objects.all()
+    # 	serializer_class = TextbookSerializer
+    # 	pagination_class = ResultsSetPagination
 
-# 	def delete(self, request, pk, format=None):
-# 		course = self.get_object(pk)
-# 		course.delete()
-# 		return Response(status=status.HTTP_204_NO_CONTENT)
+    # 	filter_backends = [DjangoFilterBackend]
+    # 	filterset_fields = ['subject', 'branch', 'course', 'year',]
 
+    # 	def post(self, request, format=None):
+    # 		serializer = TextbookSerializer(data=request.data)
+    # 		if serializer.is_valid():
+    # 			serializer.save()
+    # 			return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-# """  Textbook  """
+    # 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# class TextbookList(ListAPIView):
-# 	"""
-# 	List all Textbooks [GET] or create a new Textbook.
-# 	"""
-# 	queryset = Textbook.objects.all()
-# 	serializer_class = TextbookSerializer
-# 	pagination_class = ResultsSetPagination
+    # class TextbookDetail(APIView):
+    # 	"""
+    # 	Retrieve, update or delete a snippet instance.
+    # 	"""
+    # 	def get_object(self, pk):
+    # 		try:
+    # 			return Textbook.objects.get(pk=pk)
+    # 		except Textbook.DoesNotExist:
+    # 			raise Http404
 
-# 	filter_backends = [DjangoFilterBackend]
-# 	filterset_fields = ['subject', 'branch', 'course', 'year',]
+    # 	def get(self, request, pk, format=None):
+    # 		textbook = self.get_object(pk)
+    # 		serializer = TextbookSerializer(textbook)
+    # 		return Response(serializer.data)
 
-# 	def post(self, request, format=None):
-# 		serializer = TextbookSerializer(data=request.data)
-# 		if serializer.is_valid():
-# 			serializer.save()
-# 			return Response(serializer.data, status=status.HTTP_201_CREATED)
+    # 	def put(self, request, pk, format=None):
+    # 		textbook = self.get_object(pk)
+    # 		serializer = TextbookSerializer(textbook, data=request.data)
+    # 		if serializer.is_valid():
+    # 			serializer.save()
+    # 			return Response(serializer.data)
+    # 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    # 	def delete(self, request, pk, format=None):
+    # 		textbook = self.get_object(pk)
+    # 		textbook.delete()
+    # 		return Response(status=status.HTTP_204_NO_CONTENT)
 
+    # # """Lectures"""
+    # class LectureList(ListCreateAPIView):
+    # 	queryset = Lecture.objects.all()
+    # 	serializer_class = LectureSerializer
+    # 	pagination_class = ResultsSetPagination
 
-# class TextbookDetail(APIView):
-# 	"""
-# 	Retrieve, update or delete a snippet instance.
-# 	"""
-# 	def get_object(self, pk):
-# 		try:
-# 			return Textbook.objects.get(pk=pk)
-# 		except Textbook.DoesNotExist:
-# 			raise Http404
+    # class DayList(ListCreateAPIView):
+    # 	queryset = Day.objects.all()
+    # 	serializer_class = DaySerializer
+    # 	pagination_class = ResultsSetPagination
 
-# 	def get(self, request, pk, format=None):
-# 		textbook = self.get_object(pk)
-# 		serializer = TextbookSerializer(textbook)
-# 		return Response(serializer.data)
+    # class TimetableList(ListCreateAPIView):
+    # 	queryset = Timetable.objects.all()
+    # 	serializer_class = TimetableSerializer
+    # 	pagination_class = ResultsSetPagination
 
-# 	def put(self, request, pk, format=None):
-# 		textbook = self.get_object(pk)
-# 		serializer = TextbookSerializer(textbook, data=request.data)
-# 		if serializer.is_valid():
-# 			serializer.save()
-# 			return Response(serializer.data)
-# 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    # class PortionList(ListCreateAPIView):
+    # 	queryset = Portion.objects.all()
+    # 	serializer_class = PortionSerializer
+    # 	pagination_class = ResultsSetPagination
 
-# 	def delete(self, request, pk, format=None):
-# 		textbook = self.get_object(pk)
-# 		textbook.delete()
-# 		return Response(status=status.HTTP_204_NO_CONTENT)
+    # 	filter_backends = [DjangoFilterBackend]
+    # 	filterset_fields = ['subject', 'college',]
 
+    # class PortionDetail(RetrieveUpdateDestroyAPIView):
+    # 	queryset = Portion.objects.all()
+    # 	serializer_class = PortionSerializer
 
-# # """Lectures"""
-# class LectureList(ListCreateAPIView):
-# 	queryset = Lecture.objects.all()
-# 	serializer_class = LectureSerializer
-# 	pagination_class = ResultsSetPagination
+    # class MaterialList(ListCreateAPIView):
+    # 	"""
+    # 	List all Materials [GET]
+    # 	"""
+    # 	queryset = Material.objects.all()
+    # 	serializer_class = MaterialSerializer
+    # 	pagination_class = ResultsSetPagination
 
+    # 	filter_backends = [DjangoFilterBackend]
+    # 	filterset_fields = ['subject', 'branch', 'course', 'year',]
 
-# class DayList(ListCreateAPIView):
-# 	queryset = Day.objects.all()
-# 	serializer_class = DaySerializer
-# 	pagination_class = ResultsSetPagination
+    # class GsheettableList(ListCreateAPIView):
+    # 	"""
+    # 	List all Materials [GET]
+    # 	"""
+    # 	queryset = Gsheettable.objects.all()
+    # 	serializer_class = GsheettableSerializer
+    # 	pagination_class = ResultsSetPagination
 
+    # 	filter_backends = [DjangoFilterBackend]
+    # 	filterset_fields = ['college', 'branch', 'year',]
 
-# class TimetableList(ListCreateAPIView):
-# 	queryset = Timetable.objects.all()
-# 	serializer_class = TimetableSerializer
-# 	pagination_class = ResultsSetPagination
+    # class CollegeList(ListCreateAPIView):
+    # 	"""
+    # 	List all Materials [GET]
+    # 	"""
+    # 	queryset = College.objects.all()
+    # 	serializer_class = CollegeSerializer
+    # 	pagination_class = ResultsSetPagination
 
+    # 	filter_backends = [DjangoFilterBackend,  filters.SearchFilter, ]
+    # 	filterset_fields = ['college_code',]
+    # 	search_fields = ['name', 'college_code', 'location', 'description',]
 
-# class PortionList(ListCreateAPIView):
-# 	queryset = Portion.objects.all()
-# 	serializer_class = PortionSerializer
-# 	pagination_class = ResultsSetPagination
+    # class FacultyList(ListCreateAPIView):
+    # 	"""
+    # 	List all Materials [GET]
+    # 	"""
+    # 	queryset = Faculty.objects.all()
+    # 	serializer_class = FacultySerializer
+    # 	pagination_class = ResultsSetPagination
 
-# 	filter_backends = [DjangoFilterBackend]
-# 	filterset_fields = ['subject', 'college',]
-
-
-# class PortionDetail(RetrieveUpdateDestroyAPIView):
-# 	queryset = Portion.objects.all()
-# 	serializer_class = PortionSerializer
-
-
-# class MaterialList(ListCreateAPIView):
-# 	"""
-# 	List all Materials [GET]
-# 	"""
-# 	queryset = Material.objects.all()
-# 	serializer_class = MaterialSerializer
-# 	pagination_class = ResultsSetPagination
-
-# 	filter_backends = [DjangoFilterBackend]
-# 	filterset_fields = ['subject', 'branch', 'course', 'year',]
-
-
-# class GsheettableList(ListCreateAPIView):
-# 	"""
-# 	List all Materials [GET]
-# 	"""
-# 	queryset = Gsheettable.objects.all()
-# 	serializer_class = GsheettableSerializer
-# 	pagination_class = ResultsSetPagination
-
-# 	filter_backends = [DjangoFilterBackend]
-# 	filterset_fields = ['college', 'branch', 'year',]
-
-
-# class CollegeList(ListCreateAPIView):
-# 	"""
-# 	List all Materials [GET]
-# 	"""
-# 	queryset = College.objects.all()
-# 	serializer_class = CollegeSerializer
-# 	pagination_class = ResultsSetPagination
-
-# 	filter_backends = [DjangoFilterBackend,  filters.SearchFilter, ]
-# 	filterset_fields = ['college_code',]
-# 	search_fields = ['name', 'college_code', 'location', 'description',]
-
-
-# class FacultyList(ListCreateAPIView):
-# 	"""
-# 	List all Materials [GET]
-# 	"""
-# 	queryset = Faculty.objects.all()
-# 	serializer_class = FacultySerializer
-# 	pagination_class = ResultsSetPagination
-
-# 	filter_backends = [DjangoFilterBackend, filters.SearchFilter,]
-# 	filterset_fields = ['branch', 'is_teaching_staff', 'college',]
-# 	search_fields = ['name', 'designation',]
+    # 	filter_backends = [DjangoFilterBackend, filters.SearchFilter,]
+    # 	filterset_fields = ['branch', 'is_teaching_staff', 'college',]
+    # 	search_fields = ['name', 'designation',]
