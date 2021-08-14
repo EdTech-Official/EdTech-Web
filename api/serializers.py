@@ -22,7 +22,7 @@ from content.models import *
 
 class SubjectListingField(serializers.RelatedField):
     def to_representation(self, value):
-        return f"{value.subject_code}"
+        return [value.subject_code, value.name]
 
 
 class BranchesListingField(serializers.RelatedField):
@@ -170,6 +170,14 @@ class FacultySerializer(serializers.ModelSerializer):
 
 
 class TextbookSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(
+        view_name='textbook-detail',
+        lookup_field='pk'
+    )
+    subjects = SubjectListingField(many=True, read_only=True)
+    branches = BranchesListingField(many=True, read_only=True)
+    years = YearsListingField(many=True, read_only=True)
+
     class Meta:
         model = Textbook
         fields = '__all__'

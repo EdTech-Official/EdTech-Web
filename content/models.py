@@ -1,3 +1,4 @@
+from college.models import *
 from django.db import models
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
@@ -19,6 +20,25 @@ class Contributor(models.Model):
 def pre_save_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
         instance.slug = unique_slug_generator(instance)
+
+
+class Textbook(models.Model):
+
+    title = models.CharField(max_length=150)
+    author = models.CharField(max_length=100)
+    link = models.URLField(max_length=250)
+    is_affiliate_link = models.BooleanField(default=False)
+    cover_image = models.URLField(max_length=200)
+    colleges = models.ManyToManyField(
+        College, related_name="textbooks", blank=True, null=True)
+    subjects = models.ManyToManyField(
+        Subject, related_name="textbooks")
+    branches = models.ManyToManyField(
+        Branch, related_name="textbooks", blank=True, null=True)
+    years = models.ManyToManyField(Year, related_name="textbooks")
+
+    def __str__(self):
+        return self.title
 
 
 # class Material(models.Model):

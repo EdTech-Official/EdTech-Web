@@ -1,7 +1,7 @@
 from os import name
-from api.models import Branch, College, Textbook
 import random
 import json
+import csv
 import datetime
 import os
 
@@ -185,31 +185,38 @@ def populate_users(UserClass, jsonFilePath):
 
 
 
-def populate_textbooks(TextbookClass, branches, courses, subjects, users, jsonFilePath):
-    """./util/textbooks_data.json"""
-    json_data = open(jsonFilePath, 'r')
-    dict_data = json.load(json_data)
-    YEARS = [
-        'FIRST',
-        'SECOND',
-        'THIRD',
-        'FOURTH',
-    ]
+def populate_textbooks(TextbookClass, CollegeClass, SubjectClass, BranchClass, YearClass, csvFilePath='./util/csv/textbook/textbooks.csv'):
+    """./util/csv/textbook/textbooks.csv
+    command:
+        populate_textbooks(Textbook, College, Subject, Branch, Year)
+    """
+    csv_data = open(csvFilePath, 'r')
+    fieldnames = [ "id", "title", "author", "amazon_link", "is_affiliate_link", "cover_image", "college", "subject", "branch", "year"]
+    csv_reader = csv.DictReader(csv_data, fieldnames=fieldnames)
 
-    for book in dict_data:
+    for book in list(csv_reader)[1:]:
         textbook = TextbookClass(
             title=book['title'],
-            # author = book['author'],
-            link="https://drive.google.com/file/d/1MewBpDc6Y5_9-ZluGARQG04T75xhVjzV/view",
-            # cover_image = book['cover_image'],
-            subject=random.choice(subjects.objects.all()),
-            branch=random.choice(branches.objects.all()),
-            course=random.choice(courses.objects.all()),
-            year=random.choice(YEARS),
-            posted_by=random.choice(users.objects.all()),
-            description=book['description'],
+            author = book['author'],
+            link=book['amazon_link'],
+            is_affiliate_link = (book['is_affiliate_link'] == '1'),
+            cover_image = book['cover_image']
         )
         textbook.save()
+
+        for college in book['college'].split(';'):
+            textbook.colleges.add(CollegeClass.objects.get(college_code=college))
+
+        for subject in book['subject'].split(';'):
+            textbook.subjects.add(*SubjectClass.objects.filter(subject_code=subject))
+
+        for branch in book['branch'].split(';'):
+            textbook.branches.add(*BranchClass.objects.filter(branch_code=branch))
+
+        for year in book['year'].split(';'):
+            textbook.years.add(*YearClass.objects.filter(year=year))
+
+    csv_data.close()
 
 
 def populate_lectures(LectureClass, SubjectClass, jsonFilePath):
@@ -279,3 +286,4 @@ def populate_portion_list_for_nitgoa(Portion, Subject, College):
             link="https://drive.google.com/file/d/1MewBpDc6Y5_9-ZluGARQG04T75xhVjzV/view"
         )
         portion.save()
+
