@@ -51,33 +51,6 @@ MODELS:
 """
 
 
-class Textbook(models.Model):
-    YEARS = [
-        ('FIRST', 'FIRST'),
-        ('SECOND', 'SECOND'),
-        ('THIRD', 'THIRD'),
-        ('FOURTH', 'FOURTH'),
-    ]
-
-    title = models.CharField(max_length=150)
-    author = models.CharField(max_length=100)
-    link = models.URLField(max_length=250)
-    is_affiliate = models.BooleanField(default=False)
-    cover_image = models.URLField(max_length=200)
-    college = models.ForeignKey(
-        College, on_delete=models.DO_NOTHING, related_name="textbooks", blank=True, null=True)
-    subject = models.ForeignKey(
-        Subject, on_delete=models.DO_NOTHING, related_name="textbooks")
-    branch = models.ForeignKey(
-        Branch, on_delete=models.DO_NOTHING, related_name="textbooks", blank=True, null=True)
-    # course = models.ForeignKey(
-    #     Course, on_delete=models.DO_NOTHING, related_name="textbooks", blank=True, null=True)
-    year = models.CharField(max_length=8, choices=YEARS, default='FIRST')
-
-    def __str__(self):
-        return self.title
-
-
 # class Portion(models.Model):
 #     subject = models.ForeignKey(Subject, on_delete=models.DO_NOTHING, related_name="portions")
 #     college = models.ForeignKey(College, on_delete=models.DO_NOTHING, related_name="portions")

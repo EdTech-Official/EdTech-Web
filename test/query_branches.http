@@ -19,7 +19,7 @@ Content-Type: application/json
 
 ### for detail view
 
-GET http://127.0.0.1:8000/api/branch-detail/8/ HTTP/1.1
+GET https://edtech-dj.herokuapp.com/api/college-detail/NITG/ HTTP/1.1
 
 ###
 
