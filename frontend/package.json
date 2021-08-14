@@ -26,7 +26,7 @@
   "scripts": {
     "deploy": "yarn run build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp build/favicon.ico build/site.webmanifest build/android-chrome-512x512.png build/android-chrome-192x192.png build/static/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
