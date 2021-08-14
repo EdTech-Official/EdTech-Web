@@ -42,11 +42,11 @@ const Portion = () => {
                         className="gd-fs-n gd-fs-elm"
                         style={{ marginLeft: "10px" }}
                       >
-                        {subject}
+                        {subject[0]}
                       </span>
                     </div>
                   </a>
-                  <span className="tooltip" >{subject.name}</span>
+                  <span className="tooltip" >{subject[1]}</span>
                 </random>
               );
             });
