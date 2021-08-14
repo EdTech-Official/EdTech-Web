@@ -45,7 +45,7 @@ const NavBar = () => {
     elems.forEach((el) => {
       el.classList.remove("active");
     });
-    e.nativeEvent.path[1].className = "nav_link active";
+    e.nativeEvent.target.parentNode.className = "nav_link active";  
   }
 
   function handleClick(e) {
@@ -59,7 +59,7 @@ const NavBar = () => {
   }
 
   return (
-    <div className="l_navbar nav_list" id="navbar">
+    <div className="l_navbar" id="navbar">
       <div className="logo_content">
         <div className="logo" as={Link} to="/creator">
           <i className="bx bxs-backpack" as={Link} to="/creator"></i>

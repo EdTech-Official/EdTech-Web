@@ -7,43 +7,28 @@ import {
   useParams,
 } from "react-router-dom";
 import { AuthContext } from "../../Auth";
+import useSWR from "swr";
 const axios = require("axios");
 
 const Notes = () => {
   const { currentUserData } = useContext(AuthContext);
-
-  const [subjects, setSubjects] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [books, setBooks] = useState([]);
   const [bookLoad, setBookLoad] = useState(true);
   const { url } = useRouteMatch();
   const [storedSubject, setStoredSubject] = useState("DEFAULT");
 
-  const getSubjects = () => {
-    axios
-      .get(
-        `${process.env.REACT_APP_API_URL}subject-list/${currentUserData[0].value}/`,
-        {
-          params: {
-            page: 1,
-            page_size: 100,
-            year: currentUserData[2].value,
-            branch__branch_code: currentUserData[1].value,
-          },
-        }
-      )
-      .then((res) => {
-        const results = res.data.results;
-        setSubjects(results);
-        setLoading(false);
-      });
-    return;
-  };
+  const { data, error } = useSWR(
+    `${process.env.REACT_APP_API_URL}/api/subject-list/?years__year=${currentUserData[2].value}&branches__branch_code=${currentUserData[1].value}&colleges__college_code=${currentUserData[0].value}&page=1&page_size=100&fields=subject_code,name`,
+    {revalidateOnFocus: false}
+  );
 
-  useEffect(() => {
-    getSubjects();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  if (error) {
+    return <div className="main_content_body">Error while Fetching Data...</div>;
+  }
+
+  if(!data){
+    return <div className="main_content_body" >Loading...</div>
+  }
 
   const getBooks = (key) => {
     axios
@@ -166,18 +151,6 @@ const Notes = () => {
 
   return (
     <div className="main_content_body">
-      {loading ? (
-        <h1
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            height: "inherit",
-            alignItems: "center",
-          }}
-        >
-          Loading.....
-        </h1>
-      ) : (
         <div>
           {
             <Router>
@@ -186,21 +159,24 @@ const Notes = () => {
                   SUBJECTS
                   <hr style={{ marginTop: "7px" }} />
                 </h6>
-                {subjects.map((subject) => (
-                  <Link
-                    to={`${url}/${subject.subject_code}`}
-                    className="gd-fs-elm"
-                  >
-                    <div className="gd-fs" key={subject.subject_code}>
-                      <i className="bx bxs-folder"></i>
-                      <span
-                        className="gd-fs-n gd-fs-elm"
-                        style={{ marginLeft: "10px" }}
-                      >
-                        {subject.subject_code}
-                      </span>
-                    </div>
-                  </Link>
+                {data.results.map((subject) => (
+                  <random className="gd-fs-elm">
+                    <Link
+                      to={`${url}/${subject.subject_code}`}
+                      className="gd-fs-elm"
+                    >
+                      <div className="gd-fs" key={subject.subject_code}>
+                        <i className="bx bxs-folder"></i>
+                        <span
+                          className="gd-fs-n gd-fs-elm"
+                          style={{ marginLeft: "10px" }}
+                        >
+                          {subject.subject_code}
+                        </span>
+                      </div>
+                    </Link>
+                  <span className="tooltip" >{subject.name}</span>
+                  </random>
                 ))}
               </div>
               <Route path={`${url}/:subjectCode`}>
@@ -211,7 +187,6 @@ const Notes = () => {
             </Router>
           }
         </div>
-      )}
     </div>
   );
 };

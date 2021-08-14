@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -7,76 +7,52 @@ import {
   useParams,
 } from "react-router-dom";
 import { AuthContext } from "../../Auth";
-const axios = require("axios");
+import useSWR from "swr";
 
 const Recommendation = () => {
   const { currentUserData } = useContext(AuthContext);
 
-  const [subjects, setSubjects] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [books, setBooks] = useState([]);
   const [bookLoad, setBookLoad] = useState(true);
   const { path, url } = useRouteMatch();
   const [storedSubject, setStoredSubject] = useState("DEFAULT");
 
-  const getSubjects = () => {
-    axios
-      .get(
-        `${process.env.REACT_APP_API_URL}subject-list/${currentUserData[0].value}/`,
-        {
-          params: {
-            page: 1,
-            page_size: 100,
-            year: currentUserData[2].value,
-            branch__branch_code: currentUserData[1].value,
-          },
-        }
-      )
-      .then((res) => {
-        const results = res.data.results;
-        setSubjects(results);
-        setLoading(false);
-      });
-    return;
-  };
+  const { data, error } = useSWR(
+    `${process.env.REACT_APP_API_URL}/api/subject-list/?years__year=${currentUserData[2].value}&branches__branch_code=${currentUserData[1].value}&colleges__college_code=${currentUserData[0].value}&page=1&page_size=100&fields=subject_code,name`,
+    {revalidateOnFocus: false}
+  );
 
-  useEffect(() => {
-    getSubjects();
-  }, []);
+  if (error) {
+    return <div className="main_content_body">Error while Fetching Data...</div>;
+  }
+
+  if(!data){
+    return <div className="main_content_body" >Loading...</div>
+  }
 
   return (
     <div className="main_content_body">
-      {loading ? (
-        <h1
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            height: "inherit",
-            alignItems: "center",
-          }}
-        >
-          Loading.....
-        </h1>
-      ) : (
         <div id="textbook-block">
           <h6 style={{ margin: "15px 20px", color: "rgb(32 31 33)" }}>
             SUBJECTS
             <hr style={{ marginTop: "7px" }} />
           </h6>
-          {subjects.map((subject) => (
-            <div className="gd-fs" key={subject.subject_code}>
-              <i className="bx bxs-folder"></i>
-              <span
-                className="gd-fs-n"
-                style={{ marginLeft: "10px" }}
-                className="gd-fs-elm"
-              >
-                {subject.subject_code}
-              </span>
-            </div>
+          {data.results.map((subject) => (
+            <random className="gd-fs-elm">
+              <div className="gd-fs" key={subject.subject_code}>
+                <i className="bx bxs-folder"></i>
+                <span
+                  className="gd-fs-n"
+                  style={{ marginLeft: "10px" }}
+                  className="gd-fs-elm"
+                >
+                  {subject.subject_code}
+                </span>
+              </div>
+              <span className="tooltip" >{subject.name}</span>
+            </random>
           ))}
         </div>
-      )}
     </div>
   );
 
