@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { AuthContext } from "../Auth";
 import { firebaseApp } from "../firebase";
 import logo from "../whitelogo.png";
 
 const NavBar = () => {
+  
+  let history = useHistory();
+
   const {
     setCurrentUser,
     setGetFireAuthUser,
@@ -34,6 +37,7 @@ const NavBar = () => {
         setSelectedBranch(null);
         setSelectedYear(null);
       });
+    history.push("/");
   };
 
   function colorLink(e) {
