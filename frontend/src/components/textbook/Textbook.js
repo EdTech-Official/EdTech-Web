@@ -109,21 +109,24 @@ const Textbook = () => {
                   <hr style={{ marginTop: "7px" }} />
                 </h6>
                 {data.results.map((subject) => (
-                  <Link
-                    to={`${url}/${subject.subject_code}`}
-                    className="gd-fs-elm"
-                    key={subject.subject_code}
-                  >
-                    <div className="gd-fs">
-                      <i className="bx bxs-folder"></i>
-                      <span
-                        className="gd-fs-n gd-fs-elm"
-                        style={{ marginLeft: "10px" }}
-                      >
-                        {subject.subject_code}
-                      </span>
-                    </div>
-                  </Link>
+                  <random className="gd-fs-elm">
+                    <Link
+                      to={`${url}/${subject.subject_code}`}
+                      // className="gd-fs-elm"
+                      key={subject.subject_code}
+                    >
+                      <div className="gd-fs">
+                        <i className="bx bxs-folder"></i>
+                        <span
+                          className="gd-fs-n gd-fs-elm"
+                          style={{ marginLeft: "10px" }}
+                        >
+                          {subject.subject_code}
+                        </span>
+                      </div>
+                    </Link>
+                    <span className="tooltip" >{subject.name}</span>
+                  </random>
                 ))}
               </div>
               <Route path={`${url}/:subjectCode`}>

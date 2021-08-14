@@ -38,16 +38,19 @@ const Recommendation = () => {
             <hr style={{ marginTop: "7px" }} />
           </h6>
           {data.results.map((subject) => (
-            <div className="gd-fs" key={subject.subject_code}>
-              <i className="bx bxs-folder"></i>
-              <span
-                className="gd-fs-n"
-                style={{ marginLeft: "10px" }}
-                className="gd-fs-elm"
-              >
-                {subject.subject_code}
-              </span>
-            </div>
+            <random className="gd-fs-elm">
+              <div className="gd-fs" key={subject.subject_code}>
+                <i className="bx bxs-folder"></i>
+                <span
+                  className="gd-fs-n"
+                  style={{ marginLeft: "10px" }}
+                  className="gd-fs-elm"
+                >
+                  {subject.subject_code}
+                </span>
+              </div>
+              <span className="tooltip" >{subject.name}</span>
+            </random>
           ))}
         </div>
     </div>

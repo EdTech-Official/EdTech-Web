@@ -28,23 +28,26 @@ const Portion = () => {
           {data.results.map((subjects) => {
             return subjects.subjects.map((subject) => {
               return (
-                <a
-                  // href={`https://drive.google.com/file/d/${subjects.link}/view?usp=sharing`}
-                  href={`${subjects.link}`}
-                  target="_blank"
-                  key={subject}
-                  rel="noopener noreferrer"
-                >
-                  <div className="gd-fs gd-fs-elm">
-                    <i className="bx bxs-folder"></i>
-                    <span
-                      className="gd-fs-n gd-fs-elm"
-                      style={{ marginLeft: "10px" }}
-                    >
-                      {subject}
-                    </span>
-                  </div>
-                </a>
+                <random className="gd-fs-elm">
+                  <a
+                    // href={`https://drive.google.com/file/d/${subjects.link}/view?usp=sharing`}
+                    href={`${subjects.link}`}
+                    target="_blank"
+                    key={subject}
+                    rel="noopener noreferrer"
+                  >
+                    <div className="gd-fs gd-fs-elm">
+                      <i className="bx bxs-folder"></i>
+                      <span
+                        className="gd-fs-n gd-fs-elm"
+                        style={{ marginLeft: "10px" }}
+                      >
+                        {subject}
+                      </span>
+                    </div>
+                  </a>
+                  <span className="tooltip" >{subject.name}</span>
+                </random>
               );
             });
           })}
