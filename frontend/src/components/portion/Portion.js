@@ -17,6 +17,7 @@ const Portion = () => {
   if(!data){
     return <div className="main_content_body" >Loading...</div>
   }
+  
   return (
     <div className="main_content_body">
         <div id="textbook-block">
