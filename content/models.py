@@ -30,11 +30,11 @@ class Textbook(models.Model):
     is_affiliate_link = models.BooleanField(default=False)
     cover_image = models.URLField(max_length=200)
     colleges = models.ManyToManyField(
-        College, related_name="textbooks", blank=True)
+        College, related_name="textbooks")
     subjects = models.ManyToManyField(
-        Subject, related_name="textbooks", blank=True)
+        Subject, related_name="textbooks")
     branches = models.ManyToManyField(
-        Branch, related_name="textbooks", blank=True)
+        Branch, related_name="textbooks")
     years = models.ManyToManyField(Year, related_name="textbooks")
 
     def __str__(self):
