@@ -169,18 +169,18 @@ class FacultySerializer(serializers.ModelSerializer):
 #         fields = '__all__'
 
 
-class TextbookSerializer(serializers.ModelSerializer):
-    url = serializers.HyperlinkedIdentityField(
-        view_name='textbook-detail',
-        lookup_field='pk'
-    )
-    subjects = SubjectListingField(many=True, read_only=True)
-    branches = BranchesListingField(many=True, read_only=True)
-    years = YearsListingField(many=True, read_only=True)
+# class TextbookSerializer(serializers.ModelSerializer):
+#     url = serializers.HyperlinkedIdentityField(
+#         view_name='textbook-detail',
+#         lookup_field='pk'
+#     )
+#     subjects = SubjectListingField(many=True, read_only=True)
+#     branches = BranchesListingField(many=True, read_only=True)
+#     years = YearsListingField(many=True, read_only=True)
 
-    class Meta:
-        model = Textbook
-        fields = '__all__'
+#     class Meta:
+#         model = Textbook
+#         fields = '__all__'
 
 
 # class MaterialSerializer(serializers.ModelSerializer):

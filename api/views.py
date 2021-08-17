@@ -353,27 +353,27 @@ class ContributorDetail(RetrieveAPIView):
 #     search_fields = ['title', ]
 
 
-class TextbookList(ListAPIView, MultipleFieldLookupMixin):
-    """
-    List all textbooks [GET]
-    """
-    # return the list of subjects in a college
-    queryset = Textbook.objects.all()
-    serializer_class = TextbookSerializer
-    pagination_class = ResultsSetPagination
+# class TextbookList(ListAPIView, MultipleFieldLookupMixin):
+#     """
+#     List all textbooks [GET]
+#     """
+#     # return the list of subjects in a college
+#     queryset = Textbook.objects.all()
+#     serializer_class = TextbookSerializer
+#     pagination_class = ResultsSetPagination
 
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
-    filterset_fields = ['colleges__college_code', 'branches__branch_code',
-                        'subjects__subject_code', 'years__year']
-    search_fields = ['title', 'author',
-                     'subjects__name', 'subjects__subject_code',
-                     'branches__name', 'branches__branch_code']
+#     filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
+#     filterset_fields = ['colleges__college_code', 'branches__branch_code',
+#                         'subjects__subject_code', 'years__year']
+#     search_fields = ['title', 'author',
+#                      'subjects__name', 'subjects__subject_code',
+#                      'branches__name', 'branches__branch_code']
 
 
-class TextbookDetail(RetrieveAPIView):
-    queryset = Textbook.objects.all()
-    serializer_class = TextbookSerializer
-    lookup_field = 'pk'
+# class TextbookDetail(RetrieveAPIView):
+#     queryset = Textbook.objects.all()
+#     serializer_class = TextbookSerializer
+#     lookup_field = 'pk'
 
 
 # class MaterialList(ListAPIView, MultipleFieldLookupMixin):
@@ -397,8 +397,6 @@ class TextbookDetail(RetrieveAPIView):
 #     queryset = Material.objects.all()
 #     serializer_class = MaterialSerializer
 #     lookup_field = 'pk'
-
-
 
     # # function based views
 
