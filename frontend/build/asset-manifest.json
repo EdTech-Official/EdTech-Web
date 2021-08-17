@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.617fcfb3.chunk.css",
+    "main.css": "./static/css/main.c7517f89.chunk.css",
     "main.js": "./static/js/main.d4df1f61.chunk.js",
     "main.js.map": "./static/js/main.d4df1f61.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.80416030.js",
@@ -8,7 +8,7 @@
     "static/js/2.2bb4e364.chunk.js": "./static/js/2.2bb4e364.chunk.js",
     "static/js/2.2bb4e364.chunk.js.map": "./static/js/2.2bb4e364.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.617fcfb3.chunk.css.map": "./static/css/main.617fcfb3.chunk.css.map",
+    "static/css/main.c7517f89.chunk.css.map": "./static/css/main.c7517f89.chunk.css.map",
     "static/js/2.2bb4e364.chunk.js.LICENSE.txt": "./static/js/2.2bb4e364.chunk.js.LICENSE.txt",
     "static/media/EdTech.60341c97.svg": "./static/media/EdTech.60341c97.svg",
     "static/media/Waimakariri.3ea33f90.png": "./static/media/Waimakariri.3ea33f90.png",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.80416030.js",
     "static/js/2.2bb4e364.chunk.js",
-    "static/css/main.617fcfb3.chunk.css",
+    "static/css/main.c7517f89.chunk.css",
     "static/js/main.d4df1f61.chunk.js"
   ]
 }
