@@ -183,6 +183,20 @@ class TextbookSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class MaterialSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(
+        view_name='material-detail',
+        lookup_field='pk'
+    )
+    subjects = SubjectListingField(many=True, read_only=True)
+    branches = BranchesListingField(many=True, read_only=True)
+    years = YearsListingField(many=True, read_only=True)
+
+    class Meta:
+        model = Material
+        fields = '__all__'
+
+
 # class MaterialSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = Material

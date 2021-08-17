@@ -41,30 +41,30 @@ class Textbook(models.Model):
         return self.title
 
 
-# class Material(models.Model):
-#     title = models.CharField(max_length=150)
-#     link = models.URLField(max_length=200)
-#     contributors = models.ManyToManyField(
-#         Contributor, on_delete=models.DO_NOTHING, related_name="materials", blank=True, null=True)
-#     colleges = models.ForeignKey(
-#         College, on_delete=models.DO_NOTHING, related_name="materials", blank=True, null=True)
-#     subjectes = models.ForeignKey(
-#         Subject, on_delete=models.DO_NOTHING, related_name="materials", blank=True, null=True)
-#     branches = models.ForeignKey(
-#         Branch, on_delete=models.DO_NOTHING, related_name="materials", blank=True, null=True)
-#     years = models.CharField(max_length=8, choices=YEARS, default='FIRST')
+class Material(models.Model):
+    title = models.CharField(max_length=150)
+    link = models.URLField(max_length=200)
+    contributors = models.ManyToManyField(
+        Contributor, related_name="materials", blank=True, null=True)
+    colleges = models.ManyToManyField(
+        College, related_name="materials", blank=True, null=True)
+    subjects = models.ManyToManyField(
+        Subject, related_name="materials", blank=True, null=True)
+    branches = models.ManyToManyField(
+        Branch, related_name="materials", blank=True, null=True)
+    years = models.ManyToManyField(Year, related_name="materials")
 
-#     def __str__(self):
-#         return self.title
+    def __str__(self):
+        return self.title
 
 
-# class Recommendation(models.Model):
-#     title = models.CharField(max_length=250)
-#     recommended_by_faculty = models.ForeignKey(
-#         Faculty, on_delete=models.DO_NOTHING, blank=True, null=True, related_name='recommendations')
-#     recommended_by_contributor = models.ForeignKey(
-#         Contributor, on_delete=models.DO_NOTHING, blank=True, null=True, related_name='recommendations')
-#     link = models.URLField(max_length=200)
+class Recommendation(models.Model):
+    title = models.CharField(max_length=250)
+    recommended_by_faculty = models.ManyToManyField(
+        Faculty, blank=True, null=True, related_name='recommendations')
+    recommended_by_contributor = models.ManyToManyField(
+        Contributor, blank=True, null=True, related_name='recommendations')
+    link = models.URLField(max_length=200)
 
-#     def __str__(self):
-#         return self.title
+    def __str__(self):
+        return self.title
