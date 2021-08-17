@@ -67,7 +67,6 @@ ROOT_URLCONF = 'edtech_dj.urls'
 # Initialized path for Static React File  ~Deep Shetye + 3 lines
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/build/static'),
-    os.path.join(BASE_DIR, 'frontend/build/images'),
 ]
 
 TEMPLATES = [
