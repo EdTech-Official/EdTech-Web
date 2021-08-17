@@ -30,41 +30,41 @@ class Textbook(models.Model):
     is_affiliate_link = models.BooleanField(default=False)
     cover_image = models.URLField(max_length=200)
     colleges = models.ManyToManyField(
-        College, related_name="textbooks", blank=True, null=True)
+        College, related_name="textbooks", blank=True)
     subjects = models.ManyToManyField(
-        Subject, related_name="textbooks")
+        Subject, related_name="textbooks", blank=True)
     branches = models.ManyToManyField(
-        Branch, related_name="textbooks", blank=True, null=True)
+        Branch, related_name="textbooks", blank=True)
     years = models.ManyToManyField(Year, related_name="textbooks")
 
     def __str__(self):
         return self.title
 
 
-class Material(models.Model):
-    title = models.CharField(max_length=150)
-    link = models.URLField(max_length=200)
-    contributors = models.ManyToManyField(
-        Contributor, related_name="materials", blank=True, null=True)
-    colleges = models.ManyToManyField(
-        College, related_name="materials", blank=True, null=True)
-    subjects = models.ManyToManyField(
-        Subject, related_name="materials", blank=True, null=True)
-    branches = models.ManyToManyField(
-        Branch, related_name="materials", blank=True, null=True)
-    years = models.ManyToManyField(Year, related_name="materials")
+# class Material(models.Model):
+#     title = models.CharField(max_length=150)
+#     link = models.URLField(max_length=200)
+#     contributors = models.ManyToManyField(
+#         Contributor, related_name="materials", blank=True, null=True)
+#     colleges = models.ManyToManyField(
+#         College, related_name="materials", blank=True, null=True)
+#     subjects = models.ManyToManyField(
+#         Subject, related_name="materials", blank=True, null=True)
+#     branches = models.ManyToManyField(
+#         Branch, related_name="materials", blank=True, null=True)
+#     years = models.ManyToManyField(Year, related_name="materials")
 
-    def __str__(self):
-        return self.title
+#     def __str__(self):
+#         return self.title
 
 
-class Recommendation(models.Model):
-    title = models.CharField(max_length=250)
-    recommended_by_faculty = models.ManyToManyField(
-        Faculty, blank=True, null=True, related_name='recommendations')
-    recommended_by_contributor = models.ManyToManyField(
-        Contributor, blank=True, null=True, related_name='recommendations')
-    link = models.URLField(max_length=200)
+# class Recommendation(models.Model):
+#     title = models.CharField(max_length=250)
+#     recommended_by_faculty = models.ManyToManyField(
+#         Faculty, blank=True, null=True, related_name='recommendations')
+#     recommended_by_contributor = models.ManyToManyField(
+#         Contributor, blank=True, null=True, related_name='recommendations')
+#     link = models.URLField(max_length=200)
 
-    def __str__(self):
-        return self.title
+#     def __str__(self):
+#         return self.title

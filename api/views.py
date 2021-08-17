@@ -376,27 +376,27 @@ class TextbookDetail(RetrieveAPIView):
     lookup_field = 'pk'
 
 
-class MaterialList(ListAPIView, MultipleFieldLookupMixin):
-    """
-    List all Materials [GET]
-    """
-    # return the list of subjects in a college
-    queryset = Material.objects.all()
-    serializer_class = MaterialSerializer
-    pagination_class = ResultsSetPagination
+# class MaterialList(ListAPIView, MultipleFieldLookupMixin):
+#     """
+#     List all Materials [GET]
+#     """
+#     # return the list of subjects in a college
+#     queryset = Material.objects.all()
+#     serializer_class = MaterialSerializer
+#     pagination_class = ResultsSetPagination
 
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
-    filterset_fields = ['colleges__college_code', 'branches__branch_code',
-                        'subjects__subject_code', 'years__year']
-    search_fields = ['title', 'author',
-                     'subjects__name', 'subjects__subject_code',
-                     'branches__name', 'branches__branch_code']
+#     filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
+#     filterset_fields = ['colleges__college_code', 'branches__branch_code',
+#                         'subjects__subject_code', 'years__year']
+#     search_fields = ['title', 'author',
+#                      'subjects__name', 'subjects__subject_code',
+#                      'branches__name', 'branches__branch_code']
 
 
-class MaterialDetail(RetrieveAPIView):
-    queryset = Material.objects.all()
-    serializer_class = MaterialSerializer
-    lookup_field = 'pk'
+# class MaterialDetail(RetrieveAPIView):
+#     queryset = Material.objects.all()
+#     serializer_class = MaterialSerializer
+#     lookup_field = 'pk'
 
 
 
