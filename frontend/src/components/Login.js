@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   auth,
   googleProvider,
@@ -7,6 +7,8 @@ import {
   twitterProvider,
   db,
 } from "../firebase";
+import axiosInstance from "../http";
+import { useHistory } from 'react-router-dom'
 import { FaFacebook, FaGithub, FaGooglePlus } from "react-icons/fa";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { AuthContext } from "../Auth";
@@ -16,6 +18,36 @@ const Login = () => {
     setCurrentUser,
     collegeOptions,
   } = useContext(AuthContext);
+
+  const history = useHistory();
+
+  const initialSignInFormData = Object.freeze({
+    email: '',
+    password: ''
+  })
+
+  const initialSignUpFormData = Object.freeze({
+    email: '',
+    password: '',
+    cpassword: ''
+  })
+
+  const [ signInFormData, updateSignInFormData ] = useState(initialSignInFormData);
+  const [ signUpFormData, updateSignUpFormData ] = useState(initialSignUpFormData);
+
+  const handleSignInChange = (e) => {
+    updateSignInFormData({
+      ...formData,
+      [e.target.name]: e.target.value.trim()
+    })
+  }
+
+  const handleSignUpChange = (e) => {
+    updateSignUpFormData({
+      ...formData,
+      [e.target.name]: e.target.value.trim()
+    })
+  }
 
   useEffect(() => {
     if(collegeOptions[0] === undefined){
@@ -34,6 +66,8 @@ const Login = () => {
   }, [])
 
   const handleSignIn = (key) => {
+    e.preventDefault();
+
     switch (key) {
       case 1:
         auth
@@ -88,29 +122,54 @@ const Login = () => {
           document.getElementById("sign-up-form")["password-input"].value ===
           document.getElementById("sign-up-form")["cpassword-input"].value
         ) {
-          auth
-            .createUserWithEmailAndPassword(
-              document.getElementById("sign-up-form")["email-input"].value,
-              document.getElementById("sign-up-form")["password-input"].value
-            )
-            .then((result) => {
-              var user = result.user;
-              setCurrentUser(user);
-            });
-          document.getElementById("sign-up-form").reset();
+
+          axiosInstance
+          .post(`user/create/`, {
+            email: formData.email,
+            user_name: formData.username,
+            password: formData.password,
+          })
+          .then((res) => {
+            // history.push('/');
+          });
+
+          // auth
+          //   .createUserWithEmailAndPassword(
+          //     document.getElementById("sign-up-form")["email-input"].value,
+          //     document.getElementById("sign-up-form")["password-input"].value
+          //   )
+          //   .then((result) => {
+          //     var user = result.user;
+          //     setCurrentUser(user);
+          //   });
+          // document.getElementById("sign-up-form").reset();
         }
         break;
 
       case 6:
-        auth
-          .signInWithEmailAndPassword(
-            document.getElementById("sign-in-form")["email-signin"].value,
-            document.getElementById("sign-in-form")["password-signin"].value
-          )
-          .then((result) => {
-            var user = result.user;
-            setCurrentUser(user);
+        // Sign In
+        axiosInstance
+          .post(`token/`, {
+            email: signInFormData.email,
+            password: signInFormData.password,
+          })
+          .then((res) => {
+            localStorage.setItem('access_token', res.data.access);
+            localStorage.setItem('refresh_token', res.data.refresh);
+            axiosInstance.defaults.headers['Authorization'] =
+              'JWT ' + localStorage.getItem('access_token');
+            history.push('/');
           });
+
+        // auth
+        //   .signInWithEmailAndPassword(
+        //     document.getElementById("sign-in-form")["email-signin"].value,
+        //     document.getElementById("sign-in-form")["password-signin"].value
+        //   )
+        //   .then((result) => {
+        //     var user = result.user;
+        //     setCurrentUser(user);
+        //   });
         // document.getElementById("sign-in-form").reset();
         break;
 
@@ -140,7 +199,9 @@ const Login = () => {
                   type="email"
                   placeholder="Email"
                   id="email-signin"
+                  name="email"
                   required
+                  onChange={handleSignInChange}
                 />
               </div>
 
@@ -150,7 +211,9 @@ const Login = () => {
                   type="password"
                   placeholder="Password"
                   id="password-signin"
+                  name="password"
                   required
+                  onChange={handleSignInChange}
                 />
               </div>
               <button
@@ -182,10 +245,21 @@ const Login = () => {
               <div className="input-field ">
                 <i className="bx bxs-user"></i>
                 <input
+                  type="name"
+                  placeholder="Name"
+                  id="name-input"
+                  required
+                  onChange={handleSignUpChange}
+                />
+              </div>
+              <div className="input-field ">
+                <i className="bx bxs-user"></i>
+                <input
                   type="email"
                   placeholder="Email"
                   id="email-input"
                   required
+                  onChange={handleSignUpChange}
                 />
               </div>
               <div className="input-field">
@@ -195,6 +269,7 @@ const Login = () => {
                   placeholder="Password"
                   id="password-input"
                   required
+                  onChange={handleSignUpChange}
                 />
               </div>
               <div className="input-field">
@@ -204,6 +279,7 @@ const Login = () => {
                   placeholder="Confirm Password"
                   id="cpassword-input"
                   required
+                  onChange={handleSignUpChange}
                 />
               </div>
               <input

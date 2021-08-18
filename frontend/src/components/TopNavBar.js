@@ -25,22 +25,31 @@ const TopNavBar = () => {
   } = useContext(AuthContext);
 
   const handleSignOut = () => {
-    firebaseApp
-      .auth()
-      .signOut()
-      .then(() => {
-        setCurrentUser([]);
-        setCurrentUserData([]);
-        setDataFetched(false);
-        setGetFireAuthUser(false);
-        setCollegeOptions([]);
-        setBranchOptions([]);
-        setYearOptions([]);
-        setSelectedCollege(null);
-        setSelectedBranch(null);
-        setSelectedYear(null);
-      });
+    const response = axiosInstance.post('user/logout/blacklist/', {
+			refresh_token: localStorage.getItem('refresh_token'),
+		});
+		localStorage.removeItem('access_token');
+		localStorage.removeItem('refresh_token');
+		axiosInstance.defaults.headers['Authorization'] = null;
+    setCurrentUser([]);
+    setCurrentUserData([]);
+    setDataFetched(false);
+    setGetFireAuthUser(false);
+    setCollegeOptions([]);
+    setBranchOptions([]);
+    setYearOptions([]);
+    setSelectedCollege(null);
+    setSelectedBranch(null);
+    setSelectedYear(null);
     history.push("/")
+
+
+
+    // firebaseApp
+    //   .auth()
+    //   .signOut()
+    //   .then(() => {
+    //   });
   };
 
   return (
