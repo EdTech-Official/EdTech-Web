@@ -39,9 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    # apps
     'api.apps.ApiConfig',
     'college.apps.CollegeConfig',
     'content.apps.ContentConfig',
+    'users.apps.UsersConfig',
+
     'django_filters',
     'corsheaders',
     'nested_admin',
@@ -64,10 +67,6 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'edtech_dj.urls'
 
-# Initialized path for Static React File  ~Deep Shetye + 3 lines
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'frontend/build/static'),
-]
 
 TEMPLATES = [
     {
@@ -138,6 +137,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Initialized path for Static React File  ~Deep Shetye + 3 lines
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'frontend/build/static'),
+]
 
 # For Heroku deployment || ref: 'http://whitenoise.evans.io/en/stable/django.html'  ~Deep Shetye + 1 lines
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -146,6 +149,9 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 20
 }
+
+# Custom user model
+AUTH_USER_MODEL = "users.User"
 
 
 # Default primary key field type
