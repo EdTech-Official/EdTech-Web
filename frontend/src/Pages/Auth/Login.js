@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
-import { facebookLogin } from "../../helpers/facebook.js";
+// import { facebookLogin } from "../../helpers/facebook.js";
 import { Link, Redirect } from 'react-router-dom';
 import { FaFacebook, FaGithub, FaGooglePlus } from "react-icons/fa";
 import { AiFillTwitterCircle } from "react-icons/ai";
@@ -46,9 +46,9 @@ const Login = ({login, signup, isAuthenticated}) => {
     switch (key) {
       case 1:
         // Facebook Login
-        const responseFacebook = async (response) => {
-          facebookLogin(response.accessToken);
-        };
+        // const responseFacebook = async (response) => {
+        //   facebookLogin(response.accessToken);
+        // };
         break;
 
       case 2:
@@ -58,7 +58,7 @@ const Login = ({login, signup, isAuthenticated}) => {
       case 3:
         // Google Login
         try {
-          const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/auth/o/google-oauth2/?redirect_uri=${process.env.REACT_APP_BASE_URL}/google`);
+          const res = await axios.get(`/auth/o/google-oauth2/?redirect_uri=${process.env.REACT_APP_BASE_URL}/google`);
           window.location.replace(res.data.authorization_url);
         } catch (err) {
           console.log(err)
