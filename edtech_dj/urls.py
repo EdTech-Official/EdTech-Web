@@ -15,22 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    # Added extra path referencing React Static HTML   ~ Deep Shetye + 1 line
-    path('', TemplateView.as_view(template_name='index.html')),
-    path('portion', TemplateView.as_view(template_name='index.html')),
-    path('textbook', TemplateView.as_view(template_name='index.html')),
-    path('notes', TemplateView.as_view(template_name='index.html')),
-    path('recommendation', TemplateView.as_view(template_name='index.html')),
-    path('faculty', TemplateView.as_view(template_name='index.html')),
-    path('about', TemplateView.as_view(template_name='index.html')),
-    path('user', TemplateView.as_view(template_name='index.html')),
 
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
     url(r'^nested_admin/', include('nested_admin.urls')),
-
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt')),
 ]
+
+urlpatterns += [re_path(r'^.*',
+                        TemplateView.as_view(template_name='index.html'))]

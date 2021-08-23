@@ -27,5 +27,7 @@ frontend/yarn-error.log*
 
 /django_env
 /venv
+# environment vairables
+.env
 # /test
 # /util
