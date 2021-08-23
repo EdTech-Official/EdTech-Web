@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
+from college.models import College, Branch, Year
 
 
 class CustomAccountManager(BaseUserManager):
@@ -55,3 +56,16 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    college = models.ForeignKey(
+        College, on_delete=models.DO_NOTHING, related_name='students', null=True, blank=True)
+    branch = models.ForeignKey(
+        Branch, on_delete=models.DO_NOTHING, null=True, blank=True)
+    year = models.ForeignKey(
+        Year, on_delete=models.DO_NOTHING, null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.user.email} Profile"
