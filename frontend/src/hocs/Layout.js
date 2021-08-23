@@ -4,6 +4,7 @@ import WebNavbar from '../Components/WebNavbar';
 import MobileNavbar from '../Components/MobileNavbar';
 import { connect } from 'react-redux';
 import queryString from 'query-string'
+
 import { check_authenticated, load_user, googleAuthenticate } from '../context/actions/auth';
 
 const Layout = (props) => {
@@ -34,4 +35,4 @@ const Layout = (props) => {
     )
 }
 
-export default connect(null, { check_authenticated, load_user, googleAuthenticate })(Layout)
+export default connect(null, {  check_authenticated, load_user, googleAuthenticate  })(Layout);

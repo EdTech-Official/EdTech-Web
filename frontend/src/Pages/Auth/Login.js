@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from 'axios';
 import { facebookLogin } from "../../helpers/facebook.js";
-import { Link, Redirect, useHistory } from 'react-router-dom';
-import FbLogin from 'react-facebook-login';
+import { Link, Redirect } from 'react-router-dom';
 import { FaFacebook, FaGithub, FaGooglePlus } from "react-icons/fa";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { connect } from 'react-redux';
@@ -107,11 +106,11 @@ const Login = ({login, signup, isAuthenticated}) => {
   };
 
   if(isAuthenticated) {
-    return <Redirect to='/' />
+    return <Redirect to='/timetable' />
   }
 
   if(accountCreated) {
-    return <Redirect to='/auth' />
+    return <Redirect to='/check-email' />
   }
 
   return (
@@ -129,7 +128,6 @@ const Login = ({login, signup, isAuthenticated}) => {
                   id="email-signin"
                   name="email"
                   required
-                  // value={email}
                   onChange={(e) => handleSignInChange(e)}
                 />
               </div>
@@ -153,15 +151,9 @@ const Login = ({login, signup, isAuthenticated}) => {
               <p className="social-text">Or Sign In with Social Platforms</p>
 
               <div className="social-media">
-                <FbLogin 
-                  className="social-icon" 
-                  onClick={() => handleSignIn(1)}
-                  appId="424762231818988"
-                  fields="name,email,picture"
-                  // callback={responseFacebook}
-                >
+                <div className="social-icon" onClick={() => handleSignIn(1)}>
                   <FaFacebook />
-                </FbLogin>
+                </div>
                 <div className="social-icon" onClick={() => handleSignIn(2)}>
                   <AiFillTwitterCircle />
                 </div>

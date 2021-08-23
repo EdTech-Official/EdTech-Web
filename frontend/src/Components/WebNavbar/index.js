@@ -1,13 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link , useHistory, } from "react-router-dom";
 import logo from "../../Assets/whitelogo.png";
 import { connect } from "react-redux";
 import { logout } from "../../context/actions/auth";
+import { withRouter } from 'react-router-dom';
+
 
 const WebNavbar = ({ logout, isAuthenticated }) => {
+  const history = useHistory();
+
+  const handleLogout = () => {
+    history.push('/');
+    logout();
+  }
 
   function colorLink(e) {
-    e.preventDefault();
     var elems = Array.from(document.getElementsByClassName("nav_link"));
     elems.forEach((el) => {
       el.classList.remove("active");
@@ -15,8 +22,7 @@ const WebNavbar = ({ logout, isAuthenticated }) => {
     e.nativeEvent.target.parentNode.className = "nav_link active";  
   }
 
-  function handleClick(e) {
-    e.preventDefault();
+  function handleClick() {
     document.getElementById("navbar").classList.toggle("show");
     if (document.getElementById("btn").classList.contains("bx-menu")) {
       document.getElementById("btn").classList.replace("bx-menu", "bx-x");
@@ -102,7 +108,7 @@ const WebNavbar = ({ logout, isAuthenticated }) => {
 
       <div
         className="nav_link log-out-btn nav_list"
-        onClick={logout}
+        onClick={handleLogout}
       >
         <i className="bx bx-log-out " style={{ color: "white" }}></i>
         <span className="nav_name">Log Out</span>
@@ -118,4 +124,4 @@ const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
 }) 
 
-export default connect(mapStateToProps, { logout })(WebNavbar);
+export default withRouter(connect(mapStateToProps, { logout })(WebNavbar));

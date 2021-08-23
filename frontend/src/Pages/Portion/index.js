@@ -11,7 +11,7 @@ const Portion = () => {
   // );
 
   return (
-    <h1>hi</h1>
+    <h1 style={{ marginLeft: '100px'}}>hi</h1>
   )
 
   // if (error) {

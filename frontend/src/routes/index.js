@@ -15,7 +15,7 @@ import CheckEmail from "../Pages/Auth/CheckEmail";
 
 export const routes = [
     {
-        path: "/auth",
+        path: "/",
         component: Login,
         title: "Auth",
         needsAuth: false,
@@ -28,7 +28,7 @@ export const routes = [
 
     },
     {
-        path: "/",
+        path: "/timetable",
         component: Timetable,
         title: "Timetable",
         needsAuth: true,
