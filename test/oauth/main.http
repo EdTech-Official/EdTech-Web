@@ -20,10 +20,10 @@ Content-Type: application/json
 
   
 ### user acivation/ user accoutn verification
-# http://localhost:8000/activate/Mg/aru65z-a1295f51e2707300bbf199a60fd66447
-@uid = Mg  
+# Mw/arucjz-be34f26542e3db87362ddbf9b11792aa
+@uid = Ng
 # these uid and token are obtained from email sent to the user
-@token = aru65z-a1295f51e2707300bbf199a60fd66447
+@token = arugit-bcde553240446c57fe3c167728320bc6
 POST {{hostname}}/auth/users/activation/ HTTP/1.1
 Content-Type: application/json
 
@@ -90,7 +90,7 @@ Content-Type: application/json
 
 
 ### to verify is authenticated
-@access_token_for_verification = {{login_after_pass_reset.response.body.$.access}}
+@access_token_for_verification = {{login.response.body.$.access}}
 # @access_token_for_verification = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI5NTQ4NTQ5LCJqdGkiOiJjM2E4ZmJiZjk4ZDA0NzYzYjE2M2JhMTcyZWQ0ZTZmZSIsInVzZXJfaWQiOjF9.N3k3Tkczwe86rZXrCtpnE5gmFCC9zHYAiaSGe5lSQ5A
 POST {{hostname}}/auth/jwt/verify/ HTTP/1.1
 Content-Type: application/json
@@ -112,11 +112,25 @@ GET {{hostname}}/auth/users/me/ HTTP/1.1
 Content-Type: application/json
 Authorization: JWT {{access_token_for_get_request}}
 
-# ### update user info
-# PUT  {{hostname}}/auth/users/me/ HTTP/1.1
-# Content-Type: application/json
-# Authorization: JWT {{access_token_for_get_request}}
+### update user info
+PUT {{hostname}}/auth/users/me/ HTTP/1.1
+Content-Type: application/json
+Authorization: JWT {{access_token_for_get_request}}
 
-# {
-#     "last_name": "Dhulapkar"
-# }
+{
+  "id": 3,
+  "email": "dhulapkarraj@gmail.com",
+  "first_name": "Raj",
+  "last_name": "Dhulapkar",
+  "password": "{{user_password}}"
+}
+
+
+### deleteing a user
+DELETE {{hostname}}/auth/users/me/ HTTP/1.1
+Content-Type: application/json
+Authorization: JWT {{access_token_for_get_request}}
+
+{
+    "current_password": "{{user_password}}"
+}

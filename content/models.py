@@ -22,23 +22,23 @@ def pre_save_receiver(sender, instance, *args, **kwargs):
         instance.slug = unique_slug_generator(instance)
 
 
-# class Textbook(models.Model):
+class Textbook(models.Model):
 
-#     title = models.CharField(max_length=150)
-#     author = models.CharField(max_length=100)
-#     link = models.URLField(max_length=250)
-#     is_affiliate_link = models.BooleanField(default=False)
-#     cover_image = models.URLField(max_length=200)
-#     colleges = models.ManyToManyField(
-#         College, related_name="textbooks")
-#     subjects = models.ManyToManyField(
-#         Subject, related_name="textbooks")
-#     branches = models.ManyToManyField(
-#         Branch, related_name="textbooks")
-#     years = models.ManyToManyField(Year, related_name="textbooks")
+    title = models.CharField(max_length=150)
+    author = models.CharField(max_length=100)
+    link = models.URLField(max_length=250)
+    is_affiliate_link = models.BooleanField(default=False)
+    cover_image = models.URLField(max_length=200)
+    colleges = models.ManyToManyField(
+        College, related_name="textbooks")
+    subjects = models.ManyToManyField(
+        Subject, related_name="textbooks")
+    branches = models.ManyToManyField(
+        Branch, related_name="textbooks")
+    years = models.ManyToManyField(Year, related_name="textbooks")
 
-#     def __str__(self):
-#         return self.title
+    def __str__(self):
+        return self.title
 
 
 # class Material(models.Model):
