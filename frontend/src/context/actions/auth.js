@@ -17,9 +17,10 @@ import {
     GOOGLE_AUTH_SUCCESS,
     GOOGLE_AUTH_FAIL,
     LOGOUT,
+    NEW_ACCESS_TOKEN_FETCHED,
 } from './types';
 
-export const load_user = (email, password) => async dispatch => {
+export const load_user = () => async dispatch => {
     if (localStorage.getItem('access')) {
         const config = {
             headers: {
@@ -100,15 +101,24 @@ export const check_authenticated = () => async dispatch => {
                 dispatch({
                     type: AUTHENTICATION_SUCCESS
                 });
-            } else {
+            }
+
+        } catch (error) {
+
+            const body = JSON.stringify({ refresh: localStorage.getItem('refresh')});
+
+            try {
+                const new_access_token = await axios.post(`/auth/jwt/refresh/`, body, config );
+
+                dispatch({
+                    type: NEW_ACCESS_TOKEN_FETCHED,
+                    payload: new_access_token.data
+                })
+            } catch (error) {     
                 dispatch({
                     type: AUTHENTICATION_FAIL
                 });
             }
-        } catch (error) {
-            dispatch({
-                type: AUTHENTICATION_FAIL
-            });
         }
 
     } else {

@@ -27,7 +27,7 @@ const ResetPasswordConfirm = ({ match, reset_password_confirm }) => {
     };
 
     if (requestSent) {
-        return <Redirect to='/auth' />
+        return <Redirect to='/' />
     }
 
     return (
