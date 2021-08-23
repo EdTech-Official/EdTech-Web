@@ -10,8 +10,11 @@ def list_objects(modelClass):
     for item in modelClass.objects.all():
         print(item)
 
+
 def populate_colleges(CollegeClass, jsonFilePath='./util/json/colleges.json'):
-    """./util/json/colleges.json"""
+    """./util/json/colleges.json
+        command: populate_colleges(College)
+    """
     json_data = open(jsonFilePath, 'r')
     dict_data = json.load(json_data)
 
@@ -21,7 +24,9 @@ def populate_colleges(CollegeClass, jsonFilePath='./util/json/colleges.json'):
 
 
 def populate_branch(BranchClass, College, jsonFilePath='./util/branches_data.json'):
-    """./util/branches_data.json"""
+    """./util/branches_data.json
+    command: populate_branch(Branch, College)
+    """
     json_data = open(jsonFilePath, 'r')
     dict_data = json.load(json_data)
 
@@ -68,34 +73,50 @@ else:
 """
 
 
+def populate_years(Year):
+    """
+    command:  populate_years(Year)
+    """
+    list_years = ['FIRST', 'SECOND', 'THIRD', 'FOURTH', ]
+    for item in list_years:
+        year = Year(year=item)
+        year.save()
+
+
 def populate_subjects(SubjectClass, CollegeClass, BranchClass, YearClass, jsonFilePath='./util/json/subjects/merged_subjects.json'):
     """./util/json/subjects/merged_subjects.json"""
     """json files dir: 
-         ./util/json/subjects     
+         ./util/json/subjects  
+         command : populate_subjects(Subject, College, Branch, Year)    
     """
     current_dir = os.getcwd()
     os.chdir('./util/json/subjects')
     for file in os.listdir():
         json_data = open(file, 'r')
         dict_data = json.load(json_data)
-       
+
         for item in dict_data:
-            instance = SubjectClass.objects.filter(subject_code=item['subject_code'])
+            instance = SubjectClass.objects.filter(
+                subject_code=item['subject_code'])
             if len(instance) == 0:
                 college = item['college']
                 college = CollegeClass.objects.get(college_code=college)
-                sub = SubjectClass(subject_code=item['subject_code'], name=item['name'])
+                sub = SubjectClass(
+                    subject_code=item['subject_code'], name=item['name'])
                 sub.save()
                 sub.colleges.add(college)
-                sub.branches.add(*BranchClass.objects.filter(branch_code=item['branch']))
+                sub.branches.add(
+                    *BranchClass.objects.filter(branch_code=item['branch']))
                 sub.years.add(*YearClass.objects.filter(year=item['year']))
             else:
                 college = item['college']
                 college = CollegeClass.objects.get(college_code=college)
                 instance = instance[0]
                 instance.colleges.add(college)
-                instance.branches.add(*BranchClass.objects.filter(branch_code=item['branch']))
-                instance.years.add(*YearClass.objects.filter(year=item['year']))
+                instance.branches.add(
+                    *BranchClass.objects.filter(branch_code=item['branch']))
+                instance.years.add(
+                    *YearClass.objects.filter(year=item['year']))
 
     os.chdir(current_dir)
 
@@ -112,7 +133,7 @@ def populate_portions(PortionsClass, SubjectClass, CollegeClass, BranchClass, Ye
     for file in os.listdir():
         json_data = open(file, 'r')
         dict_data = json.load(json_data)
-       
+
         for item in dict_data:
             instance = PortionsClass.objects.filter(link=item['portion_link'])
             if len(instance) == 0 or item['portion_link'] == '':
@@ -120,22 +141,26 @@ def populate_portions(PortionsClass, SubjectClass, CollegeClass, BranchClass, Ye
                 college = CollegeClass.objects.get(college_code=college)
                 por = PortionsClass(link=item['portion_link'])
                 por.save()
-                por.subjects.add(*SubjectClass.objects.filter(subject_code=item['subject_code']))
+                por.subjects.add(
+                    *SubjectClass.objects.filter(subject_code=item['subject_code']))
                 por.colleges.add(college)
-                por.branches.add(*BranchClass.objects.filter(branch_code=item['branch']))
+                por.branches.add(
+                    *BranchClass.objects.filter(branch_code=item['branch']))
                 por.years.add(*YearClass.objects.filter(year=item['year']))
 
             else:
                 college = item['college']
                 college = CollegeClass.objects.get(college_code=college)
                 instance = instance[0]
-                instance.subjects.add(*SubjectClass.objects.filter(subject_code=item['subject_code']))
+                instance.subjects.add(
+                    *SubjectClass.objects.filter(subject_code=item['subject_code']))
                 instance.colleges.add(college)
-                instance.branches.add(*BranchClass.objects.filter(branch_code=item['branch']))
-                instance.years.add(*YearClass.objects.filter(year=item['year']))
+                instance.branches.add(
+                    *BranchClass.objects.filter(branch_code=item['branch']))
+                instance.years.add(
+                    *YearClass.objects.filter(year=item['year']))
 
     os.chdir(current_dir)
-
 
 
 def populate_gtimetable(GtimetableClass, CollegeClass, BranchClass, YearClass, jsonFilePath='./util/json/gtimetable/NITG.json'):
@@ -154,8 +179,10 @@ def populate_gtimetable(GtimetableClass, CollegeClass, BranchClass, YearClass, j
             item['gsheet_src'] = item['gsheet_src'].split('/')[-2]
 
         sheet = GtimetableClass(gsheet_src=item['gsheet_src'],
-                                college=CollegeClass.objects.get(college_code='NITG'),
-                                branch=BranchClass.objects.get(branch_code=item['branch']),
+                                college=CollegeClass.objects.get(
+                                    college_code='NITG'),
+                                branch=BranchClass.objects.get(
+                                    branch_code=item['branch']),
                                 year=YearClass.objects.get(year=item['year'])
                                 )
         sheet.save()
@@ -184,34 +211,37 @@ def populate_users(UserClass, jsonFilePath):
         user.save()
 
 
-
 def populate_textbooks(TextbookClass, CollegeClass, SubjectClass, BranchClass, YearClass, csvFilePath='./util/csv/textbook/textbooks.csv'):
     """./util/csv/textbook/textbooks.csv
     command:
         populate_textbooks(Textbook, College, Subject, Branch, Year)
     """
     csv_data = open(csvFilePath, 'r')
-    fieldnames = [ "id", "title", "author", "amazon_link", "is_affiliate_link", "cover_image", "college", "subject", "branch", "year"]
+    fieldnames = ["id", "title", "author", "amazon_link", "is_affiliate_link",
+                  "cover_image", "college", "subject", "branch", "year"]
     csv_reader = csv.DictReader(csv_data, fieldnames=fieldnames)
 
     for book in list(csv_reader)[1:]:
         textbook = TextbookClass(
             title=book['title'],
-            author = book['author'],
+            author=book['author'],
             link=book['amazon_link'],
-            is_affiliate_link = (book['is_affiliate_link'] == '1'),
-            cover_image = book['cover_image']
+            is_affiliate_link=(book['is_affiliate_link'] == '1'),
+            cover_image=book['cover_image']
         )
         textbook.save()
 
         for college in book['college'].split(';'):
-            textbook.colleges.add(CollegeClass.objects.get(college_code=college))
+            textbook.colleges.add(
+                CollegeClass.objects.get(college_code=college))
 
         for subject in book['subject'].split(';'):
-            textbook.subjects.add(*SubjectClass.objects.filter(subject_code=subject))
+            textbook.subjects.add(
+                *SubjectClass.objects.filter(subject_code=subject))
 
         for branch in book['branch'].split(';'):
-            textbook.branches.add(*BranchClass.objects.filter(branch_code=branch))
+            textbook.branches.add(
+                *BranchClass.objects.filter(branch_code=branch))
 
         for year in book['year'].split(';'):
             textbook.years.add(*YearClass.objects.filter(year=year))
@@ -286,4 +316,3 @@ def populate_portion_list_for_nitgoa(Portion, Subject, College):
             link="https://drive.google.com/file/d/1MewBpDc6Y5_9-ZluGARQG04T75xhVjzV/view"
         )
         portion.save()
-

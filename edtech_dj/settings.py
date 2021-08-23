@@ -199,7 +199,7 @@ DJOSER = {
     # 'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': ['http://localhost:8000/google', 'http://localhost:8000/facebook'],
     'SERIALIZERS': {
         'user_create': 'users.serializers.UserCreateSerializer',
-        'user': 'users.serializers.UserCreateSerializer',
+        'user': 'users.serializers.UserSerializer',
         'current_user': 'users.serializers.UserCreateSerializer',
         'user_delete': 'djoser.serializers.UserDeleteSerializer',
     }
