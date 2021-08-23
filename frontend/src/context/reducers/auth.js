@@ -16,6 +16,7 @@ import {
     GOOGLE_AUTH_SUCCESS,
     GOOGLE_AUTH_FAIL,
     LOGOUT,
+    NEW_ACCESS_TOKEN_FETCHED,
 } from '../actions/types';
 
 const initialState = {
@@ -35,8 +36,16 @@ export default function(state = initialState, action) {
                 isAuthenticated: true
             }
 
+        case NEW_ACCESS_TOKEN_FETCHED:
+            localStorage.setItem('access', payload.access);
+            return {
+                ...state,
+                isAuthenticated: true
+            }
+
         case LOGIN_SUCCESS:
             localStorage.setItem('access', payload.access)
+            localStorage.setItem('refresh', payload.refresh)
             return {
                 ...state,
                 isAuthenticated: true,
@@ -57,6 +66,8 @@ export default function(state = initialState, action) {
             }
 
         case AUTHENTICATION_FAIL:
+            localStorage.removeItem('access');
+            localStorage.removeItem('refresh');
             return {
                 ...state,
                 isAuthenticated: false
