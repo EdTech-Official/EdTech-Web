@@ -12,8 +12,7 @@ Content-Type: application/json
 
 {
     "email": "{{user_email}}",
-    "first_name": "{{user_first_name}}",
-    "last_name": "{{user_last_name}}",
+    "name": "{{user_first_name}}",
     "password": "{{user_password}}",
     "re_password": "{{user_password}}" 
 }
@@ -120,6 +119,15 @@ Authorization: JWT {{access_token_for_get_request}}
 
 {
   "last_name": "Dhulapkar"                
+}
+
+### logout
+POST {{hostname}}/auth/jwt/blacklist/ HTTP/1.1
+Content-Type: application/json
+Authorization: JWT {{access_token_for_get_request}}
+
+{
+    "refresh_token": "{{refresh_token}}"
 }
 
 

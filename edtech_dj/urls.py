@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^nested_admin/', include('nested_admin.urls')),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.jwt')),
+    path('auth/', include('users.urls')),
 ]
 
 urlpatterns += [re_path(r'^.*',
