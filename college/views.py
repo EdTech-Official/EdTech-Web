@@ -1,3 +1,4 @@
+from django.http.response import Http404
 from rest_framework.generics import (ListAPIView,
                                      RetrieveAPIView)
 from rest_framework.response import Response
@@ -71,11 +72,6 @@ class BranchDetail(RetrieveAPIView):
 
 
 class SubjectList(ListAPIView):
-    """
-    List all subjects in a college [GET]
-    """
-    # return the list of subjects in a college
-    # queryset = Subject.objects.all()
     serializer_class = SubjectSerializer
     pagination_class = ResultsSetPagination
 
@@ -97,9 +93,87 @@ class SubjectList(ListAPIView):
 
 
 class SubjectDetail(RetrieveAPIView):
-    """
-    Retrieve a subject [GET]
-    """
     queryset = Subject.objects.all()
     serializer_class = SubjectSerializer
     lookup_field = 'pk'
+
+
+""" Portins views"""
+
+
+class PortionList(ListAPIView):
+    serializer_class = PortionSerializer
+
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
+    filterset_fields = ['years__year',
+                        'subjects__subject_code',
+                        'branches__branch_code', 'colleges__college_code']
+    search_fields = ['subjects__subject_code',
+                     'subjects__name', 'branches__branch_code']
+
+    def get_queryset(self, request):
+        portions = Portion.objects.filter(
+            colleges=request.user.profile.college, branches=request.user.profile.branch, years=request.user.profile.year)
+        return portions
+
+    def get(self, request, format=None):
+        portions = self.get_queryset(request)
+        serializer = PortionSerializer(
+            portions, many=True, context={'request': request})
+        return Response(serializer.data)
+
+
+class PortionDetail(RetrieveAPIView):
+    queryset = Portion.objects.all()
+    serializer_class = PortionSerializer
+    lookup_field = 'pk'
+
+
+""" Faculty views """
+
+
+class FacultyList(ListAPIView):
+    serializer_class = FacultySerializer
+    pagination_class = ResultsSetPagination
+
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
+    filterset_fields = ['branch__branch_code',
+                        'is_teaching_staff', 'college__college_code']
+    search_fields = ['name', 'branch__name',
+                     'branch__branch_code', 'designation']
+
+    def get_queryset(self, request):
+        faculty = Faculty.objects.filter(
+            college=request.user.profile.college, branch=request.user.profile.branch)
+        return faculty
+
+    def get(self, request, format=None):
+        faculty = self.get_queryset(request)
+        serializer = FacultySerializer(
+            faculty, many=True, context={'request': request})
+        return Response(serializer.data)
+
+
+class FacultyDetail(RetrieveAPIView):
+    queryset = Faculty.objects.all()
+    serializer_class = FacultySerializer
+    lookup_field = 'pk'
+
+
+# Gtimetable veiw
+class GtimetableDetail(RetrieveAPIView):
+
+    def get_object(self, request):
+        gtimetable = Gtimetable.objects.filter(
+            college=request.user.profile.college, branch=request.user.profile.branch, year=request.user.profile.year)
+
+        if len(gtimetable) == 0:
+            raise Http404
+        else:
+            return gtimetable.first()
+
+    def get(self, request, format=None):
+        profile = self.get_object(request)
+        serializer = GtimetableSerializer(
+            profile, many=False, context={'request': request})
+        return Response(serializer.data)

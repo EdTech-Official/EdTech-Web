@@ -5,6 +5,8 @@ from college import views as college_views
 
 urlpatterns = [
     path('', views.apiOverview, name="api-overview"),
+
+    # college views
     path('college/', college_views.CollegeList.as_view(), name='college-list'),
     path('college/<str:college_code>/',
          college_views.CollegeDetail.as_view(), name='college-detail'),
@@ -17,17 +19,18 @@ urlpatterns = [
     path('subject/<str:pk>/',
          college_views.SubjectDetail.as_view(), name="subject-detail"),
     path('portion/',
-         views.PortionList.as_view(), name="portion-list"),
+         college_views.PortionList.as_view(), name="portion-list"),
     path('portion/<str:pk>/',
-         views.PortionDetail.as_view(), name="portion-detail"),
+         college_views.PortionDetail.as_view(), name="portion-detail"),
     path('faculty/',
-         views.FacultyList.as_view(), name='faculty-list'),
+         college_views.FacultyList.as_view(), name='faculty-list'),
     path('faculty/<str:pk>/',
-         views.FacultyDetail.as_view(), name='faculty-detail'),
+         college_views.FacultyDetail.as_view(), name='faculty-detail'),
+    #     path('gtimetable/',
+    #          college_views.GtimetableList.as_view(), name="gtimetable-list"),
     path('gtimetable/',
-         views.GtimetableList.as_view(), name="gtimetable-list"),
-    path('gtimetable/<str:pk>/',
-         views.GtimetableDetail.as_view(), name="gtimetable-detail"),
+         college_views.GtimetableDetail.as_view(), name="gtimetable-detail"),
+
     path('contributor/', views.ContributorList.as_view(),
          name='contributor-list'),
     path('contributor/<slug:slug>/',

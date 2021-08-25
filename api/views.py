@@ -156,49 +156,6 @@ def apiOverview(request):
     return Response(api_urls)
 
 
-class PortionList(ListAPIView):
-    queryset = Portion.objects.all()
-    serializer_class = PortionSerializer
-
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
-    filterset_fields = ['years__year',
-                        'subjects__subject_code',
-                        'branches__branch_code', 'colleges__college_code']
-    search_fields = ['subjects__subject_code',
-                     'subjects__name', 'branches__branch_code']
-
-
-class PortionDetail(RetrieveAPIView):
-    queryset = Portion.objects.all()
-    serializer_class = PortionSerializer
-    lookup_field = 'pk'
-
-
-class FacultyList(ListAPIView):
-    """
-    List all faculty in a college [GET]
-    """
-    # return the list of faculty in a college
-    queryset = Faculty.objects.all()
-    serializer_class = FacultySerializer
-    pagination_class = ResultsSetPagination
-
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
-    filterset_fields = ['branch__branch_code',
-                        'is_teaching_staff', 'college__college_code']
-    search_fields = ['name', 'branch__name',
-                     'branch__branch_code', 'designation']
-
-
-class FacultyDetail(RetrieveAPIView):
-    """
-    Retrieve a Faculty of a year of a branch in a college [GET]
-    """
-    queryset = Faculty.objects.all()
-    serializer_class = FacultySerializer
-    lookup_field = 'pk'
-
-
 """ Gtimetable """
 
 

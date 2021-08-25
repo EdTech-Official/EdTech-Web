@@ -10,51 +10,10 @@ from college.models import *
 from content.models import *
 
 
-# class CourseSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Course
-#         fields = '__all__'
-
-
-"""related fields"""
-
-
-class SubjectListingField(serializers.RelatedField):
-    def to_representation(self, value):
-        return [value.subject_code, value.name]
-
-
-class BranchesListingField(serializers.RelatedField):
-    def to_representation(self, value):
-        return f"{value.branch_code}"
-
-
-class YearsListingField(serializers.RelatedField):
-    def to_representation(self, value):
-        return f"{value.year}"
-
-
-"""end related fields"""
-
-
 # class TextbookSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = Textbook
 #         fields = '__all__'
-
-
-class PortionSerializer(QueryFieldsMixin, serializers.ModelSerializer):
-    url = serializers.HyperlinkedIdentityField(
-        view_name='portion-detail',
-        lookup_field='pk'
-    )
-    subjects = SubjectListingField(many=True, read_only=True)
-    branches = BranchesListingField(many=True, read_only=True)
-    years = YearsListingField(many=True, read_only=True)
-
-    class Meta:
-        model = Portion
-        fields = '__all__'
 
 
 class GtimetableSerializer(serializers.ModelSerializer):
@@ -87,18 +46,6 @@ class ContributorSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Contributor
-        fields = '__all__'
-
-
-class FacultySerializer(serializers.ModelSerializer):
-    url = serializers.HyperlinkedIdentityField(
-        view_name='faculty-detail',
-        lookup_field='pk'
-    )
-    branch_name = serializers.CharField(source='branch.name')
-
-    class Meta:
-        model = Faculty
         fields = '__all__'
 
 
