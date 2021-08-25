@@ -16,7 +16,8 @@ Content-Type: application/json
 
 ### get api view
 @access_token_for_get_request = {{login.response.body.$.access}}
-GET {{hostname}}/api/college-list/ HTTP/1.1
+GET {{hostname}}/api/college-list/
+?fields=value,label 
 Content-Type: application/json
 # Authorization: JWT {{access_token_for_get_request}}
 

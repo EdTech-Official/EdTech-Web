@@ -67,6 +67,8 @@ class CollegeSerializer(QueryFieldsMixin, serializers.ModelSerializer):
         view_name='college-detail',
         lookup_field='college_code'
     )
+    value = serializers.CharField(source='college_code')
+    label = serializers.CharField(source='name')
     # courses = CourseSerializer(Course, many=True, read_only=True)
     branches = BranchForCollegeSerializer(Branch, many=True, read_only=True)
     # url = serializers.HyperlinkedIdentityField(view_name="college-detail")
