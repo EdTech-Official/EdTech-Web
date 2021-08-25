@@ -1,3 +1,4 @@
+from os import read
 from django.db.models import fields
 from djoser.serializers import UserCreateSerializer, UserSerializer
 from django.contrib.auth import get_user_model, models
@@ -7,13 +8,21 @@ User = get_user_model()
 
 
 class ProfileSerializer(serializers.ModelSerializer):
+    user_email = serializers.CharField(source='user.email', read_only=True)
+
+    class Meta:
+        model = Profile
+        fields = '__all__'
+
+
+class ProfileForUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = ('college', 'branch', 'year')
 
 
 class UserSerializer(UserSerializer):
-    profile = ProfileSerializer(Profile, many=False)
+    profile = ProfileForUserSerializer(Profile, many=False)
 
     class Meta(UserSerializer.Meta):
         model = User
