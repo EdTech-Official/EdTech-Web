@@ -2,7 +2,17 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
+from rest_framework import status
+from rest_framework.response import Response
 from college.models import College, Branch, Year
+from django.http import HttpResponseBadRequest, JsonResponse
+from rest_framework.exceptions import APIException
+
+
+class BranchNotInCollege(APIException):
+    status_code = 400
+    default_detail = 'Branch must be from the users college'
+    default_code = 'bad_request'
 
 
 class CustomAccountManager(BaseUserManager):
@@ -65,3 +75,10 @@ class Profile(models.Model):
 
     def __str__(self):
         return f"{self.user.email} Profile"
+
+    def save(self, force_insert=False, force_update=False, *args, **kwargs):
+        if self.branch is not None and self.branch not in self.college.branches.all():
+            raise BranchNotInCollege(
+                "You must select one of the branch from your own college")
+        super(Profile, self).save(
+            force_insert=force_insert, force_update=force_update, *args, **kwargs)
