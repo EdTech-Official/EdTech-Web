@@ -1,6 +1,3 @@
-from django.db.models.query import QuerySet
-from api.filters import SubjectFilter
-from rest_framework import serializers
 from rest_framework import filters
 
 from django_filters.rest_framework import DjangoFilterBackend
@@ -157,82 +154,6 @@ def apiOverview(request):
     }
 
     return Response(api_urls)
-
-
-""" College """
-
-
-class CollegeList(ListAPIView):
-    """
-    List all Subjects [GET]
-    """
-
-    # return the list of subjects
-    queryset = College.objects.all()
-    serializer_class = CollegeSerializer
-    pagination_class = ResultsSetPagination
-
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
-    filterset_fields = ['college_code', ]
-    search_fields = ['name', 'college_code', 'location']
-
-
-class CollegeDetail(RetrieveAPIView):
-    """
-    Retrieve [GET], update [PUT] or delete [DELETE] a Subject instance.
-    """
-    queryset = College.objects.all()
-    serializer_class = CollegeSerializer
-    lookup_field = 'college_code'
-
-
-""" Branch """
-
-
-class BranchList(ListAPIView):
-    """
-    List all Branches in a branches [GET]
-    """
-    # return the list of subjects in a college
-    queryset = Branch.objects.all()
-    serializer_class = BranchSerializer
-    pagination_class = ResultsSetPagination
-
-
-class BranchDetail(RetrieveAPIView):
-    """
-    Retrieve a course in a branch [GET]
-    """
-    queryset = Branch.objects.all()
-    serializer_class = BranchSerializer
-    lookup_field = 'pk'
-
-
-""" Subject """
-
-
-class SubjectList(ListAPIView):
-    """
-    List all subjects in a college [GET]
-    """
-    # return the list of subjects in a college
-    queryset = Subject.objects.all()
-    serializer_class = SubjectSerializer
-    pagination_class = ResultsSetPagination
-
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter, ]
-    filterset_fields = ['years__year', 'subject_code',
-                        'branches__branch_code', 'colleges__college_code']
-    search_fields = ['name', 'subject_code', 'branches__branch_code']
-
-
-class SubjectDetail(RetrieveAPIView):
-    """
-    Retrieve a subject [GET]
-    """
-    queryset = Subject.objects.all()
-    serializer_class = SubjectSerializer
-    lookup_field = 'pk'
 
 
 class PortionList(ListAPIView):
