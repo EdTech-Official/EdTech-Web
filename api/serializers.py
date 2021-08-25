@@ -50,14 +50,16 @@ class BranchSerializer(serializers.ModelSerializer):
 
 
 class BranchForCollegeSerializer(serializers.ModelSerializer):
-    url = serializers.HyperlinkedIdentityField(
-        view_name='branch-detail',
-        lookup_field='pk'
-    )
+    # url = serializers.HyperlinkedIdentityField(
+    #     view_name='branch-detail',
+    #     lookup_field='pk'
+    # )
+    value = serializers.IntegerField(source='id')
+    label = serializers.CharField(source='name')
 
     class Meta:
         model = Branch
-        fields = ['url', 'name', 'branch_code', ]
+        fields = ['value', 'label', ]
 
 
 class CollegeSerializer(QueryFieldsMixin, serializers.ModelSerializer):
