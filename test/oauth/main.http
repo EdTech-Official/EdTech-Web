@@ -2,8 +2,7 @@
 @user_email = dhulapkarraj@gmail.com
 @user_password = BasicUserPassword
 @user_password_reseted = BasicUserPasswordReseted
-@user_first_name = Raj
-@user_last_name = Dhulapkar
+@user_name = Raj Naik Dhulapkar
 
 
 ### crete a user
@@ -12,8 +11,7 @@ Content-Type: application/json
 
 {
     "email": "{{user_email}}",
-    "first_name": "{{user_first_name}}",
-    "last_name": "{{user_last_name}}",
+    "name": "{{user_name}}",
     "password": "{{user_password}}",
     "re_password": "{{user_password}}" 
 }
@@ -63,7 +61,7 @@ Content-Type: application/json
 
 
 ### Reset Password Confirmation
-# http://localhost:8000/password/reset/confirm/MQ/arr2oo-59a2a4b6b6b50c53c9162649cf245afa
+# /MQ/arr2oo-59a2a4b6b6b50c53c9162649cf245afa
 @uid_pass_reset = MQ
 @token_pass_reset = arr2oo-59a2a4b6b6b50c53c9162649cf245afa
 
@@ -100,36 +98,35 @@ Accept: application/json
     "token": "{{access_token_for_verification}}"
 }
 
-### get api view
-@access_token_for_get_request = {{login.response.body.$.access}}
-GET {{hostname}}/api/ HTTP/1.1
-Content-Type: application/json
-Authorization: JWT {{access_token_for_get_request}}
-
-
 ### get current user
 GET {{hostname}}/auth/users/me/ HTTP/1.1
 Content-Type: application/json
-Authorization: JWT {{access_token_for_get_request}}
+Authorization: JWT {{access_token_for_verification}}
+
 
 ### update user info
-PUT {{hostname}}/auth/users/me/ HTTP/1.1
+PATCH {{hostname}}/auth/users/me/ HTTP/1.1
 Content-Type: application/json
-Authorization: JWT {{access_token_for_get_request}}
+Authorization: JWT {{access_token_for_verification}}
 
 {
-  "id": 3,
-  "email": "dhulapkarraj@gmail.com",
-  "first_name": "Raj",
-  "last_name": "Dhulapkar",
-  "password": "{{user_password}}"
+  "last_name": "Dhulapkar"                
+}
+
+### logout
+POST {{hostname}}/auth/jwt/blacklist/ HTTP/1.1
+Content-Type: application/json
+Authorization: JWT {{access_token_for_verification}}
+
+{
+    "refresh_token": "{{refresh_token}}"
 }
 
 
 ### deleteing a user
 DELETE {{hostname}}/auth/users/me/ HTTP/1.1
 Content-Type: application/json
-Authorization: JWT {{access_token_for_get_request}}
+Authorization: JWT {{access_token_for_verification}}
 
 {
     "current_password": "{{user_password}}"
