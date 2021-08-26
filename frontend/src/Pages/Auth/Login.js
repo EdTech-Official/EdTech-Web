@@ -40,9 +40,39 @@ const Login = ({login, signup, isAuthenticated}) => {
     })
   }
 
-  const handleSignIn = async (e, key) => {
+  handleFormAuth = async (e, key) => {
     e.preventDefault();
+    switch (key) {
+      case 5:
+        // Sign Up
+        if (
+          document.getElementById("sign-up-form")["password-input"].value ===
+          document.getElementById("sign-up-form")["re_password-input"].value
+        ) {
+          signup(
+            signUpFormData.first_name,
+            signUpFormData.email, 
+            signUpFormData.password, 
+            signUpFormData.re_password
+          )
+          setAccountCreated(true);
+          document.getElementById("sign-up-form").reset();
+        }
+        break;
 
+      case 6:
+        // Sign In
+        console.log(signInFormData.email, signInFormData.password);
+        login(signInFormData.email, signInFormData.password);
+        document.getElementById("sign-in-form").reset();
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  const handleSignIn = async (e, key) => {
     switch (key) {
       case 1:
         // Facebook Login
@@ -68,30 +98,6 @@ const Login = ({login, signup, isAuthenticated}) => {
 
       case 4:
         // Github login
-        break;
-
-      case 5:
-        // Sign Up
-        if (
-          document.getElementById("sign-up-form")["password-input"].value ===
-          document.getElementById("sign-up-form")["re_password-input"].value
-        ) {
-          signup(
-            signUpFormData.first_name,
-            signUpFormData.email, 
-            signUpFormData.password, 
-            signUpFormData.re_password
-          )
-          setAccountCreated(true);
-          document.getElementById("sign-up-form").reset();
-        }
-        break;
-
-      case 6:
-        // Sign In
-        console.log(signInFormData.email, signInFormData.password);
-        login(signInFormData.email, signInFormData.password);
-        document.getElementById("sign-in-form").reset();
         break;
 
       default:
@@ -120,7 +126,7 @@ const Login = ({login, signup, isAuthenticated}) => {
       <div className="container" id="container">
         <div className="forms-container">
           <div className="signin-signup">
-            <form onSubmit={(e) => handleSignIn(e,6)} className="sign-in-form" id="sign-in-form">
+            <form onSubmit={(e) => handleFormAuth(e,6)} className="sign-in-form" id="sign-in-form">
               <h2 className="title">Sign in</h2>
               <div className="input-field">
                 <i className="bx bxs-user"></i>
@@ -159,7 +165,7 @@ const Login = ({login, signup, isAuthenticated}) => {
                 <div className="social-icon" onClick={() => handleSignIn(2)}>
                   <AiFillTwitterCircle />
                 </div>
-                <div className="social-icon" onClick={(e) => handleSignIn(e, 3)}>
+                <div className="social-icon" onClick={() => handleSignIn(3)}>
                   <FaGooglePlus />
                 </div>
                 <div className="social-icon" onClick={() => handleSignIn(4)}>
@@ -168,7 +174,7 @@ const Login = ({login, signup, isAuthenticated}) => {
               </div>
             </form>
 
-            <form onSubmit={(e) => handleSignIn(e,5)} className="sign-up-form" id="sign-up-form">
+            <form onSubmit={(e) => handleFormAuth(e,5)} className="sign-up-form" id="sign-up-form">
               <h2 className="title">Sign up</h2>
               <div className="input-field ">
                 <i className="bx bxs-user"></i>
@@ -229,7 +235,7 @@ const Login = ({login, signup, isAuthenticated}) => {
                 <div className="social-icon" onClick={() => handleSignIn(2)}>
                   <AiFillTwitterCircle />
                 </div>
-                <div className="social-icon" onClick={(e) => handleSignIn(e,3)}>
+                <div className="social-icon" onClick={() => handleSignIn(3)}>
                   <FaGooglePlus />
                 </div>
                 <div className="social-icon" onClick={() => handleSignIn(4)}>
