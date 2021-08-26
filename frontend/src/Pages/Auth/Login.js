@@ -40,7 +40,7 @@ const Login = ({login, signup, isAuthenticated}) => {
     })
   }
 
-  handleFormAuth = async (e, key) => {
+  const handleFormAuth = async (e, key) => {
     e.preventDefault();
     switch (key) {
       case 5:
