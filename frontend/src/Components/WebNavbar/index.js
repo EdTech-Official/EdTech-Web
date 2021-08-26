@@ -6,7 +6,7 @@ import { logout } from "../../context/actions/auth";
 import { withRouter } from 'react-router-dom';
 
 
-const WebNavbar = ({ logout, isAuthenticated }) => {
+const WebNavbar = ({ logout }) => {
   const history = useHistory();
 
   const handleLogout = () => {
@@ -31,8 +31,7 @@ const WebNavbar = ({ logout, isAuthenticated }) => {
     }
   }
 
-  if(isAuthenticated) {
-    return (
+  return (
     <div className="l_navbar" id="navbar">
       <div className="logo_content">
         <div className="logo" as={Link} to="/creator">
@@ -115,9 +114,7 @@ const WebNavbar = ({ logout, isAuthenticated }) => {
       </div>
       <span className="tooltip">Log Out</span>
     </div>
-  )} else {
-    return <div/>;
-  };
+  )
 };
 
 const mapStateToProps = state => ({

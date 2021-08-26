@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import WebNavbar from '../Components/WebNavbar';
-import MobileNavbar from '../Components/MobileNavbar';
 import { connect } from 'react-redux';
 import queryString from 'query-string'
 
@@ -28,8 +26,6 @@ const Layout = (props) => {
 
     return (
         <div>
-            <WebNavbar />
-            <MobileNavbar />
             {props.children}
         </div>
     )
