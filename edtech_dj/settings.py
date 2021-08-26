@@ -207,7 +207,11 @@ DJOSER = {
     'ACTIVATION_URL': 'activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': True,
     'SOCIAL_AUTH_TOKEN_STRATEGY': 'djoser.social.token.jwt.TokenStrategy',
-    'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': ['http://localhost:8000/google', 'http://localhost:8000/facebook', 'http://localhost:8000'],
+    'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': [
+        'http://localhost:8000/google', 'http://localhost:8000/facebook', 'http://localhost:8000',
+        'https://edtech-dj.herokuapp.com/google', 'https://edtech-dj.herokuapp.com/facebook', 'https://edtech-dj.herokuapp.com',
+        'https://edtech1.herokuapp.com/google', 'https://edtech1.herokuapp.com/facebook', 'https://edtech1.herokuapp.com'
+    ],
     'SERIALIZERS': {
         'user_create': 'users.serializers.UserCreateSerializer',
         'user': 'users.serializers.UserCreateSerializer',

@@ -10,12 +10,6 @@ from college.models import *
 from content.models import *
 
 
-# class TextbookSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Textbook
-#         fields = '__all__'
-
-
 # class MaterialSerializer(serializers.ModelSerializer):
 #     contributor_name = serializers.CharField(source='contributor.name')
 #     contributor_link = serializers.CharField(source='contributor.social_link')
@@ -42,48 +36,4 @@ from content.models import *
 
 #     class Meta:
 #         model = Material
-#         fields = '__all__'
-
-
-# class MaterialSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Material
-#         fields = '__all__'
-
-# class PortionSerializer(serializers.ModelSerializer):
-
-#     class Meta:
-#         model = Portion
-#         fields = '__all__'
-
-
-# class UserSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ['id', 'username', 'first_name', 'last_name',]
-
-
-# class TimetableSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Timetable
-#         fields = '__all__'
-
-
-# class LectureSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Lecture
-#         fields = ['subject', 'start_time', 'end_time', 'teacher']
-
-
-# class DaySerializer(serializers.ModelSerializer):
-#     lectures = LectureSerializer(many=True, read_only=True)
-#     class Meta:
-#         model = Day
-#         fields = "__all__"
-
-
-# class TimetableSerializer(serializers.ModelSerializer):
-#     days = DaySerializer(many=True, read_only=True)
-#     class Meta:
-#         model = Timetable
 #         fields = '__all__'

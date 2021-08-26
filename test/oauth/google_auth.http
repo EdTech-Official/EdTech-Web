@@ -1,9 +1,10 @@
 @hostname = http://localhost:8000
+# @hostname = https://edtech-dj.herokuapp.com/
 
 
 ### get request to get the authorisation url
 GET {{hostname}}/auth/o/google-oauth2/ 
-?redirect_uri={{hostname}}/google
+?redirect_uri={{hostname}}
 
 
 
