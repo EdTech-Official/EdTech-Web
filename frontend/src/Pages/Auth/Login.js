@@ -87,7 +87,7 @@ const Login = ({login, signup, isAuthenticated}) => {
       case 3:
         // Google Login
         try {
-          const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/auth/o/google-oauth2/?redirect_uri=${process.env.REACT_APP_BASE_URL}/google`);
+          const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/auth/o/google-oauth2/?redirect_uri=${process.env.REACT_APP_BASE_URL}`);
           console.log(res)
           window.location.replace(res.data.authorization_url);
         } catch (err) {
