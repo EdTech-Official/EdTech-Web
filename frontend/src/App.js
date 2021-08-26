@@ -7,20 +7,20 @@ import Layout from "./hocs/Layout";
 const App = () => {
 
   return (
-      <div>
-        <Layout>
-          <Switch>
-            {routes.map((route, index) => (
-              <Route
-                path={route.path}
-                key={index}
-                exact
-                render={(props) => <route.component {...props} /> }
-              />
-            ))}
-          </Switch>
-        </Layout>
-      </div>
+    <div>
+      <Layout>
+        <Switch>
+          {routes.map((route, index) => (
+            <Route
+              path={route.path}
+              key={index}
+              exact
+              render={(props) => <route.component {...props} /> }
+            />
+          ))}
+        </Switch>
+      </Layout>
+    </div>
   );
 };
 

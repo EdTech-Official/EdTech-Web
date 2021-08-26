@@ -17,12 +17,15 @@ import {
     GOOGLE_AUTH_FAIL,
     LOGOUT,
     NEW_ACCESS_TOKEN_FETCHED,
+    USER_ACTIVATED_SUCCESS,
+    USER_ACTIVATED_FAIL,
 } from '../actions/types';
 
 const initialState = {
     access: localStorage.getItem('access'),
     refresh: localStorage.getItem('refresh'),
     isAuthenticated: null,
+    isActivated: null,
     user: null
 }
 
@@ -63,6 +66,18 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 user: payload
+            }
+
+        case USER_ACTIVATED_SUCCESS:
+            return {
+                ...state,
+                isActivated: true
+            }
+
+        case USER_ACTIVATED_FAIL:
+            return {
+                ...state,
+                isActivated: false
             }
 
         case AUTHENTICATION_FAIL:
