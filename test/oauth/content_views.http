@@ -16,27 +16,13 @@ Content-Type: application/json
 ### get list of subjects
 @access_token_for_get_request = {{login.response.body.$.access}}
 
-
-GET {{hostname}}/api/subject/ HTTP/1.1
+GET {{hostname}}/api/contributor/ HTTP/1.1
 Content-Type: application/json
 Authorization: JWT {{access_token_for_get_request}}
 
 
-### get list of portions
+### get list of textbooks
 
-GET {{hostname}}/api/portion/ HTTP/1.1
-Content-Type: application/json
-Authorization: JWT {{access_token_for_get_request}}
-
-
-### get list of faculty
-
-GET {{hostname}}/api/faculty/ HTTP/1.1
-Content-Type: application/json
-Authorization: JWT {{access_token_for_get_request}}
-
-### get list of gtimetable
-
-GET {{hostname}}/api/gtimetable/ HTTP/1.1
+GET {{hostname}}/api/textbook/ HTTP/1.1
 Content-Type: application/json
 Authorization: JWT {{access_token_for_get_request}}

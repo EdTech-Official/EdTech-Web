@@ -1,3 +1,5 @@
+
+# @hostname = https://edtech1.herokuapp.com
 @hostname = http://localhost:8000
 @user_email = dhulapkarraj@gmail.com
 @user_password = BasicUserPassword
@@ -14,7 +16,28 @@ Content-Type: application/json
 
 ### get api view
 @access_token_for_get_request = {{login.response.body.$.access}}
-GET {{hostname}}/api/ HTTP/1.1
+GET {{hostname}}/api/college-list/
 Content-Type: application/json
 Authorization: JWT {{access_token_for_get_request}}
+
+
+### get user profile
+GET {{hostname}}/auth/profile/me/ HTTP/1.1
+Content-Type: application/json
+Authorization: JWT {{access_token_for_get_request}}
+
+
+### updateing user profile data
+PUT {{hostname}}/auth/profile/me/ HTTP/1.1
+Content-Type: application/json
+Authorization: JWT {{access_token_for_get_request}}
+
+{
+  "id": 13,
+  "user_email": "dhulapkarraj@gmail.com",
+  "user": 8,
+  "college": "NITG",
+  "branch": null,
+  "year": null
+}
 

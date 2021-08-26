@@ -1,4 +1,5 @@
 @hostname = http://localhost:8000
+# @hostname = https://edtech1.herokuapp.com
 @user_email = dhulapkarraj@gmail.com
 @user_password = BasicUserPassword
 @user_password_reseted = BasicUserPasswordReseted

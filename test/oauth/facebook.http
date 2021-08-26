@@ -1,14 +1,11 @@
 @hostname = http://localhost:8000
-# @hostname = https://edtech-dj.herokuapp.com/
-
 
 ### get request to get the authorisation url
-GET {{hostname}}/auth/o/google-oauth2/ 
-?redirect_uri={{hostname}}
+GET {{hostname}}/auth/o/facebook/ 
+?redirect_uri={{hostname}}/facbook
 
 
-
-### google login
+### facbook login
 
 @state = bC12oaJRx404iVhosxkZ1pcwnjxfArOM
 @code = 4%2F0AX4XfWh_urPbSxoHEspl1tRTYa2KFgVoUJNwYqfXMHlI4KRo4vHqkD3F7y4UB2b2sQu-VA
