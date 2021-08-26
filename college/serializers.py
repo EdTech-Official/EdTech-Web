@@ -3,8 +3,6 @@ from drf_queryfields import QueryFieldsMixin
 
 from college.models import *
 
-from django_filters.rest_framework import DjangoFilterBackend
-
 
 """related fields"""
 

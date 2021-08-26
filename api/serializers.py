@@ -16,18 +16,6 @@ from content.models import *
 #         fields = '__all__'
 
 
-class GtimetableSerializer(serializers.ModelSerializer):
-    branch_code = serializers.CharField(source='branch.branch_code')
-    url = serializers.HyperlinkedIdentityField(
-        view_name='gtimetable-detail',
-        lookup_field='pk'
-    )
-
-    class Meta:
-        model = Gtimetable
-        fields = '__all__'
-
-
 # class MaterialSerializer(serializers.ModelSerializer):
 #     contributor_name = serializers.CharField(source='contributor.name')
 #     contributor_link = serializers.CharField(source='contributor.social_link')
@@ -37,35 +25,9 @@ class GtimetableSerializer(serializers.ModelSerializer):
 #         fields = '__all__'
 
 
-class ContributorSerializer(serializers.HyperlinkedModelSerializer):
-    # materials = MaterialSerializer(Material, many=True, read_only=True)
-    url = serializers.HyperlinkedIdentityField(
-        view_name='contributor-detail',
-        lookup_field='slug'
-    )
-
-    class Meta:
-        model = Contributor
-        fields = '__all__'
-
-
 # class RecommendationSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = Recommendation
-#         fields = '__all__'
-
-
-# class TextbookSerializer(serializers.ModelSerializer):
-#     url = serializers.HyperlinkedIdentityField(
-#         view_name='textbook-detail',
-#         lookup_field='pk'
-#     )
-#     subjects = SubjectListingField(many=True, read_only=True)
-#     branches = BranchesListingField(many=True, read_only=True)
-#     years = YearsListingField(many=True, read_only=True)
-
-#     class Meta:
-#         model = Textbook
 #         fields = '__all__'
 
 

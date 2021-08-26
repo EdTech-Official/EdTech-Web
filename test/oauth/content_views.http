@@ -1,0 +1,28 @@
+@hostname = http://localhost:8000
+@user_email = dhulapkarraj@gmail.com
+@user_password = BasicUserPassword
+
+### user login / getting refresh and access token
+# @name login
+POST {{hostname}}/auth/jwt/create/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "{{user_email}}",
+    "password": "{{user_password}}"
+}
+
+
+### get list of subjects
+@access_token_for_get_request = {{login.response.body.$.access}}
+
+GET {{hostname}}/api/contributor/ HTTP/1.1
+Content-Type: application/json
+Authorization: JWT {{access_token_for_get_request}}
+
+
+### get list of textbooks
+
+GET {{hostname}}/api/textbook/ HTTP/1.1
+Content-Type: application/json
+Authorization: JWT {{access_token_for_get_request}}

@@ -2,6 +2,7 @@ from api.models import Faculty
 from django.urls import path, include
 from . import views
 from college import views as college_views
+from content import views as content_views
 
 urlpatterns = [
     path('', views.apiOverview, name="api-overview"),
@@ -31,13 +32,14 @@ urlpatterns = [
     path('gtimetable/',
          college_views.GtimetableDetail.as_view(), name="gtimetable-detail"),
 
-    path('contributor/', views.ContributorList.as_view(),
+    path('contributor/', content_views.ContributorList.as_view(),
          name='contributor-list'),
     path('contributor/<slug:slug>/',
-         views.ContributorDetail.as_view(),  name='contributor-detail'),
-    #     path('textbook/', views.TextbookList.as_view(), name='textbook-list'),
-    #     path('textbook/<str:pk>/',
-    #          views.TextbookDetail.as_view(), name='textbook-detail'),
+         content_views.ContributorDetail.as_view(),  name='contributor-detail'),
+
+    path('textbook/', content_views.TextbookList.as_view(), name='textbook-list'),
+    path('textbook/<str:pk>/',
+         content_views.TextbookDetail.as_view(), name='textbook-detail'),
     #     path('material-list/', views.MaterialList.as_view(), name='material-list'),
     #     path('material-detail/<str:pk>/',
     #          views.MaterialDetail.as_view(), name='material-detail'),
