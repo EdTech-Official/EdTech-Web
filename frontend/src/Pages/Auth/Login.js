@@ -62,7 +62,6 @@ const Login = ({login, signup, isAuthenticated}) => {
 
       case 6:
         // Sign In
-        console.log(signInFormData.email, signInFormData.password);
         login(signInFormData.email, signInFormData.password);
         document.getElementById("sign-in-form").reset();
         break;
@@ -72,7 +71,7 @@ const Login = ({login, signup, isAuthenticated}) => {
     }
   }
 
-  const handleSignIn = async (e, key) => {
+  const handleSignIn = async (key) => {
     switch (key) {
       case 1:
         // Facebook Login
