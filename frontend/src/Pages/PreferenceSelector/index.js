@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Select from "react-select";
+import { getBranchList, getCollegeList } from '../../axios';
 
 const yearOptions = [
     { value: "FIRST", label: "First" },
@@ -10,28 +11,46 @@ const yearOptions = [
 
 const PreferenceSelector = () => {
 
-    function onCollegeInputChange(value) {
-        // setSelectedCollege(value);
+    const [collegeOptions, setCollegeOptions] = useState([])
+    const [branchOptions, setBranchOptions] = useState([])
+    const [selectedCollege, setSelectedCollege] = useState(null)
+    const [selectedBranch, setSelectedBranch] = useState(null)
+    const [selectedYear, setSelectedYear] = useState(null)
+
+    useEffect(() => {
+        async function fetchCollegeList() {
+            const res = await getCollegeList();
+            console.log(res);
+            setCollegeOptions(res)
+        }
+        fetchCollegeList();
+    }, [])
+
+    async function onCollegeInputChange(value) {
+        setBranchOptions([]);
+        setSelectedCollege(value);
+        const res = await getBranchList(value.value);
+        setBranchOptions(res.branches)
     }
     
     function onBranchInputChange(value) {
-        // setSelectedBranch(value);
+        setSelectedBranch(value);
     }
     
     function onYearInputChange(value) {
-        // setSelectedYear(value);
+        setSelectedYear(value);
     }
     
     function onSubmitButton() {
-        // if (
-        //     // selectedCollege != null &&
-        //     // selectedBranch != null &&
-        //     // selectedYear != null
-        // ) {
-        //     console.log("Submit logic here")
-        // } else {
-        //     alert("Please fill in all details");
-        // }
+        if (
+            selectedCollege != null &&
+            selectedBranch != null &&
+            selectedYear != null
+        ) {
+            console.log("Submit logic here")
+        } else {
+            alert("Please fill in all details");
+        }
       }
 
     return (
@@ -59,8 +78,8 @@ const PreferenceSelector = () => {
                 Select Your College
             </h3>
             <Select
-                // onChange={onCollegeInputChange}
-                // options={collegeOptions}
+                onChange={onCollegeInputChange}
+                options={collegeOptions}
             />
             </div>
             <div>
@@ -68,8 +87,8 @@ const PreferenceSelector = () => {
                 Select Your Branch
             </h3>
             <Select
-                // onChange={onBranchInputChange}
-                // options={branchOptions}
+                onChange={onBranchInputChange}
+                options={branchOptions}
             />
             </div>
             <div>
@@ -77,7 +96,7 @@ const PreferenceSelector = () => {
                 Select Your Year
             </h3>
             <Select
-                // onChange={onYearInputChange}
+                onChange={onYearInputChange}
                 options={yearOptions}
             />
             </div>

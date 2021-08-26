@@ -40,7 +40,7 @@ const Login = ({login, signup, isAuthenticated}) => {
     })
   }
 
-  const handleSignIn = async (e,key) => {
+  const handleSignIn = async (e, key) => {
     e.preventDefault();
 
     switch (key) {
@@ -58,7 +58,8 @@ const Login = ({login, signup, isAuthenticated}) => {
       case 3:
         // Google Login
         try {
-          const res = await axios.get(`/auth/o/google-oauth2/?redirect_uri=${process.env.REACT_APP_BASE_URL}/google`);
+          const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/auth/o/google-oauth2/?redirect_uri=${process.env.REACT_APP_BASE_URL}/google`);
+          console.log(res)
           window.location.replace(res.data.authorization_url);
         } catch (err) {
           console.log(err)
@@ -88,6 +89,7 @@ const Login = ({login, signup, isAuthenticated}) => {
 
       case 6:
         // Sign In
+        console.log(signInFormData.email, signInFormData.password);
         login(signInFormData.email, signInFormData.password);
         document.getElementById("sign-in-form").reset();
         break;
@@ -157,7 +159,7 @@ const Login = ({login, signup, isAuthenticated}) => {
                 <div className="social-icon" onClick={() => handleSignIn(2)}>
                   <AiFillTwitterCircle />
                 </div>
-                <div className="social-icon" onClick={() => handleSignIn(3)}>
+                <div className="social-icon" onClick={(e) => handleSignIn(e, 3)}>
                   <FaGooglePlus />
                 </div>
                 <div className="social-icon" onClick={() => handleSignIn(4)}>
@@ -227,7 +229,7 @@ const Login = ({login, signup, isAuthenticated}) => {
                 <div className="social-icon" onClick={() => handleSignIn(2)}>
                   <AiFillTwitterCircle />
                 </div>
-                <div className="social-icon" onClick={() => handleSignIn(3)}>
+                <div className="social-icon" onClick={(e) => handleSignIn(e,3)}>
                   <FaGooglePlus />
                 </div>
                 <div className="social-icon" onClick={() => handleSignIn(4)}>

@@ -52,7 +52,7 @@ const ResetPassword = ({ reset_password }) => {
                     </div>
                     <button style={{marginTop: '15px', width: '15rem'}} className='btn' type='submit'>Reset Password</button>
                 </form>
-                <Link to="/auth" style={{ textDecoration: 'none', color: 'black', lineHeight: '3rem' }} ><i className='bx bx-arrow-back'></i> Back</Link>
+                <Link to="/" style={{ textDecoration: 'none', color: 'black', lineHeight: '3rem' }} ><i className='bx bx-arrow-back'></i> Back</Link>
             </div>
         </div>
     );
