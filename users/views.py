@@ -1,9 +1,10 @@
+from djoser.social.views import ProviderAuthView
 from django.shortcuts import render
 from rest_framework.utils import serializer_helpers
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework import status
+from rest_framework import serializers, status
 from django.http import Http404
 from users.serializers import ProfileSerializer
 from users.models import Profile
@@ -50,3 +51,17 @@ class UserProfileView(APIView):
                 message = {"message": e}
                 return Response(message, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class CustomProviderAuthView(ProviderAuthView):
+
+    def __init__(self, **kwargs) -> None:
+        super().__init__(**kwargs)
+
+    def post(self, request, *args, **kwargs):
+        print(request.data)
+        request.data._mutable = True
+        request.data['is_active'] = True
+        request.data._mutable = False
+        print(request.data)
+        return super(CustomProviderAuthView, self).post(request, *args, **kwargs)
