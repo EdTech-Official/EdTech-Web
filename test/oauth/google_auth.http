@@ -10,7 +10,7 @@ GET {{hostname}}/auth/o/google-oauth2/
 ### google login
 
 @state = bC12oaJRx404iVhosxkZ1pcwnjxfArOM
-@code = 4%2F0AX4XfWgKxZDBeQ7Ba77VD3GHWox0wihYww1tXKm8sK0WLX6DQkZJg7MjXR7yesRrsrAr1w
+@code = 4%2F0AX4XfWjocXOfNq04-tyuj0FTGdcWcBKEJqTtanjcbYfGNMhRh3NJdgbt5Fsg4qYA349hyg
 
 # @name login
 POST {{hostname}}/auth/o/google-oauth2/

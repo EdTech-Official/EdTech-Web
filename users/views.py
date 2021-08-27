@@ -1,4 +1,8 @@
-from djoser.social.views import ProviderAuthView
+from users.serializers import ProviderAuthSerializer
+from djoser.conf import settings
+from social_django.utils import load_backend, load_strategy
+from rest_framework import generics, permissions, status
+# from djoser.social.views import ProviderAuthView
 from django.shortcuts import render
 from rest_framework.utils import serializer_helpers
 from rest_framework.views import APIView
@@ -53,15 +57,20 @@ class UserProfileView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class CustomProviderAuthView(ProviderAuthView):
+class ProviderAuthView(generics.CreateAPIView):
+    permission_classes = [permissions.AllowAny]
+    serializer_class = ProviderAuthSerializer
 
-    def __init__(self, **kwargs) -> None:
-        super().__init__(**kwargs)
+    def get(self, request, *args, **kwargs):
+        redirect_uri = request.GET.get("redirect_uri")
+        if redirect_uri not in settings.SOCIAL_AUTH_ALLOWED_REDIRECT_URIS:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+        strategy = load_strategy(request)
+        strategy.session_set("redirect_uri", redirect_uri)
 
-    def post(self, request, *args, **kwargs):
-        print(request.data)
-        request.data._mutable = True
-        request.data['is_active'] = True
-        request.data._mutable = False
-        print(request.data)
-        return super(CustomProviderAuthView, self).post(request, *args, **kwargs)
+        backend_name = self.kwargs["provider"]
+        backend = load_backend(strategy, backend_name,
+                               redirect_uri=redirect_uri)
+
+        authorization_url = backend.auth_url()
+        return Response(data={"authorization_url": authorization_url})

@@ -40,8 +40,6 @@ class CustomAccountManager(BaseUserManager):
         email = self.normalize_email(email)
         user = self.model(email=email, first_name=first_name,
                           **other_fields)
-        if password == None:
-            user.is_active = True
 
         user.set_password(password)
         user.save()
