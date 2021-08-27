@@ -40,35 +40,9 @@ const Login = ({login, signup, isAuthenticated}) => {
     })
   }
 
-  const handleSignIn = async (e,key) => {
+  const handleFormAuth = async (e, key) => {
     e.preventDefault();
-
     switch (key) {
-      case 1:
-        // Facebook Login
-        // const responseFacebook = async (response) => {
-        //   facebookLogin(response.accessToken);
-        // };
-        break;
-
-      case 2:
-        // Twitter login
-        break;
-
-      case 3:
-        // Google Login
-        try {
-          const res = await axios.get(`/auth/o/google-oauth2/?redirect_uri=${process.env.REACT_APP_BASE_URL}/google`);
-          window.location.replace(res.data.authorization_url);
-        } catch (err) {
-          console.log(err)
-        }
-        break;
-
-      case 4:
-        // Github login
-        break;
-
       case 5:
         // Sign Up
         if (
@@ -90,6 +64,39 @@ const Login = ({login, signup, isAuthenticated}) => {
         // Sign In
         login(signInFormData.email, signInFormData.password);
         document.getElementById("sign-in-form").reset();
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  const handleSignIn = async (key) => {
+    switch (key) {
+      case 1:
+        // Facebook Login
+        // const responseFacebook = async (response) => {
+        //   facebookLogin(response.accessToken);
+        // };
+        break;
+
+      case 2:
+        // Twitter login
+        break;
+
+      case 3:
+        // Google Login
+        try {
+          const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/auth/o/google-oauth2/?redirect_uri=${process.env.REACT_APP_BASE_URL}/google`);
+          console.log(res)
+          window.location.replace(res.data.authorization_url);
+        } catch (err) {
+          console.log(err)
+        }
+        break;
+
+      case 4:
+        // Github login
         break;
 
       default:
@@ -118,7 +125,7 @@ const Login = ({login, signup, isAuthenticated}) => {
       <div className="container" id="container">
         <div className="forms-container">
           <div className="signin-signup">
-            <form onSubmit={(e) => handleSignIn(e,6)} className="sign-in-form" id="sign-in-form">
+            <form onSubmit={(e) => handleFormAuth(e,6)} className="sign-in-form" id="sign-in-form">
               <h2 className="title">Sign in</h2>
               <div className="input-field">
                 <i className="bx bxs-user"></i>
@@ -166,7 +173,7 @@ const Login = ({login, signup, isAuthenticated}) => {
               </div>
             </form>
 
-            <form onSubmit={(e) => handleSignIn(e,5)} className="sign-up-form" id="sign-up-form">
+            <form onSubmit={(e) => handleFormAuth(e,5)} className="sign-up-form" id="sign-up-form">
               <h2 className="title">Sign up</h2>
               <div className="input-field ">
                 <i className="bx bxs-user"></i>
