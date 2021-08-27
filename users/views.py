@@ -1,9 +1,14 @@
+from users.serializers import ProviderAuthSerializer
+from djoser.conf import settings
+from social_django.utils import load_backend, load_strategy
+from rest_framework import generics, permissions, status
+# from djoser.social.views import ProviderAuthView
 from django.shortcuts import render
 from rest_framework.utils import serializer_helpers
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework import status
+from rest_framework import serializers, status
 from django.http import Http404
 from users.serializers import ProfileSerializer
 from users.models import Profile
@@ -50,3 +55,22 @@ class UserProfileView(APIView):
                 message = {"message": e}
                 return Response(message, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class ProviderAuthView(generics.CreateAPIView):
+    permission_classes = [permissions.AllowAny]
+    serializer_class = ProviderAuthSerializer
+
+    def get(self, request, *args, **kwargs):
+        redirect_uri = request.GET.get("redirect_uri")
+        if redirect_uri not in settings.SOCIAL_AUTH_ALLOWED_REDIRECT_URIS:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+        strategy = load_strategy(request)
+        strategy.session_set("redirect_uri", redirect_uri)
+
+        backend_name = self.kwargs["provider"]
+        backend = load_backend(strategy, backend_name,
+                               redirect_uri=redirect_uri)
+
+        authorization_url = backend.auth_url()
+        return Response(data={"authorization_url": authorization_url})

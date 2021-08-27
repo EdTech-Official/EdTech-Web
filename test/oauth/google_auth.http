@@ -1,5 +1,5 @@
 @hostname = http://localhost:8000
-# @hostname = https://edtech-dj.herokuapp.com/
+# @hostname = https://edtech-dj.herokuapp.com
 
 
 ### get request to get the authorisation url
@@ -7,13 +7,21 @@ GET {{hostname}}/auth/o/google-oauth2/
 ?redirect_uri={{hostname}}
 
 
-
 ### google login
 
 @state = bC12oaJRx404iVhosxkZ1pcwnjxfArOM
-@code = 4%2F0AX4XfWh_urPbSxoHEspl1tRTYa2KFgVoUJNwYqfXMHlI4KRo4vHqkD3F7y4UB2b2sQu-VA
+@code = 4%2F0AX4XfWjocXOfNq04-tyuj0FTGdcWcBKEJqTtanjcbYfGNMhRh3NJdgbt5Fsg4qYA349hyg
 
+# @name login
 POST {{hostname}}/auth/o/google-oauth2/
 ?state={{state}}
 &code={{code}}
 Content-Type: application/x-www-form-urlencoded
+
+
+### get the current user
+@access_token_for_get_request = {{login.response.body.$.access}}
+GET {{hostname}}/auth/users/me/ HTTP/1.1
+Content-Type: application/json
+Authorization: JWT {{access_token_for_get_request}}
+

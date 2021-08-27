@@ -232,6 +232,9 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config(
     'SOCIAL_AUTH_GOOGLE_OAUTH2_KEY', cast=str)
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config(
     'SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET', cast=str)
-SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ['https://www.googleapis.com/auth/userinfo.email',
-                                   'https://www.googleapis.com/auth/userinfo.profile', 'openid']
+SOCIAL_AUTH_GOOGLE_OAUTH2_IGNORE_DEFAULT_SCOPE = True
+SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ['openid',
+                                   'https://www.googleapis.com/auth/userinfo.email',
+                                   'https://www.googleapis.com/auth/userinfo.profile'
+                                   ]
 SOCIAL_AUTH_GOOGLE_OAUTH2_EXTRA_DATA = ['first_name', ]
