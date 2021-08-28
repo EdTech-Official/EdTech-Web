@@ -11,7 +11,7 @@ const api = axios.create({
 
 export const getCollegeList = async () => {
     let result;
-    await api
+    await axios
       .get(`/api/college/`, {
         params: {
           fields: "value,label"
@@ -25,7 +25,7 @@ export const getCollegeList = async () => {
 
 export const getBranchList = async (college) => {
     let result;
-    await api
+    await axios
       .get(`/api/college/${college}/`)
       .then((res) => {
         result = res.data;
