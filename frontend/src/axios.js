@@ -11,7 +11,7 @@ const api = axios.create({
 export const getCollegeList = async () => {
     let result;
     await api
-      .get(`/api/college-list/`, {
+      .get(`/api/college/`, {
         params: {
           fields: "value,label"
         },
