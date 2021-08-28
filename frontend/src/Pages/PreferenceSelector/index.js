@@ -54,9 +54,9 @@ const PreferenceSelector = () => {
     
     function onSubmitButton() {
         if (
-            selectedCollege != null &&
-            selectedBranch != null &&
-            selectedYear != null
+            data.profile.college != null &&
+            data.profile.branch != null &&
+            data.profile.year != null
         ) {
             updateUserProfile(data);
         } else {
