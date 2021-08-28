@@ -25,7 +25,7 @@ export const getCollegeList = async () => {
 export const getBranchList = async (college) => {
     let result;
     await api
-      .get(`/api/college-detail/${college}/`)
+      .get(`/api/college/${college}/`)
       .then((res) => {
         result = res.data;
     });
