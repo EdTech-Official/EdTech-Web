@@ -4,7 +4,8 @@ const api = axios.create({
     baseURL: process.env.REACT_APP_BASE_URL,
     headers: {
         'Content-type': 'application/json',
-        'Accept': 'application/json'
+        'Accept': 'application/json',
+        'Authorization': `JWT ${localStorage.getItem('access')}`
     }
 })
 
@@ -31,3 +32,9 @@ export const getBranchList = async (college) => {
     });
     return result;
 };
+
+export const updateUserProfile = async (data) => {
+    await axios
+      .put(`/auth/users/me/`, data)
+      .then(response => console.log(response));
+}
