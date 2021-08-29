@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Select from "react-select";
-import { getBranchList, getCollegeList } from '../../axios';
+import { getBranchList, getCollegeList, updateUserProfile } from '../../axios';
 
 const yearOptions = [
     { value: "FIRST", label: "First" },
@@ -17,6 +17,14 @@ const PreferenceSelector = () => {
     const [selectedBranch, setSelectedBranch] = useState(null)
     const [selectedYear, setSelectedYear] = useState(null)
 
+    const data = {
+        "profile": {
+            "college": null,
+            "branch": null,
+            "year": null
+        }
+    }
+
     useEffect(() => {
         async function fetchCollegeList() {
             const res = await getCollegeList();
@@ -28,26 +36,29 @@ const PreferenceSelector = () => {
 
     async function onCollegeInputChange(value) {
         setBranchOptions([]);
-        setSelectedCollege(value);
+        data.profile.college = value.value;
+        // setSelectedCollege(value.value);
         const res = await getBranchList(value.value);
         setBranchOptions(res.branches)
     }
     
     function onBranchInputChange(value) {
-        setSelectedBranch(value);
+        data.profile.branch = value.value;
+        // setSelectedBranch(value.value);
     }
     
     function onYearInputChange(value) {
-        setSelectedYear(value);
+        data.profile.year = value.value;
+        // setSelectedYear(value.value);
     }
     
     function onSubmitButton() {
         if (
-            selectedCollege != null &&
-            selectedBranch != null &&
-            selectedYear != null
+            data.profile.college != null &&
+            data.profile.branch != null &&
+            data.profile.year != null
         ) {
-            console.log("Submit logic here")
+            updateUserProfile(data);
         } else {
             alert("Please fill in all details");
         }

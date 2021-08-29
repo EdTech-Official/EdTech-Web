@@ -78,6 +78,7 @@ export const googleAuthenticate = (state, code) => async dispatch => {
 
         try {
             const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/o/google-oauth2/?${formBody}`, config);
+            console.log(res)
 
             dispatch({
                 type: GOOGLE_AUTH_SUCCESS,
