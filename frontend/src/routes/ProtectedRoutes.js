@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Switch, Route, Redirect } from "react-router-dom";
 import AboutCollege from '../Pages/AboutCollege';
 import People from '../Pages/Faculty';
@@ -11,15 +11,36 @@ import User from '../Pages/User';
 import MobileNavbar from '../Components/MobileNavbar';
 import WebNavbar from '../Components/WebNavbar';
 import { connect } from "react-redux";
-import { withRouter } from 'react-router-dom';
+import { withRouter, useLocation } from 'react-router-dom';
+import queryString from 'query-string'
 
-const ProtectedRoutes = ({isAuthenticated, isActivated}) => {
+import { check_authenticated, load_user, googleAuthenticate } from '../context/actions/auth';
+
+const ProtectedRoutes = (props) => {
+
+    let location = useLocation();
+
+    useEffect(() => {
+
+        const values = queryString.parse(location.search);
+        const state = values.state ? values.state : null;
+        const code = values.code ? values.code : null;
+
+        if(state && code) {
+            props.googleAuthenticate(state, code)
+        } else {
+            props.check_authenticated();
+            props.load_user();
+        }
+
+    }, [location])
+
     
-    if(!isAuthenticated) {
+    if(!props.isAuthenticated) {
         return <Redirect to='/' />
     }
 
-    if( !isActivated ) {
+    if( !props.isActivated ) {
         return <Redirect to='/select-preferences' />
     }
 
@@ -47,4 +68,4 @@ const mapStateToProps = state => ({
     isActivated: state.auth.isActivated,
 }) 
 
-export default withRouter(connect(mapStateToProps,{})(ProtectedRoutes));
+export default withRouter(connect(mapStateToProps,{  check_authenticated, load_user, googleAuthenticate  })(ProtectedRoutes));
