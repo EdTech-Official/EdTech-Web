@@ -1,5 +1,7 @@
+from django.db.models import fields
 from rest_framework import serializers
 from drf_queryfields import QueryFieldsMixin
+from rest_framework.utils import field_mapping
 
 from college.models import *
 
@@ -128,3 +130,12 @@ class GtimetableSerializer(serializers.ModelSerializer):
     class Meta:
         model = Gtimetable
         fields = '__all__'
+
+
+class YearSerializer(serializers.ModelSerializer):
+    value = serializers.CharField(source='id')
+    label = serializers.CharField(source='year')
+
+    class Meta:
+        model = Year
+        fields = ('value', 'label')

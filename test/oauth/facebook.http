@@ -1,4 +1,5 @@
-@hostname = http://localhost:8000
+# @hostname = http://localhost:8000
+@hostname = https://edtech-dj.herokuapp.com
 
 ### get request to get the authorisation url
 GET {{hostname}}/auth/o/facebook/ 

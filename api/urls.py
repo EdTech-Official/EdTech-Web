@@ -40,6 +40,8 @@ urlpatterns = [
     path('textbook/', content_views.TextbookList.as_view(), name='textbook-list'),
     path('textbook/<str:pk>/',
          content_views.TextbookDetail.as_view(), name='textbook-detail'),
+
+    path('year/', college_views.YearList.as_view(), name='year-list')
     #     path('material-list/', views.MaterialList.as_view(), name='material-list'),
     #     path('material-detail/<str:pk>/',
     #          views.MaterialDetail.as_view(), name='material-detail'),
