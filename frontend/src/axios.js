@@ -33,8 +33,18 @@ export const getBranchList = async (college) => {
     return result;
 };
 
+export const getYearList = async (college) => {
+  let result;
+  await axios
+    .get(`/api/college/${college}/`)
+    .then((res) => {
+      result = res.data;
+  });
+  return result;
+};
+
 export const updateUserProfile = async (data) => {
-    await axios
-      .put(`/auth/users/me/`, data)
-      .then(response => console.log(response));
+    await api
+      .put(`/auth/profile/me/`, data)
+      .then(window.location.href = "/timetable");
 }
