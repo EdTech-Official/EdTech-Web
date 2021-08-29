@@ -41,6 +41,15 @@ class BranchForCollegeSerializer(serializers.ModelSerializer):
         fields = ['value', 'label', ]
 
 
+class YearSerializer(serializers.ModelSerializer):
+    value = serializers.CharField(source='id')
+    label = serializers.CharField(source='year')
+
+    class Meta:
+        model = Year
+        fields = ('value', 'label')
+
+
 class CollegeSerializer(QueryFieldsMixin, serializers.ModelSerializer):
     url = serializers.HyperlinkedIdentityField(
         view_name='college-detail',
@@ -49,6 +58,7 @@ class CollegeSerializer(QueryFieldsMixin, serializers.ModelSerializer):
     value = serializers.CharField(source='college_code')
     label = serializers.CharField(source='name')
     branches = BranchForCollegeSerializer(Branch, many=True, read_only=True)
+    years = YearSerializer(Year, many=True, read_only=True)
 
     class Meta:
         model = College
@@ -130,12 +140,3 @@ class GtimetableSerializer(serializers.ModelSerializer):
     class Meta:
         model = Gtimetable
         fields = '__all__'
-
-
-class YearSerializer(serializers.ModelSerializer):
-    value = serializers.CharField(source='id')
-    label = serializers.CharField(source='year')
-
-    class Meta:
-        model = Year
-        fields = ('value', 'label')
