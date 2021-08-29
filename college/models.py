@@ -52,6 +52,8 @@ class Year(models.Model):
 
     year = models.CharField(max_length=8, choices=YEARS,
                             default='FIRST', unique=True)
+    colleges = models.ManyToManyField(
+        College, related_name='years')
 
     def __str__(self):
         return f"{self.year}"
