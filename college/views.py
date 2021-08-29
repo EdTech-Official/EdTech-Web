@@ -129,6 +129,15 @@ class PortionDetail(RetrieveAPIView):
     lookup_field = 'pk'
 
 
+""" Year List View """
+
+
+class YearList(ListAPIView):
+    queryset = Year.objects.all()
+    serializer_class = YearSerializer
+    pagination_class = ResultsSetPagination
+
+
 """ Faculty views """
 
 

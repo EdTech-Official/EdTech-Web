@@ -31,7 +31,7 @@ from content.models import *
 
 # utility classes
 class ResultsSetPagination(PageNumberPagination):
-    page_size = 10
+    page_size = 5
     page_size_query_param = 'page_size'
     max_page_size = 1000
 
@@ -115,24 +115,24 @@ def apiOverview(request):
             "method_allowed": "GET, PUT, DELETE",
             "permissions": "AllowAny"
         },
-        "Gtimetable List": {
-            "url": reverse('gtimetable-list', request=request),
-            "path": "/api/gtimetable/",
-            "name": "gtimetable-list",
-            "fields": "id, url, link, subjects, colleges, branches, years",
-            "filter_fields": "branches__branch_code, colleges__college_code, subjects_subject_code, years__year",
-            "search_fields": "subjects__name, branches__branch_code, subjects_subject_code",
-            "method_allowed": "GET, POST",
-            "permissions": "AllowAny"
-        },
-        "Gtimetable Detail": {
-            "url": reverse('gtimetable-detail', request=request, args=[10]),
-            "path": "/api/gtimetable/10/",
-            "name": "gtimetable-detail",
-            "fields": "id, url, link, subjects, colleges, branches, years",
-            "method_allowed": "GET, PUT, DELETE",
-            "permissions": "AllowAny"
-        },
+        # "Gtimetable List": {
+        #     "url": reverse('gtimetable-list', request=request),
+        #     "path": "/api/gtimetable/",
+        #     "name": "gtimetable-list",
+        #     "fields": "id, url, link, subjects, colleges, branches, years",
+        #     "filter_fields": "branches__branch_code, colleges__college_code, subjects_subject_code, years__year",
+        #     "search_fields": "subjects__name, branches__branch_code, subjects_subject_code",
+        #     "method_allowed": "GET, POST",
+        #     "permissions": "AllowAny"
+        # },
+        # "Gtimetable Detail": {
+        #     "url": reverse('gtimetable-detail', request=request, args=[10]),
+        #     "path": "/api/gtimetable/10/",
+        #     "name": "gtimetable-detail",
+        #     "fields": "id, url, link, subjects, colleges, branches, years",
+        #     "method_allowed": "GET, PUT, DELETE",
+        #     "permissions": "AllowAny"
+        # },
         "Contributor List": {
             "url": reverse('contributor-list', request=request),
             "path": "/api/contributor/",
