@@ -82,8 +82,12 @@ const PreferenceSelector = () => {
         }
       }
 
+      if(!user){
+          return <Redirect to='/' />
+      }
+    
     if(user?.college != null) {
-        <Redirect to='/timetable' />
+        return <Redirect to='/timetable' />
     }
 
     return (
