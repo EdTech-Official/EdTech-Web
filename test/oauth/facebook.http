@@ -2,8 +2,7 @@
 
 ### get request to get the authorisation url
 GET {{hostname}}/auth/o/facebook/ 
-?redirect_uri={{hostname}}/facbook
-
+?redirect_uri={{hostname}}/facebook
 
 ### facbook login
 
