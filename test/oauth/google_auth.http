@@ -1,5 +1,5 @@
-@hostname = http://localhost:8000
-# @hostname = https://edtech-dj.herokuapp.com
+# @hostname = http://localhost:8000
+@hostname = https://edtech-dj.herokuapp.com
 
 
 ### get request to get the authorisation url
@@ -20,7 +20,7 @@ Content-Type: application/x-www-form-urlencoded
 
 
 ### get the current user
-@access_token_for_get_request = {{login.response.body.$.access}}
+@access_token_for_get_request = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMwMjYwMzg0LCJqdGkiOiJlNzU2YTg4M2MyYWU0NDkxOWE0ZTliNTM3NmY2YzhkYSIsInVzZXJfaWQiOjF9.7w_1PPh5OhmlDJDDMF05ElmSUZC8LRLDWX88Ci76GpQ
 GET {{hostname}}/auth/users/me/ HTTP/1.1
 Content-Type: application/json
 Authorization: JWT {{access_token_for_get_request}}
@@ -35,13 +35,15 @@ Authorization: JWT {{access_token_for_get_request}}
 ### updateing user profile data
 PUT {{hostname}}/auth/profile/me/ HTTP/1.1
 Content-Type: application/json
-Authorization: JWT {{access_token_for_get_request}}
+Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMwMjYwMzg0LCJqdGkiOiJlNzU2YTg4M2MyYWU0NDkxOWE0ZTliNTM3NmY2YzhkYSIsInVzZXJfaWQiOjF9.7w_1PPh5OhmlDJDDMF05ElmSUZC8LRLDWX88Ci76GpQ
 
 {
   "id": 23,
   "user_email": "rajnaikdhulapkar@gmail.com",
-  "user": 18,
+  "user": 23,
   "college": "NITG",
   "branch": 2,
   "year": 1
 }
+
+

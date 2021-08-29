@@ -1,68 +1,90 @@
 import React, { useEffect, useState } from 'react';
 import Select from "react-select";
-import { getBranchList, getCollegeList, updateUserProfile } from '../../axios';
-
-const yearOptions = [
-    { value: "FIRST", label: "First" },
-    { value: "SECOND", label: "Second" },
-    { value: "THIRD", label: "Third" },
-    { value: "FOURTH", label: "Fourth" },
-];
+import { useSelector } from 'react-redux';
+import { getBranchList, getCollegeList, updateUserProfile, getYearList } from '../../axios';
+import { Redirect } from 'react-router-dom';
 
 const PreferenceSelector = () => {
 
+    const { user } = useSelector((state) => state.auth);
     const [collegeOptions, setCollegeOptions] = useState([])
     const [branchOptions, setBranchOptions] = useState([])
-    const [selectedCollege, setSelectedCollege] = useState(null)
-    const [selectedBranch, setSelectedBranch] = useState(null)
-    const [selectedYear, setSelectedYear] = useState(null)
-
-    const data = {
-        "profile": {
-            "college": null,
-            "branch": null,
-            "year": null
-        }
-    }
+    const [yearOptions, setYearOptions] = useState([])
+    const [userData, setUserData] = useState(!!user ? {
+        "id": user.id,
+        "user_email" : user.user_email,
+        "user": user.user,
+        "college": null,
+        "branch": null,
+        "year": null
+    } : {} )
 
     useEffect(() => {
         async function fetchCollegeList() {
             const res = await getCollegeList();
-            console.log(res);
             setCollegeOptions(res)
         }
         fetchCollegeList();
+        return (() => {})
     }, [])
 
     async function onCollegeInputChange(value) {
+        setUserData({
+            "id": user.id,
+            "user_email" : user.user_email,
+            "user": user.user,
+            "college": value.value,
+            "branch": null,
+            "year": null
+        })
         setBranchOptions([]);
-        data.profile.college = value.value;
-        // setSelectedCollege(value.value);
         const res = await getBranchList(value.value);
         setBranchOptions(res.branches)
     }
     
-    function onBranchInputChange(value) {
-        data.profile.branch = value.value;
-        // setSelectedBranch(value.value);
+    async function onBranchInputChange(value) {
+        setUserData(prevState => { 
+            return {
+                "id": user.id,
+                "user_email" : user.user_email,
+                "user": user.user,
+                ...prevState,
+                "branch": value.value,
+                "year": null,
+            }
+        })
+        const res = await getYearList(userData.college);
+        setYearOptions(res.years)
     }
     
     function onYearInputChange(value) {
-        data.profile.year = value.value;
-        // setSelectedYear(value.value);
+        setUserData(prevState => { 
+            return {
+                "id": user.id,
+                "user_email" : user.user_email,
+                "user": user.user,
+                ...prevState,
+                "year": value.value,
+            }
+        })
     }
     
-    function onSubmitButton() {
+    async function onSubmitButton() {
         if (
-            data.profile.college != null &&
-            data.profile.branch != null &&
-            data.profile.year != null
+            userData.college != null &&
+            userData.branch != null &&
+            userData.year != null
         ) {
-            updateUserProfile(data);
+            await updateUserProfile(userData);
+            window.location.reload();
         } else {
             alert("Please fill in all details");
         }
       }
+
+    if(user?.college != null) {
+        <Redirect to='/timetable' />
+    }
 
     return (
         <div

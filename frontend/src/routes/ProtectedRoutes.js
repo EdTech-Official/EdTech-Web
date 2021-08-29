@@ -19,7 +19,7 @@ const ProtectedRoutes = ({isAuthenticated, isActivated}) => {
         return <Redirect to='/' />
     }
 
-    if(!isActivated && isAuthenticated) {
+    if( !isActivated ) {
         return <Redirect to='/select-preferences' />
     }
 
