@@ -54,6 +54,8 @@ def apiOverview(request):
         "College Detail": {
             "url": reverse('college-detail', request=request, args=["NITG"]),
             "path": "/api/college/NITG/",
+            "users_college": "/api/college/me/",
+            "users_college_url": reverse('users-college', request=request),
             "name": "college-detail",
             "fields": "college_code, branches, name, established, location, full_address, link_image, website_link, static_map_src, email, linkedin, instagram, facebook, twitter, youtube",
             "method_allowed": "GET, PUT, DELETE",
