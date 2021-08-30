@@ -7,7 +7,7 @@ import { AiFillTwitterCircle } from "react-icons/ai";
 import { connect } from 'react-redux';
 import { login, signup } from "../../context/actions/auth.js";
 
-const Login = ({login, signup, isAuthenticated}) => {
+const Login = ({login, signup}) => {
   
   const [accountCreated, setAccountCreated] = useState(false);
 
@@ -111,10 +111,6 @@ const Login = ({login, signup, isAuthenticated}) => {
   const switchToSignIn = () => {
     document.getElementById("container").classList.remove("sign-up-mode");
   };
-
-  if(isAuthenticated) {
-    return <Redirect to='/timetable' />
-  }
 
   if(accountCreated) {
     return <Redirect to='/check-email' />
@@ -285,7 +281,9 @@ const Login = ({login, signup, isAuthenticated}) => {
 };
 
 const mapStateProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
+  isActivated: state.auth.isActivated,
+  user: state.auth.user,
 })
 
 export default connect(mapStateProps, { login, signup })(Login);

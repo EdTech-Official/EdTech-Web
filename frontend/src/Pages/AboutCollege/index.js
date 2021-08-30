@@ -1,9 +1,8 @@
 import React from "react";
 import useSWR from "swr";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
 
-const About = ({isAuthenticated}) => {
+const About = () => {
 
   const fetchWithToken = async (token) =>
   await fetch({
@@ -12,7 +11,6 @@ const About = ({isAuthenticated}) => {
       Authorization: `JWT ${token}`
     }
   }).then(response =>  response.json());
-  // console.log(response);
   
   let token = localStorage.getItem('access');
   
@@ -29,10 +27,6 @@ const About = ({isAuthenticated}) => {
         Loading
       </div>
     );
-  }
-  
-  if (!isAuthenticated) {
-    return <Redirect to='/' />
   }
   
   return (
