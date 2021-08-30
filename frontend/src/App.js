@@ -35,22 +35,15 @@ const App = () => {
           <Route
             exact
             path="/password/reset/confirm/:uid/:token"
-            location={this.props.location}
-            key={this.props.location.key}
-            render={({ location, match }) => (
-              <ResetPasswordConfirm
-                key={this.props.location.key}
-                match={match}
-              />
+            render={(props) => (
+              <ResetPasswordConfirm {...props} />
             )}
           />
           <Route
             exact
             path="/activate/:uid/:token"
-            location={this.props.location}
-            key={this.props.location.key}
-            render={({ location, match }) => (
-              <Activate key={this.props.location.key} match={match} />
+            render={(props) => (
+              <Activate {...props} />
             )}
           />
           <GuestRoute path="/check-email">
