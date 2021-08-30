@@ -1,26 +1,22 @@
 import React from "react";
 import useSWR from "swr";
 import { connect } from "react-redux";
+import axiosInstance from "../../axios";
 
 const About = () => {
 
-  const fetchWithToken = async (token) =>
-  await fetch({
-    method: "GET",
-    headers: {
-      Authorization: `JWT ${token}`
-    }
-  }).then(response =>  response.json());
-  
-  let token = localStorage.getItem('access');
-  
-  const { data, error } = useSWR([`${process.env.REACT_APP_BASE_URL}/api/college-detail/`, token], fetchWithToken)
-  const res = useSWR([`${process.env.REACT_APP_BASE_URL}/api/college-detail/`, token], fetchWithToken)
-  console.log(res)
+  const fetchWithToken = (url) =>
+    axiosInstance.get(url).then((res) => res.data);
+
+  const { data, error } = useSWR(
+    `/api/user/college/`,
+    fetchWithToken
+  );
+
   if (error) {
     return <div className="main_content_body">Error while Fetching...</div>;
   }
-  
+
   if (!data) {
     return (
       <div className="main_content_body" style={{ marginTop: "5px" }}>
@@ -28,7 +24,7 @@ const About = () => {
       </div>
     );
   }
-  
+
   return (
     <div className="main_content_body" style={{ marginTop: "5px" }}>
       <div

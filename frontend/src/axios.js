@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = axios.create({
+const axiosInstance = axios.create({
     baseURL: process.env.REACT_APP_BASE_URL,
     headers: {
         'Content-type': 'application/json',
@@ -44,6 +44,20 @@ export const getYearList = async (college) => {
 };
 
 export const updateUserProfile = async (data) => {
-    await api
+    await axiosInstance
       .put(`/auth/profile/me/`, data)
 }
+
+export const getBooks = async (book) => {
+  let result;
+  return result = await axiosInstance
+  .get(`/api/textbook/${book}`)
+}
+
+export const getMaterials = async (book) => {
+  let result;
+  return result = await axiosInstance
+  .get(`/api/material/${book}`)
+}
+
+export default axiosInstance

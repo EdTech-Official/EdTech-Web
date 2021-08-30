@@ -1,40 +1,39 @@
-import React, { useContext } from "react";
+import React from "react";
 import useSWR from "swr";
+import axiosInstance from "../../axios";
 
 const Timetable = () => {
-  // const { currentUserData } = useContext(AuthContext);
 
-  // const { data, error } = useSWR(
-  //   `${process.env.REACT_APP_API_URL}/api/gtimetable/?college__college_code=${currentUserData[0].value}&branch__branch_code=${currentUserData[1].value}&year__year=${currentUserData[2].value}`,
-  //   { revalidateOnFocus: false }
-  // );
+  const fetchWithToken = url => axiosInstance.get(url).then(res => res.data)
 
-  // if (error) {
-  //   return <div className="main_content_body">Error while Fetching...</div>;
-  // }
+  const { data, error } = useSWR(`/api/gtimetable/`, fetchWithToken)
 
-  // if (!data) {
-  //   return (
-  //     <div className="main_content_body" style={{ marginTop: "5px" }}>
-  //       Loading
-  //     </div>
-  //   );
-  // }
+  if (error) {
+    return <div className="main_content_body">Error while Fetching...</div>;
+  }
+
+  if (!data) {
+    return (
+      <div className="main_content_body" style={{ marginTop: "5px" }}>
+        Loading
+      </div>
+    );
+  }
 
   return (
     <div
       className="main_content_body"
       style={{ display: "flex", justifyContent: "center" }}
     >
-      {/* <iframe
+      <iframe
         title="Timetable Frame"
-        src={`https://docs.google.com/spreadsheets/d/e/${data.results[0].gsheet_src}/pubhtml?widget=true&amp;headers=false`}
+        src={`https://docs.google.com/spreadsheets/d/e/${data.gsheet_src}/pubhtml?widget=true&amp;headers=false`}
         style={{
           height: "50%",
           width: "70%",
           border: "0.5px solid var(--first-color)",
         }}
-      /> */}
+      />
     </div>
   );
 };
