@@ -1,5 +1,5 @@
-@hostname = http://localhost:8000
-# @hostname = https://edtech1.herokuapp.com
+# @hostname = http://localhost:8000
+@hostname = https://edtech1.herokuapp.com
 @user_email = dhulapkarraj@gmail.com
 @user_password = BasicUserPassword
 @user_password_reseted = BasicUserPasswordReseted
@@ -108,11 +108,20 @@ Authorization: JWT {{access_token_for_verification}}
 ### update user info
 PATCH {{hostname}}/auth/users/me/ HTTP/1.1
 Content-Type: application/json
-Authorization: JWT {{access_token_for_verification}}
+Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMwMjI3ODUxLCJqdGkiOiJkM2UwZjcwNDNkYjY0NmNjOWQxNjM4OGZlYjM4MjZmOCIsInVzZXJfaWQiOjF9.VpNrakT0_ieombwVyqZqI3nHueAHk-jysrD852GV2mc
 
 {
-  "last_name": "Dhulapkar"                
+    "profile": {
+        "college": "NITG",
+        "branch": 2,
+        "year": 1
+    }            
 }
+
+# {
+#   "last_name": "Dhulapkar"                
+# }
+
 
 ### logout
 POST {{hostname}}/auth/jwt/blacklist/ HTTP/1.1

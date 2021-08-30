@@ -1,140 +1,149 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import Select from "react-select";
-import { getBranchList, getCollegeList, updateUserProfile } from '../../axios';
-
-const yearOptions = [
-    { value: "FIRST", label: "First" },
-    { value: "SECOND", label: "Second" },
-    { value: "THIRD", label: "Third" },
-    { value: "FOURTH", label: "Fourth" },
-];
+import { useSelector } from "react-redux";
+import {
+  getBranchList,
+  getCollegeList,
+  updateUserProfile,
+  getYearList,
+} from "../../axios";
 
 const PreferenceSelector = () => {
-
-    const [collegeOptions, setCollegeOptions] = useState([])
-    const [branchOptions, setBranchOptions] = useState([])
-    const [selectedCollege, setSelectedCollege] = useState(null)
-    const [selectedBranch, setSelectedBranch] = useState(null)
-    const [selectedYear, setSelectedYear] = useState(null)
-
-    const data = {
-        "profile": {
-            "college": null,
-            "branch": null,
-            "year": null
+  const { user } = useSelector((state) => state.auth);
+  const [collegeOptions, setCollegeOptions] = useState([]);
+  const [branchOptions, setBranchOptions] = useState([]);
+  const [yearOptions, setYearOptions] = useState([]);
+  const [userData, setUserData] = useState(
+    !!user
+      ? {
+          id: user.id,
+          user_email: user.user_email,
+          user: user.user,
+          college: null,
+          branch: null,
+          year: null,
         }
-    }
+      : {}
+  );
 
-    useEffect(() => {
-        async function fetchCollegeList() {
-            const res = await getCollegeList();
-            console.log(res);
-            setCollegeOptions(res)
-        }
-        fetchCollegeList();
-    }, [])
+  useEffect(() => {
+    async function fetchCollegeList() {
+      const res = await getCollegeList();
+      setCollegeOptions(res);
+    }
+    fetchCollegeList();
+    return () => {};
+  }, []);
 
-    async function onCollegeInputChange(value) {
-        setBranchOptions([]);
-        data.profile.college = value.value;
-        // setSelectedCollege(value.value);
-        const res = await getBranchList(value.value);
-        setBranchOptions(res.branches)
-    }
-    
-    function onBranchInputChange(value) {
-        data.profile.branch = value.value;
-        // setSelectedBranch(value.value);
-    }
-    
-    function onYearInputChange(value) {
-        data.profile.year = value.value;
-        // setSelectedYear(value.value);
-    }
-    
-    function onSubmitButton() {
-        if (
-            data.profile.college != null &&
-            data.profile.branch != null &&
-            data.profile.year != null
-        ) {
-            updateUserProfile(data);
-        } else {
-            alert("Please fill in all details");
-        }
-      }
+  async function onCollegeInputChange(value) {
+    setUserData({
+      id: user.id,
+      user_email: user.user_email,
+      user: user.user,
+      college: value.value,
+      branch: null,
+      year: null,
+    });
+    setBranchOptions([]);
+    const res = await getBranchList(value.value);
+    setBranchOptions(res.branches);
+  }
 
-    return (
-        <div
+  async function onBranchInputChange(value) {
+    setUserData((prevState) => {
+      return {
+        id: user.id,
+        user_email: user.user_email,
+        user: user.user,
+        ...prevState,
+        branch: value.value,
+        year: null,
+      };
+    });
+    const res = await getYearList(userData.college);
+    setYearOptions(res.years);
+  }
+
+  function onYearInputChange(value) {
+    setUserData((prevState) => {
+      return {
+        id: user.id,
+        user_email: user.user_email,
+        user: user.user,
+        ...prevState,
+        year: value.value,
+      };
+    });
+  }
+
+  async function onSubmitButton() {
+    if (
+      userData.college != null &&
+      userData.branch != null &&
+      userData.year != null
+    ) {
+      await updateUserProfile(userData);
+    } else {
+      alert("Please fill in all details");
+    }
+  }
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        height: "100vh",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "rgba(0,0,0,0.1)",
+      }}
+    >
+      <div
         style={{
+          display: "grid",
+          height: "45vh",
+          width: "50vw",
+          alignItems: "center",
+          justifyContent: "unset",
+          gridTemplateRows: "1fr 1fr 1fr 1fr",
+        }}
+      >
+        <div>
+          <h3 style={{ color: "rgba(0,0,100,1)" }}>Select Your College</h3>
+          <Select onChange={onCollegeInputChange} options={collegeOptions} />
+        </div>
+        <div>
+          <h3 style={{ color: "rgba(0,0,100,1)" }}>Select Your Branch</h3>
+          <Select onChange={onBranchInputChange} options={branchOptions} />
+        </div>
+        <div>
+          <h3 style={{ color: "rgba(0,0,100,1)" }}>Select Your Year</h3>
+          <Select onChange={onYearInputChange} options={yearOptions} />
+        </div>
+        <div
+          style={{
             display: "flex",
-            height: "100vh",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "rgba(0,0,0,0.1)",
-        }}
+          }}
+          onClick={onSubmitButton}
         >
-        <div
+          <button
             style={{
-            display: "grid",
-            height: "45vh",
-            width: "50vw",
-            alignItems: "center",
-            justifyContent: "unset",
-            gridTemplateRows: "1fr 1fr 1fr 1fr",
+              border: "none",
+              color: "rgba(0,0,100,1)",
+              background: "white",
+              padding: "10px 40px",
+              fontSize: "18px",
+              borderRadius: "25px",
             }}
-        >
-            <div>
-            <h3 style={{ color: "rgba(0,0,100,1)" }}>
-                Select Your College
-            </h3>
-            <Select
-                onChange={onCollegeInputChange}
-                options={collegeOptions}
-            />
-            </div>
-            <div>
-            <h3 style={{ color: "rgba(0,0,100,1)" }}>
-                Select Your Branch
-            </h3>
-            <Select
-                onChange={onBranchInputChange}
-                options={branchOptions}
-            />
-            </div>
-            <div>
-            <h3 style={{ color: "rgba(0,0,100,1)" }}>
-                Select Your Year
-            </h3>
-            <Select
-                onChange={onYearInputChange}
-                options={yearOptions}
-            />
-            </div>
-            <div
-            style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-            }}
-            onClick={onSubmitButton}
-            >
-            <button
-                style={{
-                border: "none",
-                color: "rgba(0,0,100,1)",
-                background: "white",
-                padding: "10px 40px",
-                fontSize: "18px",
-                borderRadius: "25px",
-                }}
-            >
-                Submit
-            </button>
-            </div>
+          >
+            Submit
+          </button>
         </div>
-        </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default PreferenceSelector
+export default PreferenceSelector;
