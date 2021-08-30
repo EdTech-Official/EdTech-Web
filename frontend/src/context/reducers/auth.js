@@ -87,11 +87,14 @@ export default function(state = initialState, action) {
                 ...state,
                 isAuthenticated: false
             }
-
+            
         case USER_LOADED_FAIL:
+            localStorage.removeItem('access');
+            localStorage.removeItem('refresh');
             return {
                 ...state,
-                user: null
+                user: null,
+                isAuthenticated: false
             }
 
         case GOOGLE_AUTH_SUCCESS:
