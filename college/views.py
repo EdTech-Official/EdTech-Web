@@ -1,3 +1,4 @@
+from rest_framework.views import APIView
 from django.http.response import Http404
 from rest_framework.generics import (ListAPIView,
                                      RetrieveAPIView)
@@ -44,6 +45,23 @@ class CollegeDetail(RetrieveAPIView):
     queryset = College.objects.all()
     serializer_class = CollegeSerializer
     lookup_field = 'college_code'
+
+
+class UsersCollege(APIView):
+    """
+    Retrieve [GET], update [PUT] or delete [DELETE] a college instance.
+    """
+
+    def get_object(self, college_code):
+        try:
+            return College.objects.get(college_code=college_code)
+        except College.DoesNotExist:
+            raise Http404
+
+    def get(self, request, format=None):
+        college = self.get_object(request.user.profile.college.college_code)
+        serializer = CollegeSerializer(college, context={'request': request})
+        return Response(serializer.data)
 
 
 """ Branch """

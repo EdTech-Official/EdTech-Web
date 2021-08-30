@@ -11,6 +11,8 @@ urlpatterns = [
     path('college/', college_views.CollegeList.as_view(), name='college-list'),
     path('college/<str:college_code>/',
          college_views.CollegeDetail.as_view(), name='college-detail'),
+    path('user/college/',
+         college_views.UsersCollege.as_view(), name='users-college'),
     path('branch/',
          college_views.BranchList.as_view(), name="branch-list"),
     path('branch/<str:pk>/',
