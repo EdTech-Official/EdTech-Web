@@ -1,0 +1,25 @@
+.cardWrapper {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+    align-items: center;
+    font-size: 22px;
+}
+
+.image {
+    height: 13rem;
+    margin-bottom: 2rem;
+}
+
+.spinner {
+    margin-top: 2rem;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

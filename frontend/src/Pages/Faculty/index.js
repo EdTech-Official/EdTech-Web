@@ -1,41 +1,41 @@
-import React, { useContext } from 'react';
-// import FacultyCard from './FacultyCard';
+import React from 'react';
+import FacultyCard from './FacultyCard';
 import useSWR from "swr";
+import axiosInstance from "../../axios";
 
 const People = () => {
 
-    // const { data, error } = useSWR(
-    //     `${process.env.REACT_APP_API_URL}/api/faculty-list/?page=1&page_size=100&branch__branch_code=${currentUserData[1].value}&college__college_code=${currentUserData[0].value}`,
-    //     {revalidateOnFocus: false}
-    // );
+    const fetchWithToken = (url) =>
+    axiosInstance.get(url).then((res) => res.data);
+
+    const { data, error } = useSWR(
+        `/api/faculty/`,
+        fetchWithToken
+    );
+
+    if (error) {
+        return <div className="main_content_body">Error while Fetching...</div>;
+    }
+
+    if (!data) {
+        return (
+        <div className="main_content_body" style={{ marginTop: "5px" }}>
+            Loading
+        </div>
+        );
+    }
 
     return (
-        <div>Hi</div>
+        <div className="main_content_body">
+            {
+                data.map( person => (
+                    <div key={person.name} style={{display: 'inline-block'}}>
+                        <FacultyCard personDetail={person} />
+                    </div>
+                ))
+            }
+        </div>
     )
-
-    // if (error) {
-    //     return <div className="main_content_body">Error while Fetching...</div>;
-    // }
-
-    // if (!data) {
-    //     return (
-    //     <div className="main_content_body" style={{ marginTop: "5px" }}>
-    //         Loading
-    //     </div>
-    //     );
-    // }
-
-    // return (
-    //     <div className="main_content_body">
-    //         {
-    //             data.results.map( person => (
-    //                 <div key={person.name} style={{display: 'inline-block'}}>
-    //                     <FacultyCard personDetail={person} />
-    //                 </div>
-    //             ))
-    //         }
-    //     </div>
-    // )
 }
 
 export default People

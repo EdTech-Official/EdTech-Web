@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import queryString from 'query-string';
 import WebNavbar from '../Components/WebNavbar';
 import MobileNavbar from '../Components/MobileNavbar';
+import Loader from '../Components/Loader/Loader'
 import { check_authenticated, load_user, googleAuthenticate } from '../context/actions/auth';
 
 const Layout = (props) => {
@@ -35,7 +36,7 @@ const Layout = (props) => {
 
     return (
         loading ? (
-            <div>loading</div>
+            <Loader message="Gathering Resources... Please Wait :)" />
         ) : (
             <div>
                 { (props.isActivated && props.isAuthenticated) && <WebNavbar />}
@@ -53,4 +54,3 @@ const mapStateProps = state => ({
 })
   
 export default connect(mapStateProps, { check_authenticated, load_user, googleAuthenticate })(Layout);
-  
