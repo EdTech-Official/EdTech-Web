@@ -46,5 +46,4 @@ export const getYearList = async (college) => {
 export const updateUserProfile = async (data) => {
     await api
       .put(`/auth/profile/me/`, data)
-      .then(window.location.href = "/timetable");
 }
