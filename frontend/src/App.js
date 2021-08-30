@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 import Layout from "./hocs/Layout";
 import Login from "./Pages/Auth/Login";
 import PreferenceSelector from "./Pages/PreferenceSelector";
@@ -9,61 +9,75 @@ import ResetPassword from "./Pages/Auth/ResetPassword";
 import ResetPasswordConfirm from "./Pages/Auth/ResetPasswordConfirm";
 import Activate from "./Pages/Auth/Activate";
 import CheckEmail from "./Pages/Auth/CheckEmail";
-import AboutCollege from './Pages/AboutCollege';
-import People from './Pages/Faculty';
-import Notes from './Pages/Notes';
-import Portion from './Pages/Portion';
-import Recommendation from './Pages/Recommendations';
-import Textbook from './Pages/Textbook';
-import Timetable from './Pages/Timetable';
-import User from './Pages/User';
+import AboutCollege from "./Pages/AboutCollege";
+import People from "./Pages/Faculty";
+import Notes from "./Pages/Notes";
+import Portion from "./Pages/Portion";
+import Recommendation from "./Pages/Recommendations";
+import Textbook from "./Pages/Textbook";
+import Timetable from "./Pages/Timetable";
+import User from "./Pages/User";
 
 const App = () => {
-
   return (
     <>
       <Layout>
         <Switch>
-          <GuestRoute exact path='/'>
+          <GuestRoute exact path="/">
             <Login />
           </GuestRoute>
-          <SemiProtectedRoute path='/select-preferences' >
+          <SemiProtectedRoute path="/select-preferences">
             <PreferenceSelector />
           </SemiProtectedRoute>
-          <GuestRoute path='/reset-password' >
+          <GuestRoute path="/reset-password">
             <ResetPassword />
           </GuestRoute>
-          <GuestRoute path='/password/reset/confirm/:uid/:token' >
-            <ResetPasswordConfirm />
-          </GuestRoute>
-          <GuestRoute path='/activate/:uid/:token'  >
-            <Activate />
-          </GuestRoute>
-          <GuestRoute path='/check-email'  >
+          <Route
+            exact
+            path="/password/reset/confirm/:uid/:token"
+            location={this.props.location}
+            key={this.props.location.key}
+            render={({ location, match }) => (
+              <ResetPasswordConfirm
+                key={this.props.location.key}
+                match={match}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/activate/:uid/:token"
+            location={this.props.location}
+            key={this.props.location.key}
+            render={({ location, match }) => (
+              <Activate key={this.props.location.key} match={match} />
+            )}
+          />
+          <GuestRoute path="/check-email">
             <CheckEmail />
           </GuestRoute>
-          <ProtectedRoute path='/timetable'  >
+          <ProtectedRoute path="/timetable">
             <Timetable />
           </ProtectedRoute>
-          <ProtectedRoute path='/portion'  >
+          <ProtectedRoute path="/portion">
             <Portion />
           </ProtectedRoute>
-          <ProtectedRoute path='/textbook'  >
+          <ProtectedRoute path="/textbook">
             <Textbook />
           </ProtectedRoute>
-          <ProtectedRoute path='/notes'  >
+          <ProtectedRoute path="/notes">
             <Notes />
           </ProtectedRoute>
-          <ProtectedRoute path='/recommendation'  >
+          <ProtectedRoute path="/recommendation">
             <Recommendation />
           </ProtectedRoute>
-          <ProtectedRoute path='/faculty'  >
+          <ProtectedRoute path="/faculty">
             <People />
           </ProtectedRoute>
-          <ProtectedRoute path='/about'  >
+          <ProtectedRoute path="/about">
             <AboutCollege />
           </ProtectedRoute>
-          <ProtectedRoute path='/user'  >
+          <ProtectedRoute path="/user">
             <User />
           </ProtectedRoute>
         </Switch>
@@ -75,77 +89,77 @@ const App = () => {
 const GuestRoute = ({ children, ...rest }) => {
   const { isAuthenticated } = useSelector((state) => state.auth);
   return (
-      <Route
-          {...rest}
-          render={({ location }) => {
-              return isAuthenticated ? (
-                  <Redirect
-                      to={{
-                          pathname: '/timetable',
-                          state: { from: location },
-                      }}
-                  />
-              ) : (
-                  children
-              );
-          }}
-      ></Route>
+    <Route
+      {...rest}
+      render={({ location }) => {
+        return isAuthenticated ? (
+          <Redirect
+            to={{
+              pathname: "/timetable",
+              state: { from: location },
+            }}
+          />
+        ) : (
+          children
+        );
+      }}
+    ></Route>
   );
 };
 
 const SemiProtectedRoute = ({ children, ...rest }) => {
   const { isAuthenticated, isActivated } = useSelector((state) => state.auth);
   return (
-      <Route
-          {...rest}
-          render={({ location }) => {
-              return !isAuthenticated ? (
-                  <Redirect
-                      to={{
-                          pathname: '/',
-                          state: { from: location },
-                      }}
-                  />
-              ) : isAuthenticated && !isActivated ? (
-                  children
-              ) : (
-                  <Redirect
-                      to={{
-                          pathname: '/timetable',
-                          state: { from: location },
-                      }}
-                  />
-              );
-          }}
-      ></Route>
+    <Route
+      {...rest}
+      render={({ location }) => {
+        return !isAuthenticated ? (
+          <Redirect
+            to={{
+              pathname: "/",
+              state: { from: location },
+            }}
+          />
+        ) : isAuthenticated && !isActivated ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/timetable",
+              state: { from: location },
+            }}
+          />
+        );
+      }}
+    ></Route>
   );
 };
 
 const ProtectedRoute = ({ children, ...rest }) => {
   const { isAuthenticated, isActivated } = useSelector((state) => state.auth);
   return (
-      <Route
-          {...rest}
-          render={({ location }) => {
-              return !isAuthenticated ? (
-                  <Redirect
-                      to={{
-                          pathname: '/',
-                          state: { from: location },
-                      }}
-                  />
-              ) : isAuthenticated && !isActivated ? (
-                  <Redirect
-                      to={{
-                          pathname: '/select-preferences',
-                          state: { from: location },
-                      }}
-                  />
-              ) : (
-                  children
-              );
-          }}
-      ></Route>
+    <Route
+      {...rest}
+      render={({ location }) => {
+        return !isAuthenticated ? (
+          <Redirect
+            to={{
+              pathname: "/",
+              state: { from: location },
+            }}
+          />
+        ) : isAuthenticated && !isActivated ? (
+          <Redirect
+            to={{
+              pathname: "/select-preferences",
+              state: { from: location },
+            }}
+          />
+        ) : (
+          children
+        );
+      }}
+    ></Route>
   );
 };
 
