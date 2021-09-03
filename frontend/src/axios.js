@@ -1,11 +1,13 @@
 import axios from 'axios';
 
+const token = localStorage.getItem('access');
+
 const axiosInstance = axios.create({
     baseURL: process.env.REACT_APP_BASE_URL,
     headers: {
         'Content-type': 'application/json',
         'Accept': 'application/json',
-        'Authorization': `JWT ${localStorage.getItem('access')}`
+        'Authorization': `JWT ${token}`
     }
 })
 
