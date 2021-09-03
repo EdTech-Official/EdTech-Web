@@ -1,21 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import { useSelector } from "react-redux";
-import axios from 'axios';
 import {
   getBranchList,
   getCollegeList,
   getYearList,
+  updateUserProfile
 } from "../../axios";
-
-const axiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL,
-  headers: {
-      'Content-type': 'application/json',
-      'Accept': 'application/json',
-      'Authorization': `JWT ${localStorage.getItem('access')}`
-  }
-})
 
 const PreferenceSelector = () => {
   const { user } = useSelector((state) => state.auth);
@@ -91,8 +82,7 @@ const PreferenceSelector = () => {
       userData.branch != null &&
       userData.year != null
     ) {
-      await axiosInstance
-        .put(`/auth/profile/me/`, userData)
+      await updateUserProfile(userData);
     } else {
       alert("Please fill in all details");
     }

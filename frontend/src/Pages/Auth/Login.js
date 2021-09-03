@@ -151,7 +151,7 @@ const Login = ({login, signup}) => {
 
               <p className="social-text">Forgot Your Password? <Link to='/reset-password'>Reset Passwrod</Link></p>
 
-              <p className="social-text">Or Sign In with Social Platforms</p>
+              {/* <p className="social-text">Or Sign In with Social Platforms</p>
 
               <div className="social-media">
                 <div className="social-icon" onClick={() => handleSignIn(1)}>
@@ -166,7 +166,7 @@ const Login = ({login, signup}) => {
                 <div className="social-icon" onClick={() => handleSignIn(4)}>
                   <FaGithub />
                 </div>
-              </div>
+              </div> */}
             </form>
 
             <form onSubmit={(e) => handleFormAuth(e,5)} className="sign-up-form" id="sign-up-form">
@@ -221,7 +221,7 @@ const Login = ({login, signup}) => {
                 value="Sign up"
               />
 
-              <p className="social-text">Or Sign Up with Social Platforms</p>
+              {/* <p className="social-text">Or Sign Up with Social Platforms</p>
 
               <div className="social-media">
                 <div className="social-icon" onClick={() => handleSignIn(1)}>
@@ -236,7 +236,7 @@ const Login = ({login, signup}) => {
                 <div className="social-icon" onClick={() => handleSignIn(4)}>
                   <FaGithub />
                 </div>
-              </div>
+              </div> */}
             </form>
           </div>
         </div>
@@ -262,8 +262,7 @@ const Login = ({login, signup}) => {
             <div className="content">
               <h3>One of us ?</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                laboriosam ad deleniti.
+                Welcome back buddy! Just sign in to continue learning :)
               </p>
               <button
                 className="btn transparent sign-in-btn"
