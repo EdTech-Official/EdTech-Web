@@ -118,6 +118,7 @@ export default function(state = initialState, action) {
                 access: null,
                 refresh: null, 
                 isAuthenticated: false,
+                isActivated: false,
                 user: null
             }
 
