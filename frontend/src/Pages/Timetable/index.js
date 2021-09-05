@@ -1,8 +1,19 @@
 import React from "react";
 import useSWR from "swr";
-import axiosInstance from "../../axios";
+import axios from 'axios';
+import { useSelector } from "react-redux";
 
 const Timetable = () => {
+
+  const accessToken = useSelector((state) => state.auth.access);
+
+  const axiosInstance = axios.create({
+    baseURL: process.env.REACT_APP_BASE_URL,
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `JWT ${accessToken}`,
+    },
+  });
 
   const fetchWithToken = url => axiosInstance.get(url).then(res => res.data)
 
