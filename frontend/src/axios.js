@@ -1,13 +1,13 @@
 import axios from 'axios';
+import store from './context/store';
 
-const token = localStorage.getItem('access');
+const state = store.getState();
 
 const axiosInstance = axios.create({
     baseURL: process.env.REACT_APP_BASE_URL,
     headers: {
         'Content-type': 'application/json',
-        'Accept': 'application/json',
-        'Authorization': `JWT ${token}`
+        'Authorization': `JWT ${store.getState().auth.access}`
     }
 })
 
@@ -48,6 +48,7 @@ export const getYearList = async (college) => {
 export const updateUserProfile = async (data) => {
     await axiosInstance
       .put(`/auth/profile/me/`, data)
+      .then(console.log("User data updated successfully"));
 }
 
 export const getBooks = async (book) => {
